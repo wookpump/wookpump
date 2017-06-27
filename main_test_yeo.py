@@ -1,54 +1,41 @@
 import time
 from bittrex import Bittrex
 import json
+from decimal import *
+import sys
 import threading
 from threading import Thread
 import datetime
 import traceback
-from multiprocessing import Process, Queue
 
-# dict_price = {}
-output = Queue()
+dict_price = {}
 with open("secrets.json") as secrets_file:
     secrets = json.load(secrets_file)
     secrets_file.close()
     bittrex = Bittrex(secrets['key'], secrets['secret'])
 
 
-def run(MarketName, outqueue):
-    while True:
-        try:
-            current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            ticker = bittrex.get_ticker(MarketName)
-            price = float('%.10f' % ticker['result']['Ask'])
-            with open ('./logs/market.json', 'w') as outfile:
-                json.dump(ticker, outfile)
+class ThreadGetTiker(Thread):
+    def __init__(self, MarketName):
+        self.MarketName = MarketName
+        threading.Thread.__init__(self)
 
-        except:
-            traceback.print_exc()
-            print(MarketName)
+    def run(self):
+        while True:
+            try:
+                current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                ticker = bittrex.get_ticker(self.MarketName)
+                price = float('%.10f' % ticker['result']['Ask'])
+                list_priv = dict_price[self.MarketName][1]
+                list_curr = [current_time, price]
+                dict_price.update({self.MarketName: [list_priv, list_curr]})
+                # print(self.MarketName + ' : ' + str(price))
+            except:
+                # print(self.MarketName + ' : error')
+                print('')
+                # traceback.print_exc()
 
-        time.sleep(1)
-
-# class ThreadGetTiker(Thread):
-#     def __init__(self, MarketName):
-#         self.MarketName = MarketName
-#         threading.Thread.__init__(self)
-#
-#     def run(self):
-#         while True:
-#             try:
-#                 current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-#                 ticker = bittrex.get_ticker(self.MarketName)
-#                 price = float('%.10f' % ticker['result']['Ask'])
-#                 list_priv = dict_price[self.MarketName][1]
-#                 list_curr = [current_time, price]
-#                 dict_price.update({self.MarketName: [list_priv, list_curr]})
-#             except:
-#                 traceback.print_exc()
-#                 print(self.MarketName)
-#
-#             time.sleep(1)
+            time.sleep(2.1)
 
 
 def buyCoin(coinName, rate):
@@ -81,48 +68,45 @@ def writeLogFile(str):
 
     f.writelines(currnet_time + ' - ' + str + '\n')
     f.close()
+
+    # '2017-04-16 14:57:33'
     return 0
 
-if __name__ == "__main__":
 
-    result = bittrex.get_markets()
+# coinName = sys.argv[1].upper()
+# print(coinName)
+# askPrice, buyResult, myOrderHistory, openOrders = buyCoin(coinName,1.2)
+# print(str(buyResult))
 
-    # for coin in result['result']:
-    #     MarketName = coin['MarketName']
-    #     if 'BTC-' in MarketName and coin['IsActive']:
-    #         try:
-    #             dict_price.update({MarketName: [[0, 1], [0, 1]]})
-    #             ThreadGetTiker(MarketName).start()
-    #         except:
-    #             print('error : ' + MarketName)
-    # while True:
-    #     print('result -')
-    #     for key, value in dict_price.items():
-    #         if value[0][0] != 0:
-    #             rate = (value[1][1] - value[0][1]) / value[0][1]
-    #             value_str = '[%s][%.8f],[%s][%.8f]' % (value[0][0], value[0][1], value[1][0], value[1][1])
-    #             writeLogFile(key + ' : ' + value_str + ' : ' + str('%.8f' % rate))
-    #             if rate > 0.05:
-    #                 print(key + ' : ' + value_str + ' : ' + str('%.8f' % rate))
-    #                 writeLogFile('#################################### ' + key + ' #############################')
-    #     time.sleep(3)
-
-    procs = []
-
-    for coin in result['result']:
-        MarketName = coin['MarketName']
-        if 'BTC-' in MarketName and coin['IsActive']:
-            try:
-                procs.append(Process(target=run, args=(MarketName, output,)))
-
-            except:
-                traceback.print_exc()
-
-    for p in procs:
-        p.start()
-
-
-
-    while True:
-        print(output.get())
-        time.sleep(3)
+# sellResult, myOrderHistory, openOrders = sellCoin(coinName,askPrice, 2.5)
+# print(str(sellResult))
+result = bittrex.get_markets()
+# print(result)
+for coin in result['result']:
+    MarketName = coin['MarketName']
+    if 'BTC-' in MarketName and coin['IsActive']:
+        try:
+            # ticker = bittrex.get_ticker(MarketName)
+            # currency =  float('%.8f' % ticker['result']['Ask'])
+            # print(ticker)
+            # print(MarketName + ' : ' + str(currency))
+            dict_price.update({MarketName: [[0, 1], [0, 1]]})
+            ThreadGetTiker(MarketName).start()
+        except:
+            print('error : ' + MarketName)
+            # print(MarketName + ' : ' + str(currency))
+while True:
+    print('result -')
+    for key, value in dict_price.items():
+        # print(key + ' : ' + str('%.8f' % (value[0][1]-value[1][1])/value[0][1]))
+        if value[0][0] != 0:
+            rate = (value[1][1] - value[0][1]) / value[0][1]
+            value_str = '[%s][%.8f],[%s][%.8f]' % (value[0][0], value[0][1], value[1][0], value[1][1])
+            writeLogFile(key + ' : ' + value_str + ' : ' + str('%.8f' % rate))
+            if rate > 0.05:
+                print(key + ' : ' + value_str + ' : ' + str('%.8f' % rate))
+                writeLogFile('#################################### ' + key + ' #############################')
+    time.sleep(3)
+# print(result)
+# print(str(myOrderHistory))
+# print(str(openOrders))
