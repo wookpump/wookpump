@@ -24,10 +24,10 @@ class ThreadGetTiker(Thread):
         while True:
             try:
                 current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                ticker = bittrex.get_market_history(self.MarketName, 1)
-                print(ticker)
-                for result, i in ticker['result']:
-                    if i == 0:
+                ticker = bittrex.get_market_history(self.MarketName, 500)
+                # print(ticker)
+                for i, result in enumerate(ticker['result']):
+                    if i == len(ticker['result']):
                         list_curr = [current_time, result['Price']]
                 # price = float('%.10f' % ticker['result']['Ask'])
                 list_priv = dict_price[self.MarketName][1]
