@@ -5,7 +5,10 @@ from decimal import *
 import sys
 import threading
 from threading import Thread
+import datetime
+import traceback
 
+dict_price = {}
 with open("secrets.json") as secrets_file:
     secrets = json.load(secrets_file)
     secrets_file.close()
@@ -20,13 +23,18 @@ class ThreadGetTiker(Thread):
     def run(self):
         while True:
             try:
+                current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                 ticker = bittrex.get_ticker(self.MarketName)
-                price = float('%.8f' % ticker['result']['Ask'])
+                price = float('%.10f' % ticker['result']['Ask'])
+                dict_priv = dict_price[self.MarketName][1]
+                dict_curr = {current_time:price}
+                dict_price.update({self.MarketName:[dict_priv,dict_curr]})
                 print(self.MarketName + ' : ' + str(price))
             except:
-                print(self.MarketName + ' : error')
+                # print(self.MarketName + ' : error')
+                traceback.print_exc()
             
-            time.sleep(0.1)
+            time.sleep(2.1)
 
 def buyCoin(coinName, rate):
     coinName = 'BTC-'+coinName
@@ -57,6 +65,7 @@ def sellCoin(coinName,bidPrice, rate):
 #sellResult, myOrderHistory, openOrders = sellCoin(coinName,askPrice, 2.5)
 #print(str(sellResult))
 result = bittrex.get_markets()
+print(result)
 for coin in result['result']:
     MarketName = coin['MarketName']
     if 'BTC-' in MarketName:
@@ -65,10 +74,14 @@ for coin in result['result']:
             #currency =  float('%.8f' % ticker['result']['Ask'])
             #print(ticker)
             #print(MarketName + ' : ' + str(currency))
+            dict_price.update({MarketName:[{},{}]})
             ThreadGetTiker(MarketName).start()
         except:
             print('error : ' + MarketName)
             #print(MarketName + ' : ' + str(currency))
+while True:
+    print(dict_price)
+    time.sleep(5)
 #print(result)
 #print(str(myOrderHistory))
 #print(str(openOrders))
