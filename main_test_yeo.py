@@ -26,7 +26,7 @@ class ThreadGetTiker(Thread):
                 current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                 ticker = bittrex.get_ticker(self.MarketName)
                 print(MarketName)
-                print(float('%.10f' % ticker['result']['Ask']))
+                print(float('%.8f' % str(ticker['result']['Ask'])))
 
                 # price = float('%.10f' % ticker['result']['Ask'])
                 # list_priv = dict_price[self.MarketName][1]
