@@ -106,16 +106,21 @@ result = bittrex.get_markets()
 #                 writeLogFile('#################################### ' + key + ' #############################')
 #     time.sleep(3)
 
+procs = []
 for coin in result['result']:
     MarketName = coin['MarketName']
     if 'BTC-' in MarketName and coin['IsActive']:
         try:
             dict_price.update({MarketName: [[0, 1], [0, 1]]})
-            p = Process(target=run, args=(MarketName,))
-            p.start()
-            p.join()
+
+            procs.append(Process(target=run, args=(MarketName,)))
+
         except:
-            print('error : ' + MarketName)
+            traceback.print_exc()
+
+for p in procs:
+    p.start()
+
 while True:
     print('result -')
     for key, value in dict_price.items():
