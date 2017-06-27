@@ -25,7 +25,7 @@ class ThreadGetTiker(Thread):
             try:
                 current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                 ticker = bittrex.get_ticker(self.MarketName)
-                price = float('%.10f' % ticker['result']['Ask'])
+                price = float('%.8f' % ticker['result']['Ask'])
                 dict_priv = dict_price[self.MarketName][1]
                 dict_curr = {current_time:price}
                 dict_price.update({self.MarketName:[dict_priv,dict_curr]})
@@ -70,14 +70,14 @@ with open("coin_list.json") as coinlist_file:
     result = coinlist['coin']
 
 for coin in result:
-    MarketName = coin
+    MarketName = 'BTC-' + coin
     try:
         #ticker = bittrex.get_ticker(MarketName)
         #currency =  float('%.8f' % ticker['result']['Ask'])
         #print(ticker)
         #print(MarketName + ' : ' + str(currency))
         dict_price.update({MarketName:[{},{}]})
-        ThreadGetTiker('BTC-'+MarketName).start()
+        ThreadGetTiker(MarketName).start()
     except:
         print('error : ' + MarketName)
         #print(MarketName + ' : ' + str(currency))
