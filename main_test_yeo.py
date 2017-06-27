@@ -5,24 +5,25 @@ import threading
 from threading import Thread
 import datetime
 import traceback
-from multiprocessing import Process
+from multiprocessing import Process, Queue
 
-dict_price = {}
+# dict_price = {}
+output = Queue()
 with open("secrets.json") as secrets_file:
     secrets = json.load(secrets_file)
     secrets_file.close()
     bittrex = Bittrex(secrets['key'], secrets['secret'])
 
 
-def run(MarketName):
+def run(MarketName, outqueue):
     while True:
         try:
             current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             ticker = bittrex.get_ticker(MarketName)
             price = float('%.10f' % ticker['result']['Ask'])
-            list_priv = dict_price[MarketName][1]
-            list_curr = [current_time, price]
-            dict_price.update({MarketName: [list_priv, list_curr]})
+            with open ('./logs/market.json', 'w') as outfile:
+                json.dump(ticker, outfile)
+
         except:
             traceback.print_exc()
             print(MarketName)
@@ -82,53 +83,46 @@ def writeLogFile(str):
     f.close()
     return 0
 
+if __name__ == "__main__":
+
+    result = bittrex.get_markets()
+
+    # for coin in result['result']:
+    #     MarketName = coin['MarketName']
+    #     if 'BTC-' in MarketName and coin['IsActive']:
+    #         try:
+    #             dict_price.update({MarketName: [[0, 1], [0, 1]]})
+    #             ThreadGetTiker(MarketName).start()
+    #         except:
+    #             print('error : ' + MarketName)
+    # while True:
+    #     print('result -')
+    #     for key, value in dict_price.items():
+    #         if value[0][0] != 0:
+    #             rate = (value[1][1] - value[0][1]) / value[0][1]
+    #             value_str = '[%s][%.8f],[%s][%.8f]' % (value[0][0], value[0][1], value[1][0], value[1][1])
+    #             writeLogFile(key + ' : ' + value_str + ' : ' + str('%.8f' % rate))
+    #             if rate > 0.05:
+    #                 print(key + ' : ' + value_str + ' : ' + str('%.8f' % rate))
+    #                 writeLogFile('#################################### ' + key + ' #############################')
+    #     time.sleep(3)
+
+    procs = []
+
+    for coin in result['result']:
+        MarketName = coin['MarketName']
+        if 'BTC-' in MarketName and coin['IsActive']:
+            try:
+                procs.append(Process(target=run, args=(MarketName, output,)))
+
+            except:
+                traceback.print_exc()
+
+    for p in procs:
+        p.start()
 
 
-result = bittrex.get_markets()
 
-# for coin in result['result']:
-#     MarketName = coin['MarketName']
-#     if 'BTC-' in MarketName and coin['IsActive']:
-#         try:
-#             dict_price.update({MarketName: [[0, 1], [0, 1]]})
-#             ThreadGetTiker(MarketName).start()
-#         except:
-#             print('error : ' + MarketName)
-# while True:
-#     print('result -')
-#     for key, value in dict_price.items():
-#         if value[0][0] != 0:
-#             rate = (value[1][1] - value[0][1]) / value[0][1]
-#             value_str = '[%s][%.8f],[%s][%.8f]' % (value[0][0], value[0][1], value[1][0], value[1][1])
-#             writeLogFile(key + ' : ' + value_str + ' : ' + str('%.8f' % rate))
-#             if rate > 0.05:
-#                 print(key + ' : ' + value_str + ' : ' + str('%.8f' % rate))
-#                 writeLogFile('#################################### ' + key + ' #############################')
-#     time.sleep(3)
-
-procs = []
-for coin in result['result']:
-    MarketName = coin['MarketName']
-    if 'BTC-' in MarketName and coin['IsActive']:
-        try:
-            dict_price.update({MarketName: [[0, 1], [0, 1]]})
-
-            procs.append(Process(target=run, args=(MarketName,)))
-
-        except:
-            traceback.print_exc()
-
-for p in procs:
-    p.start()
-
-while True:
-    print('result -')
-    for key, value in dict_price.items():
-        if value[0][0] != 0:
-            rate = (value[1][1] - value[0][1]) / value[0][1]
-            value_str = '[%s][%.8f],[%s][%.8f]' % (value[0][0], value[0][1], value[1][0], value[1][1])
-            writeLogFile(key + ' : ' + value_str + ' : ' + str('%.8f' % rate))
-            if rate > 0.05:
-                print(key + ' : ' + value_str + ' : ' + str('%.8f' % rate))
-                writeLogFile('#################################### ' + key + ' #############################')
-    time.sleep(3)
+    while True:
+        print(output.get())
+        time.sleep(3)
