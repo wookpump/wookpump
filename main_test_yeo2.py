@@ -35,8 +35,8 @@ class ThreadGetTiker(Thread):
             except:
                 # print(self.MarketName + ' : error')
                 # print('')
-                continue
-                # traceback.print_exc()
+                # continue
+                traceback.print_exc()
 
             time.sleep(2.1)
 
@@ -106,7 +106,7 @@ while True:
             rate = (value[1][1] - value[0][1]) / value[0][1]
             value_str = '[%s][%.8f],[%s][%.8f]' % (value[0][0], value[0][1], value[1][0], value[1][1])
             # writeLogFile(key + ' : ' + value_str + ' : ' + str('%.8f' % rate))
-            if rate > 0.05:
+            if rate > 0.001:
                 print(key[4:] + ' : ' + value_str + ' : ' + str('%.8f' % rate))
                 writeLogFile(key + ' : ' + value_str + ' : ' + str('%.8f' % rate))
                 writeLogFile('#################################### ' + key + ' #############################')
