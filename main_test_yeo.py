@@ -25,14 +25,15 @@ class ThreadGetTiker(Thread):
             try:
                 current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                 ticker = bittrex.get_ticker(self.MarketName)
-
-                askPrice = float(ticker['result']['Ask'])
+                price = float('%.10f' % ticker['result']['Ask'])
                 list_priv = dict_price[self.MarketName][1]
-                list_curr = [current_time, '%.10f'%askPrice]
+                list_curr = [current_time, price]
                 dict_price.update({self.MarketName: [list_priv, list_curr]})
+                # print(self.MarketName + ' : ' + str(price))
             except:
                 # print(self.MarketName + ' : error')
                 traceback.print_exc()
+                print(self.MarketName)
 
             time.sleep(2.1)
 
@@ -51,7 +52,6 @@ def buyCoin(coinName, rate):
 
 def sellCoin(coinName, bidPrice, rate):
     coinAvail = '%.10f' % float(bittrex.get_balance(coinName)['result']['Available'])
-    # bidPrice = float('%.8f' % bittrex.get_ticker('BTC-'+coinName)['result']['Bid']) * rate
     bidPrice = '%.8f' % (float(bidPrice) * rate)
     print(bidPrice)
     buyResult = bittrex.sell_limit('BTC-' + coinName, coinAvail, bidPrice)['result']
@@ -101,10 +101,10 @@ while True:
         # print(key + ' : ' + str('%.8f' % (value[0][1]-value[1][1])/value[0][1]))
         if value[0][0] != 0:
             rate = (value[1][1] - value[0][1]) / value[0][1]
-
-            writeLogFile(key + ' : ' + str(value) + ' : ' + str('%.8f' % rate))
-            if rate > 0.01:
-                print(key + ' : ' + str(value) + ' : ' + str('%.8f' % rate))
+            value_str = '[%s][%.8f],[%s][%.8f]' % (value[0][0], value[0][1], value[1][0], value[1][1])
+            writeLogFile(key + ' : ' + value_str + ' : ' + str('%.8f' % rate))
+            if rate > 0.05:
+                print(key + ' : ' + value_str + ' : ' + str('%.8f' % rate))
                 writeLogFile('#################################### ' + key + ' #############################')
     time.sleep(3)
 # print(result)
