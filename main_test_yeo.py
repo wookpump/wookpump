@@ -25,11 +25,13 @@ class ThreadGetTiker(Thread):
             try:
                 current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                 ticker = bittrex.get_ticker(self.MarketName)
-                price = float('%.10f' % float(ticker['result']['Ask']))
-                list_priv = dict_price[self.MarketName][1]
-                list_curr = [current_time, price]
-                dict_price.update({self.MarketName: [list_priv, list_curr]})
-                # print(self.MarketName + ' : ' + str(price))
+                print(MarketName)
+                print(ticker['result']['Ask'])
+
+                # price = float('%.10f' % ticker['result']['Ask'])
+                # list_priv = dict_price[self.MarketName][1]
+                # list_curr = [current_time, price]
+                # dict_price.update({self.MarketName: [list_priv, list_curr]})
             except:
                 # print(self.MarketName + ' : error')
                 traceback.print_exc()
