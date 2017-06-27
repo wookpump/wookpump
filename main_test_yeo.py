@@ -29,7 +29,7 @@ class ThreadGetTiker(Thread):
                 dict_priv = dict_price[self.MarketName][1]
                 dict_curr = {current_time:price}
                 dict_price.update({self.MarketName:[dict_priv,dict_curr]})
-                print(self.MarketName + ' : ' + str(price))
+                # print(self.MarketName + ' : ' + str(price))
             except:
                 # print(self.MarketName + ' : error')
                 traceback.print_exc()
