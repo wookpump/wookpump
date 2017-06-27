@@ -35,7 +35,7 @@ class ThreadGetTiker(Thread):
                 traceback.print_exc()
                 print(self.MarketName)
 
-            time.sleep(2.1)
+            # time.sleep(2.1)
 
 
 def buyCoin(coinName, rate):
