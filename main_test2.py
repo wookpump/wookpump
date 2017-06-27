@@ -49,7 +49,6 @@ def buyCoin(coinName, rate):
 
 def sellCoin(coinName,bidPrice, rate):
     coinAvail = '%.10f' % float(bittrex.get_balance(coinName)['result']['Available'])
-    #bidPrice = float('%.8f' % bittrex.get_ticker('BTC-'+coinName)['result']['Bid']) * rate
     bidPrice = '%.8f' % (float(bidPrice) * rate)
     print(bidPrice)
     buyResult = bittrex.sell_limit('BTC-' + coinName, coinAvail, bidPrice)['result']
