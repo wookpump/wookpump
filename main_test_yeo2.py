@@ -25,6 +25,7 @@ class ThreadGetTiker(Thread):
             try:
                 current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                 ticker = bittrex.get_market_history(self.MarketName, 1)
+                print(ticker)
                 for result, i in ticker['result']:
                     if i == 0:
                         list_curr = [current_time, result['Price']]
