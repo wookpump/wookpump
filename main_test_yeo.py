@@ -77,7 +77,7 @@ for coin in result:
         #print(ticker)
         #print(MarketName + ' : ' + str(currency))
         dict_price.update({MarketName:[{},{}]})
-        ThreadGetTiker(MarketName).start()
+        ThreadGetTiker('BTC-'+MarketName).start()
     except:
         print('error : ' + MarketName)
         #print(MarketName + ' : ' + str(currency))
