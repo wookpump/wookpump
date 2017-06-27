@@ -68,22 +68,21 @@ with open("coin_list.json") as coinlist_file:
     coinlist = json.load(coinlist_file)
     coinlist_file.close()
     result = coinlist['coin']
-print(result)
-# for coin in result['result']:
-#     MarketName = coin['MarketName']
-#     if 'BTC-' in MarketName:
-#         try:
-#             #ticker = bittrex.get_ticker(MarketName)
-#             #currency =  float('%.8f' % ticker['result']['Ask'])
-#             #print(ticker)
-#             #print(MarketName + ' : ' + str(currency))
-#             dict_price.update({MarketName:[{},{}]})
-#             ThreadGetTiker(MarketName).start()
-#         except:
-#             print('error : ' + MarketName)
-#             #print(MarketName + ' : ' + str(currency))
-# while True:
-#     print(dict_price)
+
+for coin in result:
+    MarketName = coin
+    try:
+        #ticker = bittrex.get_ticker(MarketName)
+        #currency =  float('%.8f' % ticker['result']['Ask'])
+        #print(ticker)
+        #print(MarketName + ' : ' + str(currency))
+        dict_price.update({MarketName:[{},{}]})
+        ThreadGetTiker(MarketName).start()
+    except:
+        print('error : ' + MarketName)
+        #print(MarketName + ' : ' + str(currency))
+while True:
+    print(dict_price)
 #     time.sleep(5)
 #print(result)
 #print(str(myOrderHistory))
