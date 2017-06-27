@@ -106,7 +106,7 @@ while True:
             if rate > 0.05:
                 print(key + ' : ' + value_str + ' : ' + str('%.8f' % rate))
                 writeLogFile('#################################### ' + key + ' #############################')
-    time.sleep(3)
+    # time.sleep(3)
 # print(result)
 # print(str(myOrderHistory))
 # print(str(openOrders))
