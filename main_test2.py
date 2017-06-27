@@ -96,7 +96,6 @@ while True:
     for key, value in dict_price.items():
         #print(key + ' : ' + str('%.8f' % (value[0][1]-value[1][1])/value[0][1]))
         if value[0][0] != 0:
-            print(value_str)
             rate = (value[1][1]-value[0][1])/value[0][1]
 
             writeLogFile(key + ' : ' + str(value) +' : '+ str('%.8f' % rate))

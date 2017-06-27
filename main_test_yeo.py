@@ -8,7 +8,13 @@ from threading import Thread
 import datetime
 import traceback
 
-dict_price = {}
+dict_price = {
+    'coin' : {
+        'current_time' : '',
+
+    }
+
+}
 with open("secrets.json") as secrets_file:
     secrets = json.load(secrets_file)
     secrets_file.close()
@@ -77,7 +83,7 @@ for coin in result:
         #print(ticker)
         #print(MarketName + ' : ' + str(currency))
         dict_price.update({MarketName:[{},{}]})
-        ThreadGetTiker(MarketName).start()
+        # ThreadGetTiker(MarketName).start()
     except:
         print('error : ' + MarketName)
         #print(MarketName + ' : ' + str(currency))
