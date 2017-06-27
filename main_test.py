@@ -98,6 +98,7 @@ while True:
         if value[0][0] != 0:
             print(value_str)
             rate = (value[1][1]-value[0][1])/value[0][1]
+
             writeLogFile(key + ' : ' + str(value) +' : '+ str('%.8f' % rate))
             if rate > 0.01:
                 print(key + ' : ' + str(value) +' : '+ str('%.8f' % rate))
