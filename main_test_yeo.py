@@ -32,7 +32,8 @@ class ThreadGetTiker(Thread):
                 # print(self.MarketName + ' : ' + str(price))
             except:
                 # print(self.MarketName + ' : error')
-                print('')
+                # print('')
+                continue
                 # traceback.print_exc()
 
             time.sleep(2.1)
@@ -96,15 +97,16 @@ for coin in result['result']:
             print('error : ' + MarketName)
             # print(MarketName + ' : ' + str(currency))
 while True:
-    print('result -')
+    # print('result -')
     for key, value in dict_price.items():
         # print(key + ' : ' + str('%.8f' % (value[0][1]-value[1][1])/value[0][1]))
         if value[0][0] != 0:
             rate = (value[1][1] - value[0][1]) / value[0][1]
             value_str = '[%s][%.8f],[%s][%.8f]' % (value[0][0], value[0][1], value[1][0], value[1][1])
-            writeLogFile(key + ' : ' + value_str + ' : ' + str('%.8f' % rate))
+            # writeLogFile(key + ' : ' + value_str + ' : ' + str('%.8f' % rate))
             if rate > 0.05:
                 print(key + ' : ' + value_str + ' : ' + str('%.8f' % rate))
+                writeLogFile(key + ' : ' + value_str + ' : ' + str('%.8f' % rate))
                 writeLogFile('#################################### ' + key + ' #############################')
     # time.sleep(3)
 # print(result)
