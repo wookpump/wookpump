@@ -94,7 +94,7 @@ def sellCoin(coinName, rate):
     # number of coin
     balance = bittrex.get_balance(coinName)
     count = 0
-    while balance['result']['Available']  == None:
+    while balance['result']['Available'] == None or balance['result']['Available'] == 0.0:
         balance = bittrex.get_balance(coinName)
         time.sleep(0.1)
         count += 1
