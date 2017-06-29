@@ -7,6 +7,9 @@ import threading
 from threading import Thread
 import datetime
 import traceback
+import slackweb
+
+slack = slackweb.Slack(url="https://hooks.slack.com/services/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")
 
 AUTO_TRADE = True # True or False ex)False = Display CoinName Only
 BUY_COIN_UNIT = 0.01 # Total Buy bit ex)0.1 = 0.1BIT
@@ -65,7 +68,15 @@ class ThreadGetTiker(Thread):
                             askPrice, buyResult, myOrderHistory, openOrders = buyCoin(self.MarketName, BUY_PRICE_RATE)
                             coinName = self.MarketName.split('-')[1]
                             sellResult, myOrderHistory, openOrders = sellCoin(coinName, SELL_PRICE_RATE)
+
+                            slack_message = self.MarketName + ' : ' + str(dict_price[self.MarketName]) + ':' + str('%.8f' % gap_price_rate)
+                            printt(slack_message)
+                            slack.notify(text=slack_message)
                             break
+
+                        slack_message = self.MarketName + ' : ' + str(dict_price[self.MarketName]) + ':' + str('%.8f' % gap_price_rate)
+                        printt(slack_message)
+                        slack.notify(text=slack_message)
 
                 dict_price.update({self.MarketName: [list_priv, list_curr, True]})
 
