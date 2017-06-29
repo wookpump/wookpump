@@ -57,15 +57,15 @@ class ThreadGetTiker(Thread):
                         writeLogFile('#################################### ' + self.MarketName.split('-')[1] + ' #############################')
                         writeLogFile('#################################### ' + self.MarketName.split('-')[1] + ' #############################')
 
-                        # close this coin
-                        dict_price.update({self.MarketName: [list_priv, list_curr, False]})
+
                         # Real Trading
                         if AUTO_TRADE :
+                            # close this coin
+                            dict_price.update({self.MarketName: [list_priv, list_curr, False]})
                             askPrice, buyResult, myOrderHistory, openOrders = buyCoin(self.MarketName, BUY_PRICE_RATE)
                             coinName = self.MarketName.split('-')[1]
                             sellResult, myOrderHistory, openOrders = sellCoin(coinName, SELL_PRICE_RATE)
-
-                        break
+                            break
 
                 dict_price.update({self.MarketName: [list_priv, list_curr, True]})
 
@@ -89,9 +89,18 @@ def buyCoin(coinName, rate):
     return askPrice, buyResult, myOrderHistory, openOrders
 
 def sellCoin(coinName, rate):
+    #{'success': True, 'message': '', 'result': {'Currency': 'ANS', 'Balance': None, 'Available': None, 'Pending': None, 'CryptoAddress': None}}
     printt('sellCoin :' + coinName)
     # number of coin
     balance = bittrex.get_balance(coinName)
+    count = 0
+    while balance['result']['Available']  == None:
+        balance = bittrex.get_balance(coinName)
+        time.sleep(0.1)
+        count += 1
+        if count == 100:
+            break
+
     coinAvail = '%.10f' % float(balance['result']['Available'])
     print('sell qty : ' + coinAvail)
     # buy actual price
@@ -108,6 +117,7 @@ def sellCoin(coinName, rate):
 def printt(str):
     currnet_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     print(currnet_time + ' - ' + str)
+    writeLogFile(str)
 
 def writeLogFile(str):
     currnet_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -139,6 +149,7 @@ sellResult, myOrderHistory, openOrders = sellCoin(coinName, askPrice, SELL_PRICE
 result = bittrex.get_markets()
 
 #print(result)
+
 for coin in result['result']:
     MarketName = coin['MarketName']
     if 'BTC-' in MarketName and coin['IsActive'] and MarketName != 'BTC-MGO':
