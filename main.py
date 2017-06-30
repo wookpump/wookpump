@@ -79,7 +79,6 @@ class ThreadGetTiker(Thread):
                             '%m/%d %H:%M:%S') + ' , ' + str('%.8f' % priv_price) + '\nCURR: ' + curr_time.strftime(
                             '%m/%d %H:%M:%S') + ' , ' + str('%.8f' % curr_price) + '\nGAP: ' + '%.1f' % (
                             ACCEPT_PRICE_GAP * 100) + '\nUNIT: ' + '%.3f' % BUY_COIN_UNIT + 'BIT\nHOST: ' + socket.gethostname()
-
                         slack.notify(text=slack_message)
 
                 dict_price.update({self.MarketName: [list_priv, list_curr, True]})
