@@ -70,7 +70,7 @@ class ThreadGetTiker(Thread):
                             slack_message = '[' + self.MarketName + '] ' + '\nPREV: ' + priv_time.strftime(
                                 '%m/%d %H:%M:%S') + ' , ' + str('%.8f' % priv_price) + '\nCURR: ' + curr_time.strftime(
                                 '%m/%d %H:%M:%S') + ' , ' + str('%.8f' % curr_price) + '\nGAP: ' + '%.1f' % (
-                                ACCEPT_PRICE_GAP * 100) + '\nUNIT: ' + '%.3f' % BUY_COIN_UNIT + 'BIT\nHOST: ' + socket.gethostname()
+                                ACCEPT_PRICE_GAP * 100) + '\nUNIT: ' + '%.3f' % BUY_COIN_UNIT + 'BIT\nHOST: ' + socket.gethostname() + '\nCATCH : %0.8f' %gap_price_rate
                             printt(slack_message)
                             slack.notify(text=slack_message)
                             break
@@ -78,7 +78,7 @@ class ThreadGetTiker(Thread):
                         slack_message = '[' + self.MarketName + '] ' + '\nPREV: ' + priv_time.strftime(
                             '%m/%d %H:%M:%S') + ' , ' + str('%.8f' % priv_price) + '\nCURR: ' + curr_time.strftime(
                             '%m/%d %H:%M:%S') + ' , ' + str('%.8f' % curr_price) + '\nGAP: ' + '%.1f' % (
-                            ACCEPT_PRICE_GAP * 100) + '\nUNIT: ' + '%.3f' % BUY_COIN_UNIT + 'BIT\nHOST: ' + socket.gethostname()
+                            ACCEPT_PRICE_GAP * 100) + '\nUNIT: ' + '%.3f' % BUY_COIN_UNIT + 'BIT\nHOST: ' + socket.gethostname() + '\nCATCH : %0.8f' %gap_price_rate
                         slack.notify(text=slack_message)
 
                 dict_price.update({self.MarketName: [list_priv, list_curr, True]})
