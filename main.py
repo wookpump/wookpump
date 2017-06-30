@@ -57,8 +57,8 @@ class ThreadGetTiker(Thread):
                     if gap_price_rate > ACCEPT_PRICE_GAP:
                         printt('#################################### ' + self.MarketName.split('-')[1] + ' #############################')
                         printt('#################################### ' + self.MarketName.split('-')[1] + ' #############################')
-                        writeLogFile('#################################### ' + self.MarketName.split('-')[1] + ' #############################')
-                        writeLogFile('#################################### ' + self.MarketName.split('-')[1] + ' #############################')
+                        #writeLogFile('#################################### ' + self.MarketName.split('-')[1] + ' #############################')
+                        #writeLogFile('#################################### ' + self.MarketName.split('-')[1] + ' #############################')
 
 
                         # Real Trading
@@ -190,8 +190,8 @@ while True:
                 printt(key.split('-')[1] + ' : ' + value_str + ' : ' + str('%.8f' % rate))
                 printt('#################################### ' + key.split('-')[1] + ' #############################')
                 printt('#################################### ' + key.split('-')[1] + ' #############################')
-                writeLogFile(key.split('-')[1] + ' : ' + value_str + ' : ' + str('%.8f' % rate))
-                writeLogFile('#################################### ' + key.split('-')[1] + ' #############################')
+                #writeLogFile(key.split('-')[1] + ' : ' + value_str + ' : ' + str('%.8f' % rate))
+                #writeLogFile('#################################### ' + key.split('-')[1] + ' #############################')
 
 
     time.sleep(3)
