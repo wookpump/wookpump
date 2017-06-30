@@ -12,7 +12,7 @@ import socket
 
 slack = slackweb.Slack(url="https://hooks.slack.com/services/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")
 
-AUTO_TRADE = True # True or False ex)False = Display CoinName Only
+AUTO_TRADE = False # True or False ex)False = Display CoinName Only
 BUY_COIN_UNIT = 0.01 # Total Buy bit ex)0.1 = 0.1BIT
 ACCEPT_PRICE_GAP = 0.1 # Gap of prev between curr price ex)0.1 = 10%
 IGNORE_GAP_SECONDS = 10 # accept time gap under 10 ex)10 = 10 second
@@ -140,27 +140,10 @@ def writeLogFile(str):
     f.writelines(currnet_time+ ' - ' + str + '\n')
     f.close()
 
-    #'2017-04-16 14:57:33'
     return 0
-
-#coinName = sys.argv[1].upper()
-#print(coinName)
-#askPrice, buyResult, myOrderHistory, openOrders = buyCoin(coinName,1.2)
-#print(str(buyResult))
-
-#sellResult, myOrderHistory, openOrders = sellCoin(coinName,askPrice, 2.5)
-#print(str(sellResult))
-"""
-MarketName = 'BTC-CFI'
-askPrice, buyResult, myOrderHistory, openOrders = buyCoin(MarketName, BUY_PRICE_RATE)
-coinName = MarketName[-3:]
-sellResult, myOrderHistory, openOrders = sellCoin(coinName, askPrice, SELL_PRICE_RATE)
-"""
 
 
 result = bittrex.get_markets()
-
-#print(result)
 
 for coin in result['result']:
     MarketName = coin['MarketName']
