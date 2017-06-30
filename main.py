@@ -8,6 +8,7 @@ from threading import Thread
 import datetime
 import traceback
 import slackweb
+import socket
 
 slack = slackweb.Slack(url="https://hooks.slack.com/services/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")
 
@@ -69,12 +70,12 @@ class ThreadGetTiker(Thread):
                             coinName = self.MarketName.split('-')[1]
                             sellResult, myOrderHistory, openOrders = sellCoin(coinName, SELL_PRICE_RATE)
 
-                            slack_message = self.MarketName + ' : ' + str(dict_price[self.MarketName]) + ':' + str('%.8f' % gap_price_rate)
+                            slack_message = self.MarketName + ' : ' + str(dict_price[self.MarketName]) + ':' + str('%.8f' % gap_price_rate) + '-' + socket.gethostname() + ', GAP : %.3f' % ACCEPT_PRICE_GAP
                             printt(slack_message)
                             slack.notify(text=slack_message)
                             break
 
-                        slack_message = self.MarketName + ' : ' + str(dict_price[self.MarketName]) + ':' + str('%.8f' % gap_price_rate)
+                        slack_message = self.MarketName + ' : ' + str(dict_price[self.MarketName]) + ':' + str('%.8f' % gap_price_rate) + '-' + socket.gethostname() + ', GAP : %.3f' % ACCEPT_PRICE_GAP
                         printt(slack_message)
                         slack.notify(text=slack_message)
 
