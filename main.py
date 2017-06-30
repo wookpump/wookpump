@@ -58,9 +58,6 @@ class ThreadGetTiker(Thread):
                     if gap_price_rate > ACCEPT_PRICE_GAP:
                         printt('#################################### ' + self.MarketName.split('-')[1] + ' #############################')
                         printt('#################################### ' + self.MarketName.split('-')[1] + ' #############################')
-                        #writeLogFile('#################################### ' + self.MarketName.split('-')[1] + ' #############################')
-                        #writeLogFile('#################################### ' + self.MarketName.split('-')[1] + ' #############################')
-
 
                         # Real Trading
                         if AUTO_TRADE :
@@ -70,13 +67,19 @@ class ThreadGetTiker(Thread):
                             coinName = self.MarketName.split('-')[1]
                             sellResult, myOrderHistory, openOrders = sellCoin(coinName, SELL_PRICE_RATE)
 
-                            slack_message = self.MarketName + ' : ' + str(dict_price[self.MarketName]) + ':' + str('%.8f' % gap_price_rate) + '-' + socket.gethostname() + ', GAP : %.3f' % ACCEPT_PRICE_GAP
+                            slack_message = '[' + self.MarketName + '] ' + '\nPREV: ' + priv_time.strftime(
+                                '%m/%d %H:%M:%S') + ' , ' + str('%.8f' % priv_price) + '\nCURR: ' + curr_time.strftime(
+                                '%m/%d %H:%M:%S') + ' , ' + str('%.8f' % curr_price) + '\nGAP: ' + '%.1f' % (
+                                ACCEPT_PRICE_GAP * 100) + '\nUNIT: ' + '%.3f' % BUY_COIN_UNIT + 'BIT\nHOST: ' + socket.gethostname()
                             printt(slack_message)
                             slack.notify(text=slack_message)
                             break
 
-                        slack_message = self.MarketName + ' : ' + str(dict_price[self.MarketName]) + ':' + str('%.8f' % gap_price_rate) + '-' + socket.gethostname() + ', GAP : %.3f' % ACCEPT_PRICE_GAP
-                        printt(slack_message)
+                        slack_message = '[' + self.MarketName + '] ' + '\nPREV: ' + priv_time.strftime(
+                            '%m/%d %H:%M:%S') + ' , ' + str('%.8f' % priv_price) + '\nCURR: ' + curr_time.strftime(
+                            '%m/%d %H:%M:%S') + ' , ' + str('%.8f' % curr_price) + '\nGAP: ' + '%.1f' % (
+                            ACCEPT_PRICE_GAP * 100) + '\nUNIT: ' + '%.3f' % BUY_COIN_UNIT + 'BIT\nHOST: ' + socket.gethostname()
+
                         slack.notify(text=slack_message)
 
                 dict_price.update({self.MarketName: [list_priv, list_curr, True]})
@@ -159,6 +162,7 @@ for coin in result['result']:
         except:
             print('error : ' + MarketName)
             #print(MarketName + ' : ' + str(currency))
+
 while True:
     printt('Program is running')
     for key, value in dict_price.items():
