@@ -14,10 +14,10 @@ slack = slackweb.Slack(url="https://hooks.slack.com/services/T5JBP5JVB/B60PNR34H
 
 AUTO_TRADE = False # True or False ex)False = Display CoinName Only
 BUY_COIN_UNIT = 0.01 # Total Buy bit ex)0.1 = 0.1BIT
-ACCEPT_PRICE_GAP = 0.1 # Gap of prev between curr price ex)0.1 = 10%
+ACCEPT_PRICE_GAP = 0.15 # Gap of prev between curr price ex)0.1 = 10%
 IGNORE_GAP_SECONDS = 10 # accept time gap under 10 ex)10 = 10 second
 BUY_PRICE_RATE = 1.2 # Buy coin at Current price * 1.2 ex)1.2 = 120%
-SELL_PRICE_RATE = 1.03 # Sell coin at buy price(Actual) * 1.2 ex)1.2 = 120%
+SELL_PRICE_RATE = 2.5 # Sell coin at buy price(Actual) * 1.2 ex)1.2 = 120%
 
 dict_price = {}
 with open("secrets.json") as secrets_file:
