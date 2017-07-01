@@ -1,0 +1,33 @@
+{
+  "coin" : [
+    "BTC-DGB",
+"BTC-GBYTE",
+"BTC-DCR",
+"BTC-KMD",
+"BTC-MAID",
+"BTC-GNO",
+"BTC-FCT",
+"BTC-GAME",
+"BTC-ARDR",
+"BTC-ANS",
+"BTC-REP",
+"BTC-DOGE",
+"BTC-LSK",
+"BTC-XLM",
+"BTC-SC",
+"BTC-WAVES",
+"BTC-STEEM",
+"BTC-GNT",
+"BTC-ZEC",
+"BTC-XMR",
+"BTC-STRAT",
+"BTC-BTS",
+"BTC-DASH",
+"BTC-XEM",
+"BTC-ETC",
+"BTC-LTC",
+"BTC-XRP",
+"BTC-ETH",
+"BTC-MGO"
+  ]
+}
