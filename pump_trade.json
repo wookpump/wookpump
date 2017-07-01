@@ -1,8 +1,0 @@
-{
-  "AUTO_TRADE" : true,
-  "BUY_COIN_UNIT" : 0.01,
-  "ACCEPT_PRICE_GAP" : 0.1,
-  "IGNORE_GAP_SECONDS" : 10,
-  "BUY_PRICE_RATE" : 1.2,
-  "SELL_PRICE_RATE" : 1.03
-}
