@@ -134,8 +134,6 @@ def sellCoin(coinName, rate):
                 sell_count += 1
             else:
                 coinAvail = '%.10f' % float(balance['result']['Available'])
-                history = bittrex.get_order_history('BTC-' + coinName, 0)
-                buy_actual_price = history['result'][0]['PricePerUnit']
                 bidPrice = '%.8f' % (buy_actual_price * rate)
                 print('sell price : ' + bidPrice)
                 buyResult = bittrex.sell_limit('BTC-' + coinName, coinAvail, bidPrice)['result']
