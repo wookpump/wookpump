@@ -13,10 +13,10 @@ import socket
 slack = slackweb.Slack(url="https://hooks.slack.com/services/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")
 
 AUTO_TRADE = False  # True or False ex)False = Display CoinName Only
-BUY_COIN_UNIT = 0.3  # Total Buy bit ex)0.1 = 0.1BIT
+BUY_COIN_UNIT = 0.01  # Total Buy bit ex)0.1 = 0.1BIT
 ACCEPT_PRICE_GAP = 0.15  # Gap of prev between curr price ex)0.1 = 10%
 IGNORE_GAP_SECONDS = 5  # accept time gap under 10 ex)10 = 10 second
-BUY_PRICE_RATE = 1.2  # Buy coin at Current price * 1.2 ex)1.2 = 120%
+BUY_PRICE_RATE = 1.5  # Buy coin at Current price * 1.2 ex)1.2 = 120%
 SELL_PRICE_RATE = 3.5  # Sell coin at buy price(Actual) * 1.2 ex)1.2 = 120%
 
 dict_price = {}
@@ -63,11 +63,11 @@ class ThreadGetTiker(Thread):
                         # Real Trading
                         if AUTO_TRADE:
                             # close this coin
-                            # dict_price.update({self.MarketName: [list_priv, list_curr, False]})
                             # askPrice, buyResult, myOrderHistory, openOrders = buyCoin(self.MarketName, BUY_PRICE_RATE, curr_price)
                             askPrice, buyResult = buyCoin(self.MarketName, BUY_PRICE_RATE, curr_price)
                             coinName = self.MarketName.split('-')[1]
                             sellResult, myOrderHistory, openOrders = sellCoin(coinName, SELL_PRICE_RATE)
+                            dict_price.update({self.MarketName: [list_priv, list_curr, False]})
 
                             slack_message = '[' + self.MarketName + '] ' + '\nPREV: ' + priv_time.strftime(
                                 '%m/%d %H:%M:%S') + ' , ' + str('%.8f' % priv_price) + '\nCURR: ' + curr_time.strftime(
@@ -88,7 +88,6 @@ class ThreadGetTiker(Thread):
             except:
                 print(self.MarketName + ' : error')
                 traceback.print_exc()
-                break
 
             time.sleep(1.1)
 
