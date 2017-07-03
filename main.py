@@ -71,10 +71,10 @@ class ThreadGetTiker(Thread):
                             coinName = self.MarketName.split('-')[1]
 
                             sellRate = SELL_PRICE_RATE
-                            if gap_price_rate > 0.5:
-                                sellRate = 2.5
-                            elif gap_price_rate > 1.0:
+                            if gap_price_rate > 1.0:
                                 sellRate = 2.0
+                            elif gap_price_rate > 0.5:
+                                sellRate = 2.5
 
                             sellResult = sellCoin(coinName, sellRate)
                             printt(str(sellResult))
