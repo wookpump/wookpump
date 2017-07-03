@@ -123,7 +123,6 @@ def sellCoin(coinName, rate):
     while True:
         if balance['result']['Available'] == None or balance['result']['Available'] == 0.0:
             balance = bittrex.get_balance(coinName)
-            time.sleep(0.1)
         else:
             if sell_count == 0:
                 coinAvail = '%.10f' % float(balance['result']['Available'])
@@ -141,7 +140,9 @@ def sellCoin(coinName, rate):
                 print('sell price : ' + bidPrice)
                 buyResult = bittrex.sell_limit('BTC-' + coinName, coinAvail, bidPrice)['result']
                 sell_count += 1
+
         loop_count += 1
+        time.sleep(0.1)
         if loop_count == 100:
             break
 
