@@ -64,7 +64,7 @@ class ThreadGetTiker(Thread):
                         if AUTO_TRADE:
                             # close this coin
                             buyResult = buyCoin(self.MarketName, BUY_PRICE_RATE, curr_price)
-                            printt(buyResult)
+                            printt(str(buyResult))
                             coinName = self.MarketName.split('-')[1]
 
                             if gap_price_rate > 0.5:
@@ -73,13 +73,13 @@ class ThreadGetTiker(Thread):
                                 SELL_PRICE_RATE = 2.0
 
                             sellResult = sellCoin(coinName, SELL_PRICE_RATE)
-                            printt(sellResult)
+                            printt(str(sellResult))
                             dict_price.update({self.MarketName: [list_priv, list_curr, False]})
 
                             slack_message = '[' + self.MarketName + '] ' + '\nPREV: ' + priv_time.strftime(
                                 '%m/%d %H:%M:%S') + ' , ' + str('%.8f' % priv_price) + '\nCURR: ' + curr_time.strftime(
                                 '%m/%d %H:%M:%S') + ' , ' + str('%.8f' % curr_price) + '\nGAP: ' + '%.1f' % (
-                                ACCEPT_PRICE_GAP * 100) + '\nUNIT: ' + '%.3f' % BUY_COIN_UNIT + 'BIT\nHOST: ' + socket.gethostname() + '\nCATCH : %0.8f' % gap_price_rate
+                                ACCEPT_PRICE_GAP * 100) + '\nUNIT: ' + '%.3f' % BUY_COIN_UNIT + 'BIT\nHOST: ' + socket.gethostname() + '\nCATCH : %0.8f' % gap_price_rate + '\nBUY_PRICE_RATE : %.8f' % BUY_PRICE_RATE + '\nSELL_PRICE_RATE : %.8f' % SELL_PRICE_RATE
                             printt(slack_message)
                             slack.notify(text=slack_message)
                             break
@@ -87,7 +87,8 @@ class ThreadGetTiker(Thread):
                         slack_message = '[' + self.MarketName + '] ' + '\nPREV: ' + priv_time.strftime(
                             '%m/%d %H:%M:%S') + ' , ' + str('%.8f' % priv_price) + '\nCURR: ' + curr_time.strftime(
                             '%m/%d %H:%M:%S') + ' , ' + str('%.8f' % curr_price) + '\nGAP: ' + '%.1f' % (
-                            ACCEPT_PRICE_GAP * 100) + '\nUNIT: ' + '%.3f' % BUY_COIN_UNIT + 'BIT\nHOST: ' + socket.gethostname() + '\nCATCH : %0.8f' % gap_price_rate
+                            ACCEPT_PRICE_GAP * 100) + '\nUNIT: ' + '%.3f' % BUY_COIN_UNIT + 'BIT\nHOST: ' + socket.gethostname() + '\nCATCH : %0.8f' % gap_price_rate + '\nBUY_PRICE_RATE : %.8f' % BUY_PRICE_RATE + '\nSELL_PRICE_RATE : %.8f' % SELL_PRICE_RATE
+
                         slack.notify(text=slack_message)
 
                 dict_price.update({self.MarketName: [list_priv, list_curr, True]})
@@ -115,6 +116,7 @@ def sellCoin(coinName, rate):
     balance = bittrex.get_balance(coinName)
     loop_count = 0
     sell_count = 0
+    start_time = datetime.datetime.now()
     while True:
         if balance['result']['Available'] == None or balance['result']['Available'] == 0.0:
             balance = bittrex.get_balance(coinName)
@@ -136,8 +138,33 @@ def sellCoin(coinName, rate):
 
         loop_count += 1
         time.sleep(0.1)
-        if loop_count == 100:
+        if loop_count >= 100:
+            printt("LOOP COUNT 100 BREAK")
             break
+
+        curr_time  = datetime.datetime.now()
+        during_seconds = (curr_time - start_time).total_seconds()
+
+        if during_seconds > 60:
+            openOrder = bittrex.get_open_orders('BTC-' + coinName)
+            for order in openOrder['result']:
+                printt(order['OrderUuid'])
+                bittrex.cancel(order['OrderUuid'])
+
+            balance = bittrex.get_balance(coinName)
+            loop_count2 = 0
+
+            while True:
+                if balance['result']['Available'] == None or balance['result']['Available'] == 0.0:
+                    coinAvail = '%.8f' % float(balance['result']['Available'])
+                    bidPrice = '%.8f' % (0.0006 / float(coinAvail))
+                    printt('sell price : ' + bidPrice + ', sell unit : %.8f' % coinAvail + ', sell_count %d' % sell_count)
+                    sellResult = bittrex.sell_limit('BTC-' + coinName, coinAvail, bidPrice)['result']
+                loop_count2 += 1
+
+                if(loop_count2 >= 10):
+                    printt("LOOP COUNT2 10 BREAK")
+                    break
 
     return sellResult
 
@@ -171,42 +198,33 @@ def isExcludedCoin(MarketName):
             print("Included")
             return False
 
-result = bittrex.get_markets()
+if __name__  == "__main__":
+    result = bittrex.get_markets()
 
-for coin in result['result']:
-    MarketName = coin['MarketName']
-    if 'BTC-' in MarketName and coin['IsActive'] and isExcludedCoin(MarketName) is not True:
-        try:
-            # ticker = bittrex.get_ticker(MarketName)
-            # currency =  float('%.8f' % ticker['result']['Ask'])
-            # print(ticker)
-            # print(MarketName + ' : ' + str(currency))
-            current_time = datetime.datetime.now()
-            dict_price.update({MarketName: [[current_time, 1], [current_time, 1], True]})
-            ThreadGetTiker(MarketName).start()
-        except:
-            print('error : ' + MarketName)
-            # print(MarketName + ' : ' + str(currency))
+    for coin in result['result']:
+        MarketName = coin['MarketName']
+        if 'BTC-' in MarketName and coin['IsActive'] and isExcludedCoin(MarketName) is not True:
+            try:
+                current_time = datetime.datetime.now()
+                dict_price.update({MarketName: [[current_time, 1], [current_time, 1], True]})
+                ThreadGetTiker(MarketName).start()
+            except:
+                print('error : ' + MarketName)
 
-while True:
-    printt('Program is running')
-    for key, value in dict_price.items():
-        # print(key + ' : ' + str('%.8f' % (value[0][1]-value[1][1])/value[0][1]))
-        if value[0][0] != 0 and value[2]:
-            rate = (value[1][1] - value[0][1]) / value[0][1]
-            value_str = '[%s][%.8f],[%s][%.8f]' % (value[0][0], value[0][1], value[1][0], value[1][1])
-            # printt(key + ' : ' + value_str +' : '+ str('%.8f' % rate))
-            writeLogFile(key.split('-')[1] + ' : ' + value_str + ' : ' + str('%.8f' % rate))
-            if rate > ACCEPT_PRICE_GAP:
-                printt('#################################### ' + key.split('-')[1] + ' #############################')
-                printt('#################################### ' + key.split('-')[1] + ' #############################')
-                printt(key.split('-')[1] + ' : ' + value_str + ' : ' + str('%.8f' % rate))
-                printt('#################################### ' + key.split('-')[1] + ' #############################')
-                printt('#################################### ' + key.split('-')[1] + ' #############################')
-                # writeLogFile(key.split('-')[1] + ' : ' + value_str + ' : ' + str('%.8f' % rate))
-                # writeLogFile('#################################### ' + key.split('-')[1] + ' #############################')
+    while True:
+        printt('Program is running')
+        for key, value in dict_price.items():
+            # print(key + ' : ' + str('%.8f' % (value[0][1]-value[1][1])/value[0][1]))
+            if value[0][0] != 0 and value[2]:
+                rate = (value[1][1] - value[0][1]) / value[0][1]
+                value_str = '[%s][%.8f],[%s][%.8f]' % (value[0][0], value[0][1], value[1][0], value[1][1])
+                # printt(key + ' : ' + value_str +' : '+ str('%.8f' % rate))
+                writeLogFile(key.split('-')[1] + ' : ' + value_str + ' : ' + str('%.8f' % rate))
+                if rate > ACCEPT_PRICE_GAP:
+                    printt('#################################### ' + key.split('-')[1] + ' #############################')
+                    printt('#################################### ' + key.split('-')[1] + ' #############################')
+                    printt(key.split('-')[1] + ' : ' + value_str + ' : ' + str('%.8f' % rate))
+                    printt('#################################### ' + key.split('-')[1] + ' #############################')
+                    printt('#################################### ' + key.split('-')[1] + ' #############################')
 
-    time.sleep(3)
-# print(result)
-# print(str(myOrderHistory))
-# print(str(openOrders))
+        time.sleep(3)
