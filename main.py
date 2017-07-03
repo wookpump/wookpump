@@ -66,6 +66,12 @@ class ThreadGetTiker(Thread):
                             # askPrice, buyResult, myOrderHistory, openOrders = buyCoin(self.MarketName, BUY_PRICE_RATE, curr_price)
                             askPrice, buyResult = buyCoin(self.MarketName, BUY_PRICE_RATE, curr_price)
                             coinName = self.MarketName.split('-')[1]
+
+                            if gap_price_rate > 0.5:
+                                SELL_PRICE_RATE = 2.5
+                            elif gap_price_rate > 1.0:
+                                SELL_PRICE_RATE = 2.0
+
                             sellResult, myOrderHistory, openOrders = sellCoin(coinName, SELL_PRICE_RATE)
                             dict_price.update({self.MarketName: [list_priv, list_curr, False]})
 
@@ -112,23 +118,41 @@ def sellCoin(coinName, rate):
     printt('sellCoin :' + coinName)
     # number of coin
     balance = bittrex.get_balance(coinName)
-    count = 0
-    while balance['result']['Available'] == None or balance['result']['Available'] == 0.0:
-        balance = bittrex.get_balance(coinName)
-        time.sleep(0.1)
-        count += 1
-        if count == 100:
+    loop_count = 0
+    sell_count = 0
+    while True:
+        if balance['result']['Available'] == None or balance['result']['Available'] == 0.0:
+            balance = bittrex.get_balance(coinName)
+            time.sleep(0.1)
+        else:
+            if sell_count == 0:
+                coinAvail = '%.10f' % float(balance['result']['Available'])
+                history = bittrex.get_order_history('BTC-' + coinName, 0)
+                buy_actual_price = history['result'][0]['PricePerUnit']
+                bidPrice = '%.8f' % (buy_actual_price * rate)
+                print('sell price : ' + bidPrice)
+                buyResult = bittrex.sell_limit('BTC-' + coinName, coinAvail, bidPrice)['result']
+                sell_count += 1
+            else:
+                coinAvail = '%.10f' % float(balance['result']['Available'])
+                history = bittrex.get_order_history('BTC-' + coinName, 0)
+                buy_actual_price = history['result'][0]['PricePerUnit']
+                bidPrice = '%.8f' % (buy_actual_price * rate)
+                print('sell price : ' + bidPrice)
+                buyResult = bittrex.sell_limit('BTC-' + coinName, coinAvail, bidPrice)['result']
+                sell_count += 1
+        loop_count += 1
+        if loop_count == 100:
             break
 
-    coinAvail = '%.10f' % float(balance['result']['Available'])
+
     print('sell qty : ' + coinAvail)
     # buy actual price
-    history = bittrex.get_order_history('BTC-' + coinName, 0)
-    buy_actual_price = history['result'][0]['PricePerUnit']
+
+
 
     bidPrice = '%.8f' % (buy_actual_price * rate)
-    print('sell price : ' + bidPrice)
-    buyResult = bittrex.sell_limit('BTC-' + coinName, coinAvail, bidPrice)['result']
+
     myOrderHistory = bittrex.get_order_history(coinName, 1)
     openOrders = bittrex.get_open_orders(coinName)
     return buyResult, myOrderHistory, openOrders
