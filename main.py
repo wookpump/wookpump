@@ -12,12 +12,12 @@ import socket
 
 slack = slackweb.Slack(url="https://hooks.slack.com/services/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")
 
-AUTO_TRADE = False  # True or False ex)False = Display CoinName Only
-BUY_COIN_UNIT = 0.01  # Total Buy bit ex)0.1 = 0.1BIT
-ACCEPT_PRICE_GAP = 0.15  # Gap of prev between curr price ex)0.1 = 10%
+AUTO_TRADE = True  # True or False ex)False = Display CoinName Only
+BUY_COIN_UNIT = 0.001  # Total Buy bit ex)0.1 = 0.1BIT
+ACCEPT_PRICE_GAP = 0.10  # Gap of prev between curr price ex)0.1 = 10%
 IGNORE_GAP_SECONDS = 5  # accept time gap under 10 ex)10 = 10 second
-BUY_PRICE_RATE = 1.5  # Buy coin at Current price * 1.2 ex)1.2 = 120%
-SELL_PRICE_RATE = 3.5  # Sell coin at buy price(Actual) * 1.2 ex)1.2 = 120%
+BUY_PRICE_RATE = 1.2  # Buy coin at Current price * 1.2 ex)1.2 = 120%
+SELL_PRICE_RATE = 1.02  # Sell coin at buy price(Actual) * 1.2 ex)1.2 = 120%
 
 dict_price = {}
 with open("secrets.json") as secrets_file:
@@ -63,8 +63,8 @@ class ThreadGetTiker(Thread):
                         # Real Trading
                         if AUTO_TRADE:
                             # close this coin
-                            # askPrice, buyResult, myOrderHistory, openOrders = buyCoin(self.MarketName, BUY_PRICE_RATE, curr_price)
-                            askPrice, buyResult = buyCoin(self.MarketName, BUY_PRICE_RATE, curr_price)
+                            buyResult = buyCoin(self.MarketName, BUY_PRICE_RATE, curr_price)
+                            printt(buyResult)
                             coinName = self.MarketName.split('-')[1]
 
                             if gap_price_rate > 0.5:
@@ -72,7 +72,8 @@ class ThreadGetTiker(Thread):
                             elif gap_price_rate > 1.0:
                                 SELL_PRICE_RATE = 2.0
 
-                            sellResult, myOrderHistory, openOrders = sellCoin(coinName, SELL_PRICE_RATE)
+                            sellResult = sellCoin(coinName, SELL_PRICE_RATE)
+                            printt(sellResult)
                             dict_price.update({self.MarketName: [list_priv, list_curr, False]})
 
                             slack_message = '[' + self.MarketName + '] ' + '\nPREV: ' + priv_time.strftime(
@@ -99,18 +100,12 @@ class ThreadGetTiker(Thread):
 
 
 def buyCoin(coinName, rate, curr_price):
-    # coinName = 'BTC-'+coinName
-    # ticker = bittrex.get_ticker(coinName)
-    # askPrice = float(ticker['result']['Ask']) * rate
     askPrice = curr_price * rate
-    # askPrice = '%.8f' % float(askPrice)
     qty = round(float(BUY_COIN_UNIT / askPrice), 8)
     printt('BUY - ' + coinName + ':' + str('%.8f' % askPrice) + ':' + str('%.8f' % qty))
     buyResult = bittrex.buy_limit(coinName, qty, askPrice)['result']
-    # myOrderHistory = bittrex.get_order_history(coinName, 1)
-    # openOrders = bittrex.get_open_orders(coinName)
-    # return askPrice, buyResult, myOrderHistory, openOrders
-    return askPrice, buyResult
+
+    return buyResult
 
 
 def sellCoin(coinName, rate):
@@ -125,18 +120,18 @@ def sellCoin(coinName, rate):
             balance = bittrex.get_balance(coinName)
         else:
             if sell_count == 0:
-                coinAvail = '%.10f' % float(balance['result']['Available'])
+                coinAvail = '%.8f' % float(balance['result']['Available'])
                 history = bittrex.get_order_history('BTC-' + coinName, 0)
                 buy_actual_price = history['result'][0]['PricePerUnit']
                 bidPrice = '%.8f' % (buy_actual_price * rate)
-                print('sell price : ' + bidPrice)
-                buyResult = bittrex.sell_limit('BTC-' + coinName, coinAvail, bidPrice)['result']
+                sellResult = bittrex.sell_limit('BTC-' + coinName, coinAvail, bidPrice)['result']
+                printt('sell price : ' + bidPrice + ', sell unit : %.8f' % coinAvail + ', sell_count %d' % sell_count)
                 sell_count += 1
             else:
-                coinAvail = '%.10f' % float(balance['result']['Available'])
-                bidPrice = '%.8f' % (buy_actual_price * rate)
-                print('sell price : ' + bidPrice)
-                buyResult = bittrex.sell_limit('BTC-' + coinName, coinAvail, bidPrice)['result']
+                coinAvail = '%.8f' % float(balance['result']['Available'])
+                bidPrice = '%.8f' % (0.0006 / float(coinAvail))
+                printt('sell price : ' + bidPrice + ', sell unit : %.8f' % coinAvail + ', sell_count %d' % sell_count)
+                sellResult = bittrex.sell_limit('BTC-' + coinName, coinAvail, bidPrice)['result']
                 sell_count += 1
 
         loop_count += 1
@@ -144,17 +139,7 @@ def sellCoin(coinName, rate):
         if loop_count == 100:
             break
 
-
-    print('sell qty : ' + coinAvail)
-    # buy actual price
-
-
-
-    bidPrice = '%.8f' % (buy_actual_price * rate)
-
-    myOrderHistory = bittrex.get_order_history(coinName, 1)
-    openOrders = bittrex.get_open_orders(coinName)
-    return buyResult, myOrderHistory, openOrders
+    return sellResult
 
 
 def printt(str):
