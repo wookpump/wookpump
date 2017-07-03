@@ -139,6 +139,7 @@ def sellCoin(coinName, rate):
                 buyResult = bittrex.sell_limit('BTC-' + coinName, coinAvail, bidPrice)['result']
                 sell_count += 1
 
+
         loop_count += 1
         time.sleep(0.1)
         if loop_count == 100:
