@@ -1,10 +1,10 @@
-import time
 from bittrex import Bittrex
 import json
 import threading
 from threading import Thread
 import traceback
 from pymongo import MongoClient
+import time
 
 
 with open("secrets.json") as secrets_file:
@@ -23,16 +23,19 @@ class ThreadGetMarketHistory(Thread):
     def run(self):
         while True:
             try:
-                history = bittrex.get_market_history(self.MarketName, 2)
-                result = db[MarketName].insert_one(history['result'][0])
-                print(result)
+                history = bittrex.get_market_history(self.MarketName, 10)
+                for data in history['result']:
+                    result = db[MarketName].insert_one(data)
+                    print(result)
+                # result = db[MarketName].insert_one(history['result'])
+
 
             except:
                 print(self.MarketName + ' : error')
                 traceback.print_exc()
                 break
 
-            # time.sleep(1)
+            time.sleep(1.1)
 
 def isExcludedCoin(MarketName):
     print("MarketName : " + MarketName)
