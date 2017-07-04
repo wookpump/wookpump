@@ -136,6 +136,7 @@ class ThreadGetTiker(Thread):
                 print(self.MarketName + ' : error')
                 traceback.print_exc()
 
+
             time.sleep(1.1)
 
 
