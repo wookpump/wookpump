@@ -1,0 +1,4475 @@
+/* 1 */
+{
+    "_id" : ObjectId("59599ab62875cb2630454431"),
+    "OrderType" : "SELL",
+    "FillType" : "FILL",
+    "TimeStamp" : "2017-07-02T23:23:07.273",
+    "Quantity" : 23.34880236,
+    "Id" : 8715022,
+    "Total" : 0.0099655,
+    "Price" : 0.00042681
+}
+
+/* 2 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2a4"),
+    "Quantity" : 5121.47240566,
+    "Price" : 1.04e-06,
+    "Id" : 1035908,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.00532633,
+    "TimeStamp" : "2017-07-03T01:36:59.183",
+    "OrderType" : "SELL"
+}
+
+/* 3 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2a5"),
+    "Quantity" : 52.04567078,
+    "Price" : 0.00027234,
+    "Id" : 16871941,
+    "FillType" : "FILL",
+    "Total" : 0.01417411,
+    "TimeStamp" : "2017-07-03T00:57:45.34",
+    "OrderType" : "SELL"
+}
+
+/* 4 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2a6"),
+    "Quantity" : 1.73246914,
+    "Price" : 0.00040304,
+    "Id" : 3883193,
+    "FillType" : "FILL",
+    "Total" : 0.00069825,
+    "TimeStamp" : "2017-07-03T01:07:15.143",
+    "OrderType" : "BUY"
+}
+
+/* 5 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2a7"),
+    "Quantity" : 446.13941324,
+    "Price" : 2.51e-06,
+    "Id" : 3911881,
+    "FillType" : "FILL",
+    "Total" : 0.0011198,
+    "TimeStamp" : "2017-07-02T23:51:20.147",
+    "OrderType" : "BUY"
+}
+
+/* 6 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2a8"),
+    "Quantity" : 799.7412707,
+    "Price" : 2.68e-06,
+    "Id" : 1328552,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.0021433,
+    "TimeStamp" : "2017-07-02T23:47:50.95",
+    "OrderType" : "SELL"
+}
+
+/* 7 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2a9"),
+    "Quantity" : 2.25568208,
+    "Price" : 0.0045898,
+    "Id" : 17466692,
+    "FillType" : "FILL",
+    "Total" : 0.01035312,
+    "TimeStamp" : "2017-07-03T02:01:17.637",
+    "OrderType" : "BUY"
+}
+
+/* 8 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2aa"),
+    "Quantity" : 109.55613934,
+    "Price" : 2.92e-05,
+    "Id" : 4661080,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.00319903,
+    "TimeStamp" : "2017-07-03T02:44:26.87",
+    "OrderType" : "BUY"
+}
+
+/* 9 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2ab"),
+    "Quantity" : 36.74840171,
+    "Price" : 1.405e-05,
+    "Id" : 11721947,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.00051631,
+    "TimeStamp" : "2017-07-03T01:55:49.123",
+    "OrderType" : "SELL"
+}
+
+/* 10 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2ac"),
+    "Quantity" : 175.27681529,
+    "Price" : 2.198e-05,
+    "Id" : 4754971,
+    "FillType" : "FILL",
+    "Total" : 0.00385258,
+    "TimeStamp" : "2017-07-02T23:39:14.533",
+    "OrderType" : "BUY"
+}
+
+/* 11 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2ad"),
+    "Quantity" : 31.57099942,
+    "Price" : 0.0001884,
+    "Id" : 10106669,
+    "FillType" : "FILL",
+    "Total" : 0.00594797,
+    "TimeStamp" : "2017-07-02T17:31:40.937",
+    "OrderType" : "BUY"
+}
+
+/* 12 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2ae"),
+    "Quantity" : 9601.4618525,
+    "Price" : 3e-05,
+    "Id" : 9455424,
+    "FillType" : "FILL",
+    "Total" : 0.28804385,
+    "TimeStamp" : "2017-07-03T00:54:44.823",
+    "OrderType" : "SELL"
+}
+
+/* 13 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2af"),
+    "Quantity" : 5.7957588,
+    "Price" : 0.01610008,
+    "Id" : 7351749,
+    "FillType" : "FILL",
+    "Total" : 0.09331218,
+    "TimeStamp" : "2017-07-02T19:46:14.413",
+    "OrderType" : "BUY"
+}
+
+/* 14 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2b0"),
+    "Quantity" : 15.93782819,
+    "Price" : 0.00069014,
+    "Id" : 4135804,
+    "FillType" : "FILL",
+    "Total" : 0.01099933,
+    "TimeStamp" : "2017-07-03T00:39:49.87",
+    "OrderType" : "BUY"
+}
+
+/* 15 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2b1"),
+    "Quantity" : 2513.27652116,
+    "Price" : 3.969e-05,
+    "Id" : 10717789,
+    "FillType" : "FILL",
+    "Total" : 0.09975194,
+    "TimeStamp" : "2017-07-03T00:13:43.39",
+    "OrderType" : "BUY"
+}
+
+/* 16 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2b2"),
+    "Quantity" : 101.11423499,
+    "Price" : 0.00018556,
+    "Id" : 14445652,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.01876275,
+    "TimeStamp" : "2017-07-03T00:37:42.94",
+    "OrderType" : "SELL"
+}
+
+/* 17 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2b3"),
+    "Quantity" : 2586.99777778,
+    "Price" : 1.04e-06,
+    "Id" : 1035904,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.00269047,
+    "TimeStamp" : "2017-07-03T01:29:02.507",
+    "OrderType" : "BUY"
+}
+
+/* 18 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2b4"),
+    "Quantity" : 30.91979966,
+    "Price" : 2.221e-05,
+    "Id" : 3318800,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.00068672,
+    "TimeStamp" : "2017-07-02T23:46:32.5",
+    "OrderType" : "BUY"
+}
+
+/* 19 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2b5"),
+    "Quantity" : 179.42397519,
+    "Price" : 3.311e-05,
+    "Id" : 2825039,
+    "FillType" : "FILL",
+    "Total" : 0.00594072,
+    "TimeStamp" : "2017-07-02T15:49:15.453",
+    "OrderType" : "SELL"
+}
+
+/* 20 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2b6"),
+    "Quantity" : 2.40912986,
+    "Price" : 0.00047701,
+    "Id" : 5658193,
+    "FillType" : "FILL",
+    "Total" : 0.00114917,
+    "TimeStamp" : "2017-07-03T00:05:17.647",
+    "OrderType" : "BUY"
+}
+
+/* 21 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2b7"),
+    "Quantity" : 1673.64675996,
+    "Price" : 4.77e-06,
+    "Id" : 1556595,
+    "FillType" : "FILL",
+    "Total" : 0.00798329,
+    "TimeStamp" : "2017-07-02T20:57:57.643",
+    "OrderType" : "SELL"
+}
+
+/* 22 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2b8"),
+    "Quantity" : 302.38730174,
+    "Price" : 0.00016274,
+    "Id" : 6326007,
+    "FillType" : "FILL",
+    "Total" : 0.0492105,
+    "TimeStamp" : "2017-07-02T18:26:02.227",
+    "OrderType" : "BUY"
+}
+
+/* 23 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2b9"),
+    "Quantity" : 854.83341109,
+    "Price" : 9.51e-05,
+    "Id" : 5506430,
+    "FillType" : "FILL",
+    "Total" : 0.08129465,
+    "TimeStamp" : "2017-07-02T23:47:21.79",
+    "OrderType" : "BUY"
+}
+
+/* 24 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2ba"),
+    "Quantity" : 50.3654375,
+    "Price" : 3e-05,
+    "Id" : 9455423,
+    "FillType" : "FILL",
+    "Total" : 0.00151096,
+    "TimeStamp" : "2017-07-03T00:54:44.823",
+    "OrderType" : "SELL"
+}
+
+/* 25 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2bb"),
+    "Quantity" : 53.43793412,
+    "Price" : 0.00246369,
+    "Id" : 8916633,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.1316545,
+    "TimeStamp" : "2017-07-02T21:36:07.137",
+    "OrderType" : "BUY"
+}
+
+/* 26 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2bc"),
+    "Quantity" : 179.20637272,
+    "Price" : 0.00011499,
+    "Id" : 3167566,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.02060694,
+    "TimeStamp" : "2017-07-03T01:00:27.787",
+    "OrderType" : "BUY"
+}
+
+/* 27 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2bd"),
+    "Quantity" : 10000.0,
+    "Price" : 2.82e-06,
+    "Id" : 2033361,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.0282,
+    "TimeStamp" : "2017-07-02T22:26:09.107",
+    "OrderType" : "BUY"
+}
+
+/* 28 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2be"),
+    "Quantity" : 50.0,
+    "Price" : 0.00095,
+    "Id" : 13675878,
+    "FillType" : "FILL",
+    "Total" : 0.0475,
+    "TimeStamp" : "2017-07-02T22:24:22.89",
+    "OrderType" : "SELL"
+}
+
+/* 29 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2bf"),
+    "Quantity" : 0.26538492,
+    "Price" : 0.00458319,
+    "Id" : 17466609,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.0012163,
+    "TimeStamp" : "2017-07-03T01:56:12.45",
+    "OrderType" : "SELL"
+}
+
+/* 30 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2c0"),
+    "Quantity" : 254.18506099,
+    "Price" : 0.00029654,
+    "Id" : 10066849,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.07537603,
+    "TimeStamp" : "2017-07-02T23:36:21.96",
+    "OrderType" : "BUY"
+}
+
+/* 31 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2c1"),
+    "Quantity" : 103.30578512,
+    "Price" : 5.324e-05,
+    "Id" : 2777089,
+    "FillType" : "FILL",
+    "Total" : 0.00549999,
+    "TimeStamp" : "2017-07-03T01:22:33.4",
+    "OrderType" : "SELL"
+}
+
+/* 32 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2c2"),
+    "Quantity" : 49.47901508,
+    "Price" : 0.0001617,
+    "Id" : 6326006,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.00800075,
+    "TimeStamp" : "2017-07-02T18:26:02.227",
+    "OrderType" : "BUY"
+}
+
+/* 33 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2c3"),
+    "Quantity" : 44.28216558,
+    "Price" : 0.00018397,
+    "Id" : 4324675,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.00814659,
+    "TimeStamp" : "2017-07-02T21:45:47.78",
+    "OrderType" : "BUY"
+}
+
+/* 34 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2c4"),
+    "Quantity" : 14.88150322,
+    "Price" : 0.00017722,
+    "Id" : 9881632,
+    "FillType" : "FILL",
+    "Total" : 0.0026373,
+    "TimeStamp" : "2017-07-03T01:12:07.593",
+    "OrderType" : "SELL"
+}
+
+/* 35 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2c5"),
+    "Quantity" : 5.60834413,
+    "Price" : 0.0001552,
+    "Id" : 17045428,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.00087041,
+    "TimeStamp" : "2017-07-03T00:42:26.637",
+    "OrderType" : "BUY"
+}
+
+/* 36 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2c6"),
+    "Quantity" : 55.06689214,
+    "Price" : 9.231e-05,
+    "Id" : 3841564,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.00508322,
+    "TimeStamp" : "2017-07-02T15:50:16.05",
+    "OrderType" : "BUY"
+}
+
+/* 37 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2c7"),
+    "Quantity" : 78.80934888,
+    "Price" : 2.274e-05,
+    "Id" : 5146560,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.00179212,
+    "TimeStamp" : "2017-07-03T02:05:00.707",
+    "OrderType" : "BUY"
+}
+
+/* 38 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2c8"),
+    "Quantity" : 14.6078748,
+    "Price" : 0.0001887,
+    "Id" : 11410531,
+    "FillType" : "FILL",
+    "Total" : 0.0027565,
+    "TimeStamp" : "2017-07-03T00:29:35.07",
+    "OrderType" : "BUY"
+}
+
+/* 39 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2c9"),
+    "Quantity" : 2092.25625,
+    "Price" : 1.06e-06,
+    "Id" : 1035889,
+    "FillType" : "FILL",
+    "Total" : 0.00221779,
+    "TimeStamp" : "2017-07-03T01:15:31.047",
+    "OrderType" : "BUY"
+}
+
+/* 40 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2ca"),
+    "Quantity" : 689.64317597,
+    "Price" : 2.51e-06,
+    "Id" : 3911879,
+    "FillType" : "FILL",
+    "Total" : 0.001731,
+    "TimeStamp" : "2017-07-02T23:51:20.053",
+    "OrderType" : "BUY"
+}
+
+/* 41 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2cb"),
+    "Quantity" : 2.71783442,
+    "Price" : 0.00018397,
+    "Id" : 4324381,
+    "FillType" : "FILL",
+    "Total" : 0.00049999,
+    "TimeStamp" : "2017-07-02T21:20:07.8",
+    "OrderType" : "BUY"
+}
+
+/* 42 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2cc"),
+    "Quantity" : 4.67336392,
+    "Price" : 0.00014127,
+    "Id" : 17280754,
+    "FillType" : "FILL",
+    "Total" : 0.0006602,
+    "TimeStamp" : "2017-07-02T22:47:19.43",
+    "OrderType" : "BUY"
+}
+
+/* 43 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2cd"),
+    "Quantity" : 414.71839081,
+    "Price" : 8.69e-06,
+    "Id" : 4768502,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.0036039,
+    "TimeStamp" : "2017-07-03T02:23:51.717",
+    "OrderType" : "SELL"
+}
+
+/* 44 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2ce"),
+    "Quantity" : 9.8386462,
+    "Price" : 5.082e-05,
+    "Id" : 2328638,
+    "FillType" : "FILL",
+    "Total" : 0.00049999,
+    "TimeStamp" : "2017-07-02T16:05:58.74",
+    "OrderType" : "SELL"
+}
+
+/* 45 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2cf"),
+    "Quantity" : 20.52201013,
+    "Price" : 7.963e-05,
+    "Id" : 8119636,
+    "FillType" : "FILL",
+    "Total" : 0.00163416,
+    "TimeStamp" : "2017-07-02T23:09:52.623",
+    "OrderType" : "SELL"
+}
+
+/* 46 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2d0"),
+    "Quantity" : 671.91518052,
+    "Price" : 0.00052181,
+    "Id" : 4971552,
+    "FillType" : "FILL",
+    "Total" : 0.35061206,
+    "TimeStamp" : "2017-07-02T20:32:57.84",
+    "OrderType" : "BUY"
+}
+
+/* 47 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2d1"),
+    "Quantity" : 1000.0,
+    "Price" : 9.7e-07,
+    "Id" : 1678102,
+    "FillType" : "FILL",
+    "Total" : 0.00097,
+    "TimeStamp" : "2017-07-02T23:08:41.01",
+    "OrderType" : "SELL"
+}
+
+/* 48 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2d2"),
+    "Quantity" : 476.547859,
+    "Price" : 8.41e-06,
+    "Id" : 1932731,
+    "FillType" : "FILL",
+    "Total" : 0.00400776,
+    "TimeStamp" : "2017-07-02T22:44:44.597",
+    "OrderType" : "SELL"
+}
+
+/* 49 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2d3"),
+    "Quantity" : 24.37227271,
+    "Price" : 0.0006901,
+    "Id" : 4135802,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.0168193,
+    "TimeStamp" : "2017-07-03T00:39:20.527",
+    "OrderType" : "SELL"
+}
+
+/* 50 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2d4"),
+    "Quantity" : 63.20247831,
+    "Price" : 2.22e-05,
+    "Id" : 3318799,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.00140309,
+    "TimeStamp" : "2017-07-02T23:46:32.5",
+    "OrderType" : "BUY"
+}
+
+/* 51 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2d5"),
+    "Quantity" : 8.6525161,
+    "Price" : 0.0002571,
+    "Id" : 5976668,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.00222456,
+    "TimeStamp" : "2017-07-02T16:17:07.99",
+    "OrderType" : "SELL"
+}
+
+/* 52 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2d6"),
+    "Quantity" : 2631.92612137,
+    "Price" : 3.79e-06,
+    "Id" : 1333661,
+    "FillType" : "FILL",
+    "Total" : 0.00997499,
+    "TimeStamp" : "2017-07-02T22:12:18.84",
+    "OrderType" : "SELL"
+}
+
+/* 53 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2d7"),
+    "Quantity" : 1.32056872,
+    "Price" : 0.00458319,
+    "Id" : 17466433,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.00605241,
+    "TimeStamp" : "2017-07-03T01:40:45.9",
+    "OrderType" : "SELL"
+}
+
+/* 54 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2d8"),
+    "Quantity" : 13800.0,
+    "Price" : 9.1e-07,
+    "Id" : 854221,
+    "FillType" : "FILL",
+    "Total" : 0.012558,
+    "TimeStamp" : "2017-07-02T23:03:31.95",
+    "OrderType" : "BUY"
+}
+
+/* 55 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2d9"),
+    "Quantity" : 13.76059151,
+    "Price" : 3.733e-05,
+    "Id" : 3252977,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.00051368,
+    "TimeStamp" : "2017-07-03T01:16:40.583",
+    "OrderType" : "SELL"
+}
+
+/* 56 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2da"),
+    "Quantity" : 54.43313429,
+    "Price" : 0.0031,
+    "Id" : 12101116,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.16874271,
+    "TimeStamp" : "2017-07-03T00:37:55.74",
+    "OrderType" : "SELL"
+}
+
+/* 57 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2db"),
+    "Quantity" : 59387.36387717,
+    "Price" : 6.3e-07,
+    "Id" : 1424920,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.03741403,
+    "TimeStamp" : "2017-07-03T01:18:57.28",
+    "OrderType" : "BUY"
+}
+
+/* 58 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2dc"),
+    "Quantity" : 46.95717506,
+    "Price" : 5.324e-05,
+    "Id" : 2777088,
+    "FillType" : "FILL",
+    "Total" : 0.0025,
+    "TimeStamp" : "2017-07-03T01:22:33.4",
+    "OrderType" : "SELL"
+}
+
+/* 59 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2dd"),
+    "Quantity" : 9.7713504,
+    "Price" : 5.117e-05,
+    "Id" : 2328637,
+    "FillType" : "FILL",
+    "Total" : 0.00049999,
+    "TimeStamp" : "2017-07-02T16:05:58.74",
+    "OrderType" : "SELL"
+}
+
+/* 60 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2de"),
+    "Quantity" : 6.0,
+    "Price" : 0.00069014,
+    "Id" : 4135801,
+    "FillType" : "FILL",
+    "Total" : 0.00414084,
+    "TimeStamp" : "2017-07-03T00:38:32.43",
+    "OrderType" : "BUY"
+}
+
+/* 61 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2df"),
+    "Quantity" : 416.554877,
+    "Price" : 0.00018599,
+    "Id" : 14445641,
+    "FillType" : "FILL",
+    "Total" : 0.07747504,
+    "TimeStamp" : "2017-07-03T00:37:32.383",
+    "OrderType" : "BUY"
+}
+
+/* 62 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2e0"),
+    "Quantity" : 49.17064276,
+    "Price" : 0.00040163,
+    "Id" : 3883068,
+    "FillType" : "FILL",
+    "Total" : 0.0197484,
+    "TimeStamp" : "2017-07-03T00:26:50.057",
+    "OrderType" : "BUY"
+}
+
+/* 63 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2e1"),
+    "Quantity" : 14.84324217,
+    "Price" : 0.00030307,
+    "Id" : 21931837,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.00449854,
+    "TimeStamp" : "2017-07-03T00:31:25.98",
+    "OrderType" : "SELL"
+}
+
+/* 64 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2e2"),
+    "Quantity" : 4.5e-07,
+    "Price" : 2.916e-05,
+    "Id" : 4661022,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.0,
+    "TimeStamp" : "2017-07-03T02:42:28.707",
+    "OrderType" : "BUY"
+}
+
+/* 65 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2e3"),
+    "Quantity" : 2.28220734,
+    "Price" : 0.00094501,
+    "Id" : 13675291,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.0021567,
+    "TimeStamp" : "2017-07-02T22:06:05.55",
+    "OrderType" : "SELL"
+}
+
+/* 66 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2e4"),
+    "Quantity" : 887.71343106,
+    "Price" : 2.78e-06,
+    "Id" : 1328511,
+    "FillType" : "FILL",
+    "Total" : 0.00246784,
+    "TimeStamp" : "2017-07-02T23:43:05.463",
+    "OrderType" : "BUY"
+}
+
+/* 67 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2e5"),
+    "Quantity" : 42448.79721154,
+    "Price" : 6.3e-07,
+    "Id" : 1424918,
+    "FillType" : "FILL",
+    "Total" : 0.02674274,
+    "TimeStamp" : "2017-07-03T01:18:44.733",
+    "OrderType" : "BUY"
+}
+
+/* 68 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2e6"),
+    "Quantity" : 61.67686886,
+    "Price" : 0.00016172,
+    "Id" : 6326001,
+    "FillType" : "FILL",
+    "Total" : 0.00997438,
+    "TimeStamp" : "2017-07-02T18:24:57.927",
+    "OrderType" : "BUY"
+}
+
+/* 69 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2e7"),
+    "Quantity" : 192.76918498,
+    "Price" : 0.00026714,
+    "Id" : 4350793,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.05149636,
+    "TimeStamp" : "2017-07-03T01:49:49.443",
+    "OrderType" : "BUY"
+}
+
+/* 70 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2e8"),
+    "Quantity" : 0.50707319,
+    "Price" : 0.000374,
+    "Id" : 8044944,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.00018964,
+    "TimeStamp" : "2017-07-03T01:24:16.723",
+    "OrderType" : "BUY"
+}
+
+/* 71 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2e9"),
+    "Quantity" : 15.0,
+    "Price" : 0.01610008,
+    "Id" : 7351747,
+    "FillType" : "FILL",
+    "Total" : 0.2415012,
+    "TimeStamp" : "2017-07-02T19:46:12.977",
+    "OrderType" : "SELL"
+}
+
+/* 72 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2ea"),
+    "Quantity" : 2313.47526433,
+    "Price" : 3.879e-05,
+    "Id" : 10172407,
+    "FillType" : "FILL",
+    "Total" : 0.0897397,
+    "TimeStamp" : "2017-07-02T21:46:53.837",
+    "OrderType" : "BUY"
+}
+
+/* 73 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2eb"),
+    "Quantity" : 1234.64977612,
+    "Price" : 1.406e-05,
+    "Id" : 11721946,
+    "FillType" : "FILL",
+    "Total" : 0.01735917,
+    "TimeStamp" : "2017-07-03T01:55:40.137",
+    "OrderType" : "BUY"
+}
+
+/* 74 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2ec"),
+    "Quantity" : 162.1552541,
+    "Price" : 3.97e-05,
+    "Id" : 10717751,
+    "FillType" : "FILL",
+    "Total" : 0.00643756,
+    "TimeStamp" : "2017-07-03T00:12:14.75",
+    "OrderType" : "BUY"
+}
+
+/* 75 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2ed"),
+    "Quantity" : 0.05038137,
+    "Price" : 0.0288292,
+    "Id" : 22301548,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.00145245,
+    "TimeStamp" : "2017-07-02T20:55:16.887",
+    "OrderType" : "SELL"
+}
+
+/* 76 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2ee"),
+    "Quantity" : 15.76006609,
+    "Price" : 0.00020718,
+    "Id" : 5922985,
+    "FillType" : "FILL",
+    "Total" : 0.00326517,
+    "TimeStamp" : "2017-07-02T20:31:11.227",
+    "OrderType" : "BUY"
+}
+
+/* 77 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2ef"),
+    "Quantity" : 18322.98145031,
+    "Price" : 2.5e-06,
+    "Id" : 3911873,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.04580745,
+    "TimeStamp" : "2017-07-02T23:50:09.08",
+    "OrderType" : "SELL"
+}
+
+/* 78 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2f0"),
+    "Quantity" : 837.18980203,
+    "Price" : 0.00025711,
+    "Id" : 5976667,
+    "FillType" : "FILL",
+    "Total" : 0.21524986,
+    "TimeStamp" : "2017-07-02T16:17:07.973",
+    "OrderType" : "SELL"
+}
+
+/* 79 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2f1"),
+    "Quantity" : 299.2113936,
+    "Price" : 4.84e-06,
+    "Id" : 1556587,
+    "FillType" : "FILL",
+    "Total" : 0.00144818,
+    "TimeStamp" : "2017-07-02T20:57:00.707",
+    "OrderType" : "BUY"
+}
+
+/* 80 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2f2"),
+    "Quantity" : 5.10802898,
+    "Price" : 0.00211,
+    "Id" : 9955442,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.01077794,
+    "TimeStamp" : "2017-07-02T23:41:40.16",
+    "OrderType" : "SELL"
+}
+
+/* 81 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2f3"),
+    "Quantity" : 21.88409886,
+    "Price" : 0.00017722,
+    "Id" : 9881631,
+    "FillType" : "FILL",
+    "Total" : 0.00387829,
+    "TimeStamp" : "2017-07-03T01:12:07.593",
+    "OrderType" : "SELL"
+}
+
+/* 82 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2f4"),
+    "Quantity" : 267.72023717,
+    "Price" : 0.00014266,
+    "Id" : 17280752,
+    "FillType" : "FILL",
+    "Total" : 0.03819296,
+    "TimeStamp" : "2017-07-02T22:47:16.727",
+    "OrderType" : "SELL"
+}
+
+/* 83 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2f5"),
+    "Quantity" : 6.07177708,
+    "Price" : 0.000115,
+    "Id" : 3167562,
+    "FillType" : "FILL",
+    "Total" : 0.00069825,
+    "TimeStamp" : "2017-07-03T00:59:58.72",
+    "OrderType" : "BUY"
+}
+
+/* 84 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2f6"),
+    "Quantity" : 574.71264367,
+    "Price" : 8.7e-06,
+    "Id" : 4768501,
+    "FillType" : "FILL",
+    "Total" : 0.00499999,
+    "TimeStamp" : "2017-07-03T02:23:51.717",
+    "OrderType" : "SELL"
+}
+
+/* 85 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2f7"),
+    "Quantity" : 100.0,
+    "Price" : 2.231e-05,
+    "Id" : 5146531,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.002231,
+    "TimeStamp" : "2017-07-03T01:58:23.57",
+    "OrderType" : "SELL"
+}
+
+/* 86 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2f8"),
+    "Quantity" : 6000.0,
+    "Price" : 2.82e-06,
+    "Id" : 2033360,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.01692,
+    "TimeStamp" : "2017-07-02T22:26:09.107",
+    "OrderType" : "BUY"
+}
+
+/* 87 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2f9"),
+    "Quantity" : 29.47722387,
+    "Price" : 0.00027234,
+    "Id" : 16871754,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.00802782,
+    "TimeStamp" : "2017-07-03T00:42:30.11",
+    "OrderType" : "SELL"
+}
+
+/* 88 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2fa"),
+    "Quantity" : 215.90909091,
+    "Price" : 2.222e-05,
+    "Id" : 3318718,
+    "FillType" : "FILL",
+    "Total" : 0.0047975,
+    "TimeStamp" : "2017-07-02T23:45:00.78",
+    "OrderType" : "BUY"
+}
+
+/* 89 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2fb"),
+    "Quantity" : 299.67907178,
+    "Price" : 0.00040163,
+    "Id" : 3883060,
+    "FillType" : "FILL",
+    "Total" : 0.1203601,
+    "TimeStamp" : "2017-07-03T00:25:18.693",
+    "OrderType" : "BUY"
+}
+
+/* 90 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2fc"),
+    "Quantity" : 19.96984823,
+    "Price" : 0.0031,
+    "Id" : 12101114,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.06190652,
+    "TimeStamp" : "2017-07-03T00:37:25.707",
+    "OrderType" : "SELL"
+}
+
+/* 91 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2fd"),
+    "Quantity" : 1026.62953406,
+    "Price" : 0.00017752,
+    "Id" : 10106622,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.18224727,
+    "TimeStamp" : "2017-07-02T17:23:07.13",
+    "OrderType" : "SELL"
+}
+
+/* 92 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2fe"),
+    "Quantity" : 81.78675522,
+    "Price" : 0.00018397,
+    "Id" : 4324046,
+    "FillType" : "FILL",
+    "Total" : 0.0150463,
+    "TimeStamp" : "2017-07-02T21:03:43.553",
+    "OrderType" : "BUY"
+}
+
+/* 93 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b2ff"),
+    "Quantity" : 25.29488644,
+    "Price" : 5.414e-05,
+    "Id" : 29098382,
+    "FillType" : "FILL",
+    "Total" : 0.00136946,
+    "TimeStamp" : "2017-07-03T01:08:44.443",
+    "OrderType" : "SELL"
+}
+
+/* 94 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b300"),
+    "Quantity" : 170.0,
+    "Price" : 8.42e-06,
+    "Id" : 1932730,
+    "FillType" : "FILL",
+    "Total" : 0.0014314,
+    "TimeStamp" : "2017-07-02T22:44:44.597",
+    "OrderType" : "SELL"
+}
+
+/* 95 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b301"),
+    "Quantity" : 1000.0,
+    "Price" : 9.7e-07,
+    "Id" : 1678101,
+    "FillType" : "FILL",
+    "Total" : 0.00097,
+    "TimeStamp" : "2017-07-02T23:08:41.01",
+    "OrderType" : "SELL"
+}
+
+/* 96 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b302"),
+    "Quantity" : 36.74346497,
+    "Price" : 1.405e-05,
+    "Id" : 11721937,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.00051624,
+    "TimeStamp" : "2017-07-03T01:55:09.573",
+    "OrderType" : "SELL"
+}
+
+/* 97 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b303"),
+    "Quantity" : 50.0,
+    "Price" : 0.00069014,
+    "Id" : 4135799,
+    "FillType" : "FILL",
+    "Total" : 0.034507,
+    "TimeStamp" : "2017-07-03T00:34:40.543",
+    "OrderType" : "BUY"
+}
+
+/* 98 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b304"),
+    "Quantity" : 215.71500642,
+    "Price" : 7.187e-05,
+    "Id" : 5240444,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.01550343,
+    "TimeStamp" : "2017-07-02T15:49:54.79",
+    "OrderType" : "BUY"
+}
+
+/* 99 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b305"),
+    "Quantity" : 80.20212484,
+    "Price" : 0.00040162,
+    "Id" : 3883056,
+    "FillType" : "FILL",
+    "Total" : 0.03221077,
+    "TimeStamp" : "2017-07-03T00:24:59.427",
+    "OrderType" : "BUY"
+}
+
+/* 100 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b306"),
+    "Quantity" : 30.0,
+    "Price" : 0.00025713,
+    "Id" : 5976666,
+    "FillType" : "FILL",
+    "Total" : 0.0077139,
+    "TimeStamp" : "2017-07-02T16:17:07.973",
+    "OrderType" : "SELL"
+}
+
+/* 101 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b307"),
+    "Quantity" : 13500.0,
+    "Price" : 9.1e-07,
+    "Id" : 854219,
+    "FillType" : "FILL",
+    "Total" : 0.012285,
+    "TimeStamp" : "2017-07-02T23:02:59.48",
+    "OrderType" : "BUY"
+}
+
+/* 102 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b308"),
+    "Quantity" : 13.75210447,
+    "Price" : 3.733e-05,
+    "Id" : 3252976,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.00051336,
+    "TimeStamp" : "2017-07-03T01:16:16.363",
+    "OrderType" : "SELL"
+}
+
+/* 103 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b309"),
+    "Quantity" : 1852.60667506,
+    "Price" : 5.35e-05,
+    "Id" : 2777075,
+    "FillType" : "FILL",
+    "Total" : 0.09911445,
+    "TimeStamp" : "2017-07-03T01:21:18.93",
+    "OrderType" : "BUY"
+}
+
+/* 104 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b30a"),
+    "Quantity" : 21.89901207,
+    "Price" : 9.5e-05,
+    "Id" : 5506429,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.0020804,
+    "TimeStamp" : "2017-07-02T23:47:21.79",
+    "OrderType" : "BUY"
+}
+
+/* 105 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b30b"),
+    "Quantity" : 1500.0,
+    "Price" : 3e-05,
+    "Id" : 9455422,
+    "FillType" : "FILL",
+    "Total" : 0.045,
+    "TimeStamp" : "2017-07-03T00:54:44.823",
+    "OrderType" : "SELL"
+}
+
+/* 106 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b30c"),
+    "Quantity" : 0.28107534,
+    "Price" : 0.00246102,
+    "Id" : 8916632,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.00069173,
+    "TimeStamp" : "2017-07-02T21:36:07.137",
+    "OrderType" : "BUY"
+}
+
+/* 107 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b30d"),
+    "Quantity" : 19.47798987,
+    "Price" : 7.963e-05,
+    "Id" : 8119617,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.00155103,
+    "TimeStamp" : "2017-07-02T23:09:30.717",
+    "OrderType" : "BUY"
+}
+
+/* 108 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b30e"),
+    "Quantity" : 92.73095505,
+    "Price" : 0.0005218,
+    "Id" : 4971551,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.04838701,
+    "TimeStamp" : "2017-07-02T20:32:57.84",
+    "OrderType" : "BUY"
+}
+
+/* 109 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b30f"),
+    "Quantity" : 136.16136872,
+    "Price" : 0.0001552,
+    "Id" : 17045427,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.02113224,
+    "TimeStamp" : "2017-07-03T00:42:26.637",
+    "OrderType" : "BUY"
+}
+
+/* 110 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b310"),
+    "Quantity" : 50.0,
+    "Price" : 9.092e-05,
+    "Id" : 3841562,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.004546,
+    "TimeStamp" : "2017-07-02T15:50:15.99",
+    "OrderType" : "SELL"
+}
+
+/* 111 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b311"),
+    "Quantity" : 67.3034676,
+    "Price" : 0.00018869,
+    "Id" : 11410530,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.01269949,
+    "TimeStamp" : "2017-07-03T00:29:35.07",
+    "OrderType" : "BUY"
+}
+
+/* 112 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b312"),
+    "Quantity" : 72.59925228,
+    "Price" : 0.00027234,
+    "Id" : 16871751,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.01977168,
+    "TimeStamp" : "2017-07-03T00:42:19.33",
+    "OrderType" : "SELL"
+}
+
+/* 113 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b313"),
+    "Quantity" : 153.507329,
+    "Price" : 2.916e-05,
+    "Id" : 4661020,
+    "FillType" : "FILL",
+    "Total" : 0.00447627,
+    "TimeStamp" : "2017-07-03T02:42:27.91",
+    "OrderType" : "BUY"
+}
+
+/* 114 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b314"),
+    "Quantity" : 199.50399,
+    "Price" : 2.5e-06,
+    "Id" : 3911872,
+    "FillType" : "FILL",
+    "Total" : 0.00049875,
+    "TimeStamp" : "2017-07-02T23:50:09.067",
+    "OrderType" : "SELL"
+}
+
+/* 115 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b315"),
+    "Quantity" : 65.84434636,
+    "Price" : 0.00029353,
+    "Id" : 10066848,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.01932729,
+    "TimeStamp" : "2017-07-02T23:36:21.96",
+    "OrderType" : "BUY"
+}
+
+/* 116 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b316"),
+    "Quantity" : 1.249,
+    "Price" : 0.00458318,
+    "Id" : 17466184,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.00572439,
+    "TimeStamp" : "2017-07-03T01:11:51.363",
+    "OrderType" : "SELL"
+}
+
+/* 117 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b317"),
+    "Quantity" : 6157.40740741,
+    "Price" : 4.84e-06,
+    "Id" : 1556584,
+    "FillType" : "FILL",
+    "Total" : 0.02980185,
+    "TimeStamp" : "2017-07-02T20:56:46.227",
+    "OrderType" : "BUY"
+}
+
+/* 118 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b318"),
+    "Quantity" : 167.77937153,
+    "Price" : 0.00016271,
+    "Id" : 6325905,
+    "FillType" : "FILL",
+    "Total" : 0.02729938,
+    "TimeStamp" : "2017-07-02T18:00:20.707",
+    "OrderType" : "BUY"
+}
+
+/* 119 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b319"),
+    "Quantity" : 1e-07,
+    "Price" : 0.002112,
+    "Id" : 9955369,
+    "FillType" : "FILL",
+    "Total" : 0.0,
+    "TimeStamp" : "2017-07-02T23:40:08.507",
+    "OrderType" : "SELL"
+}
+
+/* 120 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b31a"),
+    "Quantity" : 140.74536497,
+    "Price" : 0.000374,
+    "Id" : 8044905,
+    "FillType" : "FILL",
+    "Total" : 0.05263876,
+    "TimeStamp" : "2017-07-03T01:23:01.137",
+    "OrderType" : "BUY"
+}
+
+/* 121 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b31b"),
+    "Quantity" : 4.66706919,
+    "Price" : 0.00011285,
+    "Id" : 3167556,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.00052667,
+    "TimeStamp" : "2017-07-03T00:57:07.413",
+    "OrderType" : "BUY"
+}
+
+/* 122 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b31c"),
+    "Quantity" : 614.34524001,
+    "Price" : 5.117e-05,
+    "Id" : 2328636,
+    "FillType" : "FILL",
+    "Total" : 0.03143604,
+    "TimeStamp" : "2017-07-02T16:05:58.723",
+    "OrderType" : "SELL"
+}
+
+/* 123 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b31d"),
+    "Quantity" : 410.62787604,
+    "Price" : 1.406e-05,
+    "Id" : 11721935,
+    "FillType" : "FILL",
+    "Total" : 0.00577342,
+    "TimeStamp" : "2017-07-03T01:55:08.98",
+    "OrderType" : "BUY"
+}
+
+/* 124 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b31e"),
+    "Quantity" : 3540.0,
+    "Price" : 0.000207,
+    "Id" : 5922973,
+    "FillType" : "FILL",
+    "Total" : 0.73278,
+    "TimeStamp" : "2017-07-02T20:29:29.25",
+    "OrderType" : "SELL"
+}
+
+/* 125 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b31f"),
+    "Quantity" : 6000.0,
+    "Price" : 2.82e-06,
+    "Id" : 2033359,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.01692,
+    "TimeStamp" : "2017-07-02T22:26:09.107",
+    "OrderType" : "BUY"
+}
+
+/* 126 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b320"),
+    "Quantity" : 2.94766552,
+    "Price" : 0.00048079,
+    "Id" : 5658011,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.0014172,
+    "TimeStamp" : "2017-07-03T00:00:22.177",
+    "OrderType" : "SELL"
+}
+
+/* 127 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b321"),
+    "Quantity" : 587.59066623,
+    "Price" : 3.79e-06,
+    "Id" : 1333536,
+    "FillType" : "FILL",
+    "Total" : 0.00222696,
+    "TimeStamp" : "2017-07-02T22:08:21.427",
+    "OrderType" : "SELL"
+}
+
+/* 128 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b322"),
+    "Quantity" : 1.89998838,
+    "Price" : 0.00095103,
+    "Id" : 13675290,
+    "FillType" : "FILL",
+    "Total" : 0.00180694,
+    "TimeStamp" : "2017-07-02T22:06:05.55",
+    "OrderType" : "SELL"
+}
+
+/* 129 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b323"),
+    "Quantity" : 12800.0,
+    "Price" : 9.1e-07,
+    "Id" : 854216,
+    "FillType" : "FILL",
+    "Total" : 0.011648,
+    "TimeStamp" : "2017-07-02T23:02:43.747",
+    "OrderType" : "BUY"
+}
+
+/* 130 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b324"),
+    "Quantity" : 1046.19955473,
+    "Price" : 2.189e-05,
+    "Id" : 4754830,
+    "FillType" : "FILL",
+    "Total" : 0.0229013,
+    "TimeStamp" : "2017-07-02T23:30:54.477",
+    "OrderType" : "SELL"
+}
+
+/* 131 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b325"),
+    "Quantity" : 7551.20278846,
+    "Price" : 6.3e-07,
+    "Id" : 1424917,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.00475725,
+    "TimeStamp" : "2017-07-03T01:18:44.733",
+    "OrderType" : "BUY"
+}
+
+/* 132 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b326"),
+    "Quantity" : 50.31404149,
+    "Price" : 0.00026713,
+    "Id" : 4350792,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.01344038,
+    "TimeStamp" : "2017-07-03T01:49:49.443",
+    "OrderType" : "BUY"
+}
+
+/* 133 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b327"),
+    "Quantity" : 14.90674896,
+    "Price" : 0.01610009,
+    "Id" : 7351746,
+    "FillType" : "FILL",
+    "Total" : 0.23999999,
+    "TimeStamp" : "2017-07-02T19:46:12.977",
+    "OrderType" : "SELL"
+}
+
+/* 134 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b328"),
+    "Quantity" : 521.85258552,
+    "Price" : 3.878e-05,
+    "Id" : 10172406,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.02023744,
+    "TimeStamp" : "2017-07-02T21:46:53.823",
+    "OrderType" : "BUY"
+}
+
+/* 135 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b329"),
+    "Quantity" : 3.83262378,
+    "Price" : 0.00246094,
+    "Id" : 8916631,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.00943185,
+    "TimeStamp" : "2017-07-02T21:36:07.137",
+    "OrderType" : "BUY"
+}
+
+/* 136 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b32a"),
+    "Quantity" : 336.52115969,
+    "Price" : 3.969e-05,
+    "Id" : 10717730,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.01335652,
+    "TimeStamp" : "2017-07-03T00:08:52.17",
+    "OrderType" : "BUY"
+}
+
+/* 137 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b32b"),
+    "Quantity" : 154.00247998,
+    "Price" : 3.238e-05,
+    "Id" : 2824838,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.0049866,
+    "TimeStamp" : "2017-07-02T15:44:11.43",
+    "OrderType" : "SELL"
+}
+
+/* 138 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b32c"),
+    "Quantity" : 8.22710362,
+    "Price" : 0.00018556,
+    "Id" : 11410521,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.00152662,
+    "TimeStamp" : "2017-07-03T00:29:15.363",
+    "OrderType" : "SELL"
+}
+
+/* 139 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b32d"),
+    "Quantity" : 2750.40197914,
+    "Price" : 2.205e-05,
+    "Id" : 3318410,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.06064636,
+    "TimeStamp" : "2017-07-02T23:37:26.26",
+    "OrderType" : "SELL"
+}
+
+/* 140 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b32e"),
+    "Quantity" : 9112.28656894,
+    "Price" : 2.76e-06,
+    "Id" : 1328504,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.02514991,
+    "TimeStamp" : "2017-07-02T23:42:06.023",
+    "OrderType" : "BUY"
+}
+
+/* 141 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b32f"),
+    "Quantity" : 13.74404382,
+    "Price" : 3.733e-05,
+    "Id" : 3252973,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.00051306,
+    "TimeStamp" : "2017-07-03T01:15:55.423",
+    "OrderType" : "SELL"
+}
+
+/* 142 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b330"),
+    "Quantity" : 447.66692386,
+    "Price" : 0.00017752,
+    "Id" : 10106621,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.07946983,
+    "TimeStamp" : "2017-07-02T17:23:06.35",
+    "OrderType" : "SELL"
+}
+
+/* 143 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b331"),
+    "Quantity" : 93.44986028,
+    "Price" : 0.0001627,
+    "Id" : 6325904,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.01520429,
+    "TimeStamp" : "2017-07-02T18:00:20.707",
+    "OrderType" : "BUY"
+}
+
+/* 144 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b332"),
+    "Quantity" : 16.71340706,
+    "Price" : 0.00017722,
+    "Id" : 9881630,
+    "FillType" : "FILL",
+    "Total" : 0.00296194,
+    "TimeStamp" : "2017-07-03T01:12:07.593",
+    "OrderType" : "SELL"
+}
+
+/* 145 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b333"),
+    "Quantity" : 73.99262785,
+    "Price" : 0.00014304,
+    "Id" : 17280751,
+    "FillType" : "FILL",
+    "Total" : 0.0105839,
+    "TimeStamp" : "2017-07-02T22:47:16.727",
+    "OrderType" : "SELL"
+}
+
+/* 146 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b334"),
+    "Quantity" : 100.0,
+    "Price" : 5.415e-05,
+    "Id" : 29098381,
+    "FillType" : "FILL",
+    "Total" : 0.005415,
+    "TimeStamp" : "2017-07-03T01:08:44.443",
+    "OrderType" : "SELL"
+}
+
+/* 147 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b335"),
+    "Quantity" : 2728.28507795,
+    "Price" : 8.98e-06,
+    "Id" : 4768464,
+    "FillType" : "FILL",
+    "Total" : 0.02449999,
+    "TimeStamp" : "2017-07-03T02:22:48.48",
+    "OrderType" : "SELL"
+}
+
+/* 148 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b336"),
+    "Quantity" : 5.69570512,
+    "Price" : 0.00052054,
+    "Id" : 4971443,
+    "FillType" : "FILL",
+    "Total" : 0.00296484,
+    "TimeStamp" : "2017-07-02T20:30:01.047",
+    "OrderType" : "SELL"
+}
+
+/* 149 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b337"),
+    "Quantity" : 546.0009,
+    "Price" : 8.42e-06,
+    "Id" : 1932729,
+    "FillType" : "FILL",
+    "Total" : 0.00459732,
+    "TimeStamp" : "2017-07-02T22:44:44.597",
+    "OrderType" : "SELL"
+}
+
+/* 150 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b338"),
+    "Quantity" : 0.17877985,
+    "Price" : 0.0288292,
+    "Id" : 22301539,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.00515408,
+    "TimeStamp" : "2017-07-02T20:55:10.663",
+    "OrderType" : "SELL"
+}
+
+/* 151 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b339"),
+    "Quantity" : 6.556584,
+    "Price" : 0.00018599,
+    "Id" : 14445514,
+    "FillType" : "FILL",
+    "Total" : 0.00121945,
+    "TimeStamp" : "2017-07-03T00:35:53.94",
+    "OrderType" : "BUY"
+}
+
+/* 152 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b33a"),
+    "Quantity" : 67.36264467,
+    "Price" : 2.231e-05,
+    "Id" : 5146522,
+    "FillType" : "FILL",
+    "Total" : 0.00150286,
+    "TimeStamp" : "2017-07-03T01:55:40.923",
+    "OrderType" : "BUY"
+}
+
+/* 153 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b33b"),
+    "Quantity" : 30.07982666,
+    "Price" : 1.406e-05,
+    "Id" : 11721934,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.00042292,
+    "TimeStamp" : "2017-07-03T01:55:08.98",
+    "OrderType" : "BUY"
+}
+
+/* 154 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b33c"),
+    "Quantity" : 198910.87200172,
+    "Price" : 1.02e-06,
+    "Id" : 1035867,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.20288908,
+    "TimeStamp" : "2017-07-03T01:10:15.807",
+    "OrderType" : "SELL"
+}
+
+/* 155 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b33d"),
+    "Quantity" : 42.2434424,
+    "Price" : 0.0006901,
+    "Id" : 4135797,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.02915219,
+    "TimeStamp" : "2017-07-03T00:34:38.7",
+    "OrderType" : "SELL"
+}
+
+/* 156 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b33e"),
+    "Quantity" : 33.33292276,
+    "Price" : 0.0003028,
+    "Id" : 21931752,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.0100932,
+    "TimeStamp" : "2017-07-03T00:29:28.013",
+    "OrderType" : "SELL"
+}
+
+/* 157 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b33f"),
+    "Quantity" : 10.0,
+    "Price" : 0.00029,
+    "Id" : 10066847,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.0029,
+    "TimeStamp" : "2017-07-02T23:36:21.96",
+    "OrderType" : "BUY"
+}
+
+/* 158 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b340"),
+    "Quantity" : 1019.8333126,
+    "Price" : 2.67e-06,
+    "Id" : 1328444,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.00272295,
+    "TimeStamp" : "2017-07-02T23:33:04.7",
+    "OrderType" : "SELL"
+}
+
+/* 159 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b341"),
+    "Quantity" : 850.0,
+    "Price" : 6.3e-07,
+    "Id" : 1424911,
+    "FillType" : "FILL",
+    "Total" : 0.0005355,
+    "TimeStamp" : "2017-07-03T01:17:41.687",
+    "OrderType" : "BUY"
+}
+
+/* 160 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b342"),
+    "Quantity" : 243.53802599,
+    "Price" : 0.00018396,
+    "Id" : 4324045,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.04480125,
+    "TimeStamp" : "2017-07-02T21:03:43.553",
+    "OrderType" : "BUY"
+}
+
+/* 161 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b343"),
+    "Quantity" : 40.15020878,
+    "Price" : 0.00017722,
+    "Id" : 9881629,
+    "FillType" : "FILL",
+    "Total" : 0.00711541,
+    "TimeStamp" : "2017-07-03T01:12:07.593",
+    "OrderType" : "SELL"
+}
+
+/* 162 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b344"),
+    "Quantity" : 3.04709421,
+    "Price" : 0.00026698,
+    "Id" : 4350791,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.00081351,
+    "TimeStamp" : "2017-07-03T01:49:49.443",
+    "OrderType" : "BUY"
+}
+
+/* 163 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b345"),
+    "Quantity" : 10.0,
+    "Price" : 7.962e-05,
+    "Id" : 8119616,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.0007962,
+    "TimeStamp" : "2017-07-02T23:09:30.717",
+    "OrderType" : "BUY"
+}
+
+/* 164 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b346"),
+    "Quantity" : 38.83920258,
+    "Price" : 2.231e-05,
+    "Id" : 5146520,
+    "FillType" : "FILL",
+    "Total" : 0.0008665,
+    "TimeStamp" : "2017-07-03T01:55:36.907",
+    "OrderType" : "SELL"
+}
+
+/* 165 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b347"),
+    "Quantity" : 103.44450609,
+    "Price" : 0.00018737,
+    "Id" : 11410502,
+    "FillType" : "FILL",
+    "Total" : 0.01938239,
+    "TimeStamp" : "2017-07-03T00:28:26.577",
+    "OrderType" : "BUY"
+}
+
+/* 166 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b348"),
+    "Quantity" : 4110.591,
+    "Price" : 2.916e-05,
+    "Id" : 4661012,
+    "FillType" : "FILL",
+    "Total" : 0.11986483,
+    "TimeStamp" : "2017-07-03T02:42:12.287",
+    "OrderType" : "BUY"
+}
+
+/* 167 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b349"),
+    "Quantity" : 19950.0,
+    "Price" : 2.5e-06,
+    "Id" : 3911871,
+    "FillType" : "FILL",
+    "Total" : 0.049875,
+    "TimeStamp" : "2017-07-02T23:50:09.067",
+    "OrderType" : "SELL"
+}
+
+/* 168 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b34a"),
+    "Quantity" : 80.0,
+    "Price" : 7.178e-05,
+    "Id" : 5240443,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.0057424,
+    "TimeStamp" : "2017-07-02T15:49:54.79",
+    "OrderType" : "BUY"
+}
+
+/* 169 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b34b"),
+    "Quantity" : 612.67622074,
+    "Price" : 0.0004666,
+    "Id" : 5657904,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.28587472,
+    "TimeStamp" : "2017-07-02T23:54:18.073",
+    "OrderType" : "SELL"
+}
+
+/* 170 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b34c"),
+    "Quantity" : 77.3255814,
+    "Price" : 0.000258,
+    "Id" : 5976665,
+    "FillType" : "FILL",
+    "Total" : 0.01995,
+    "TimeStamp" : "2017-07-02T16:17:07.973",
+    "OrderType" : "SELL"
+}
+
+/* 171 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b34d"),
+    "Quantity" : 0.14706859,
+    "Price" : 0.00458318,
+    "Id" : 17466179,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.00067404,
+    "TimeStamp" : "2017-07-03T01:10:51.357",
+    "OrderType" : "SELL"
+}
+
+/* 172 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b34e"),
+    "Quantity" : 55.14234243,
+    "Price" : 0.00037399,
+    "Id" : 8044904,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.02062268,
+    "TimeStamp" : "2017-07-03T01:23:01.137",
+    "OrderType" : "BUY"
+}
+
+/* 173 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b34f"),
+    "Quantity" : 7.21739234,
+    "Price" : 0.0161001,
+    "Id" : 7351745,
+    "FillType" : "FILL",
+    "Total" : 0.11620073,
+    "TimeStamp" : "2017-07-02T19:46:12.977",
+    "OrderType" : "SELL"
+}
+
+/* 174 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b350"),
+    "Quantity" : 126.27215501,
+    "Price" : 0.00011287,
+    "Id" : 3167545,
+    "FillType" : "FILL",
+    "Total" : 0.01425233,
+    "TimeStamp" : "2017-07-03T00:53:37.803",
+    "OrderType" : "SELL"
+}
+
+/* 175 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b351"),
+    "Quantity" : 340.16169666,
+    "Price" : 3.948e-05,
+    "Id" : 10717725,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.01342958,
+    "TimeStamp" : "2017-07-03T00:08:45.98",
+    "OrderType" : "BUY"
+}
+
+/* 176 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b352"),
+    "Quantity" : 51.00222455,
+    "Price" : 0.00015514,
+    "Id" : 17045426,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.00791248,
+    "TimeStamp" : "2017-07-03T00:42:26.637",
+    "OrderType" : "BUY"
+}
+
+/* 177 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b353"),
+    "Quantity" : 54.9873529,
+    "Price" : 9.093e-05,
+    "Id" : 3841554,
+    "FillType" : "FILL",
+    "Total" : 0.00499999,
+    "TimeStamp" : "2017-07-02T15:49:35.36",
+    "OrderType" : "SELL"
+}
+
+/* 178 */
+{
+    "_id" : ObjectId("5959b00b2875cb04e465b354"),
+    "Quantity" : 6000.0,
+    "Price" : 2.82e-06,
+    "Id" : 2033358,
+    "FillType" : "PARTIAL_FILL",
+    "Total" : 0.01692,
+    "TimeStamp" : "2017-07-02T22:26:09.107",
+    "OrderType" : "BUY"
+}
+
+/* 179 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319ea8"),
+    "Total" : 0.09806728,
+    "Price" : 0.00010948,
+    "Quantity" : 895.75520999,
+    "OrderType" : "BUY",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 3175582,
+    "TimeStamp" : "2017-07-03T11:55:59.887"
+}
+
+/* 180 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319ea9"),
+    "Total" : 0.07154809,
+    "Price" : 0.00100094,
+    "Quantity" : 71.48090743,
+    "OrderType" : "SELL",
+    "FillType" : "FILL",
+    "Id" : 13709118,
+    "TimeStamp" : "2017-07-03T12:19:16.013"
+}
+
+/* 181 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319eaa"),
+    "Total" : 0.0261601,
+    "Price" : 6.23e-06,
+    "Quantity" : 4199.05355234,
+    "OrderType" : "SELL",
+    "FillType" : "FILL",
+    "Id" : 5225707,
+    "TimeStamp" : "2017-07-03T13:49:42.12"
+}
+
+/* 182 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319eab"),
+    "Total" : 0.0007001,
+    "Price" : 7.001e-05,
+    "Quantity" : 10.0,
+    "OrderType" : "SELL",
+    "FillType" : "FILL",
+    "Id" : 5241784,
+    "TimeStamp" : "2017-07-02T22:42:29.403"
+}
+
+/* 183 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319eac"),
+    "Total" : 0.01277856,
+    "Price" : 2.83e-06,
+    "Quantity" : 4515.39534456,
+    "OrderType" : "SELL",
+    "FillType" : "FILL",
+    "Id" : 1333972,
+    "TimeStamp" : "2017-07-03T14:10:45.59"
+}
+
+/* 184 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319ead"),
+    "Total" : 0.009975,
+    "Price" : 0.00016192,
+    "Quantity" : 61.60449605,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 6336016,
+    "TimeStamp" : "2017-07-03T12:43:19.603"
+}
+
+/* 185 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319eae"),
+    "Total" : 0.55770495,
+    "Price" : 5.5e-05,
+    "Quantity" : 10140.09,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 29159716,
+    "TimeStamp" : "2017-07-03T14:19:26.373"
+}
+
+/* 186 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319eaf"),
+    "Total" : 0.00065185,
+    "Price" : 0.00241503,
+    "Quantity" : 0.26991575,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 8931376,
+    "TimeStamp" : "2017-07-03T10:30:01.3"
+}
+
+/* 187 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319eb0"),
+    "Total" : 0.00698057,
+    "Price" : 0.00066717,
+    "Quantity" : 10.46296255,
+    "OrderType" : "SELL",
+    "FillType" : "FILL",
+    "Id" : 4150721,
+    "TimeStamp" : "2017-07-03T11:49:17.58"
+}
+
+/* 188 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319eb1"),
+    "Total" : 0.00890086,
+    "Price" : 0.00473023,
+    "Quantity" : 1.88169719,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 17476731,
+    "TimeStamp" : "2017-07-03T15:10:52.773"
+}
+
+/* 189 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319eb2"),
+    "Total" : 0.00118724,
+    "Price" : 6.099e-05,
+    "Quantity" : 19.46621495,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 2799455,
+    "TimeStamp" : "2017-07-03T14:15:17.57"
+}
+
+/* 190 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319eb3"),
+    "Total" : 0.00900892,
+    "Price" : 0.0003864,
+    "Quantity" : 23.31503505,
+    "OrderType" : "SELL",
+    "FillType" : "FILL",
+    "Id" : 3885037,
+    "TimeStamp" : "2017-07-03T15:04:24.643"
+}
+
+/* 191 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319eb4"),
+    "Total" : 0.15428889,
+    "Price" : 6.419e-05,
+    "Quantity" : 2403.62826823,
+    "OrderType" : "BUY",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 17776765,
+    "TimeStamp" : "2017-07-03T14:18:06.28"
+}
+
+/* 192 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319eb5"),
+    "Total" : 0.00059849,
+    "Price" : 0.0001641,
+    "Quantity" : 3.64716636,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 11441055,
+    "TimeStamp" : "2017-07-03T14:00:11.153"
+}
+
+/* 193 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319eb6"),
+    "Total" : 0.30214696,
+    "Price" : 0.02974988,
+    "Quantity" : 10.15624142,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 22343816,
+    "TimeStamp" : "2017-07-03T12:50:41.347"
+}
+
+/* 194 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319eb7"),
+    "Total" : 0.00351708,
+    "Price" : 1.403e-05,
+    "Quantity" : 250.68351403,
+    "OrderType" : "SELL",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 11727250,
+    "TimeStamp" : "2017-07-03T14:46:18.743"
+}
+
+/* 195 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319eb8"),
+    "Total" : 0.00171882,
+    "Price" : 3.786e-05,
+    "Quantity" : 45.39937029,
+    "OrderType" : "SELL",
+    "FillType" : "FILL",
+    "Id" : 10730112,
+    "TimeStamp" : "2017-07-03T13:22:02.89"
+}
+
+/* 196 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319eb9"),
+    "Total" : 0.0793302,
+    "Price" : 0.00028384,
+    "Quantity" : 279.48917642,
+    "OrderType" : "SELL",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 21961390,
+    "TimeStamp" : "2017-07-03T12:57:08.157"
+}
+
+/* 197 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319eba"),
+    "Total" : 0.09446927,
+    "Price" : 0.0001769,
+    "Quantity" : 534.02645445,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 14481671,
+    "TimeStamp" : "2017-07-03T14:21:12.787"
+}
+
+/* 198 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319ebb"),
+    "Total" : 0.00756194,
+    "Price" : 0.00018536,
+    "Quantity" : 40.79599533,
+    "OrderType" : "BUY",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 4332171,
+    "TimeStamp" : "2017-07-03T07:06:11.79"
+}
+
+/* 199 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319ebc"),
+    "Total" : 0.0009186,
+    "Price" : 3.062e-05,
+    "Quantity" : 30.0,
+    "OrderType" : "SELL",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 2826070,
+    "TimeStamp" : "2017-07-02T17:41:14.37"
+}
+
+/* 200 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319ebd"),
+    "Total" : 0.0037001,
+    "Price" : 0.000207,
+    "Quantity" : 17.87490496,
+    "OrderType" : "SELL",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 5923241,
+    "TimeStamp" : "2017-07-02T22:26:18.003"
+}
+
+/* 201 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319ebe"),
+    "Total" : 0.05102616,
+    "Price" : 0.00049754,
+    "Quantity" : 102.55691113,
+    "OrderType" : "SELL",
+    "FillType" : "FILL",
+    "Id" : 5693646,
+    "TimeStamp" : "2017-07-03T12:53:22.27"
+}
+
+/* 202 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319ebf"),
+    "Total" : 0.00999999,
+    "Price" : 0.00030814,
+    "Quantity" : 32.4527812,
+    "OrderType" : "SELL",
+    "FillType" : "FILL",
+    "Id" : 10085624,
+    "TimeStamp" : "2017-07-03T14:39:00.763"
+}
+
+/* 203 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319ec0"),
+    "Total" : 0.04845916,
+    "Price" : 0.000275,
+    "Quantity" : 176.21515482,
+    "OrderType" : "SELL",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 4357759,
+    "TimeStamp" : "2017-07-03T14:38:17.683"
+}
+
+/* 204 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319ec1"),
+    "Total" : 2.338e-05,
+    "Price" : 3.823e-05,
+    "Quantity" : 0.61165688,
+    "OrderType" : "SELL",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 10187959,
+    "TimeStamp" : "2017-07-03T11:53:05.65"
+}
+
+/* 205 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319ec2"),
+    "Total" : 0.0012707,
+    "Price" : 4.608e-05,
+    "Quantity" : 27.57608915,
+    "OrderType" : "SELL",
+    "FillType" : "FILL",
+    "Id" : 3580094,
+    "TimeStamp" : "2017-07-03T15:21:52.933"
+}
+
+/* 206 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319ec3"),
+    "Total" : 0.0012873,
+    "Price" : 1.839e-05,
+    "Quantity" : 70.0,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 4772960,
+    "TimeStamp" : "2017-07-03T13:08:58.637"
+}
+
+/* 207 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319ec4"),
+    "Total" : 0.00923499,
+    "Price" : 1.442e-05,
+    "Quantity" : 640.42995839,
+    "OrderType" : "BUY",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 5588391,
+    "TimeStamp" : "2017-07-03T13:58:24.367"
+}
+
+/* 208 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319ec5"),
+    "Total" : 0.02966347,
+    "Price" : 0.00207452,
+    "Quantity" : 14.29895797,
+    "OrderType" : "SELL",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 9976408,
+    "TimeStamp" : "2017-07-03T11:06:58.697"
+}
+
+/* 209 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319ec6"),
+    "Total" : 0.0081991,
+    "Price" : 0.01645093,
+    "Quantity" : 0.49839769,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 7360509,
+    "TimeStamp" : "2017-07-02T22:39:01.17"
+}
+
+/* 210 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319ec7"),
+    "Total" : 0.00078431,
+    "Price" : 0.00017212,
+    "Quantity" : 4.55676433,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 10112350,
+    "TimeStamp" : "2017-07-03T08:45:23.907"
+}
+
+/* 211 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319ec8"),
+    "Total" : 0.00950921,
+    "Price" : 0.00010963,
+    "Quantity" : 86.73913043,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 3175047,
+    "TimeStamp" : "2017-07-03T11:34:16.373"
+}
+
+/* 212 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319ec9"),
+    "Total" : 0.0602,
+    "Price" : 3.01e-05,
+    "Quantity" : 2000.0,
+    "OrderType" : "BUY",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 4673698,
+    "TimeStamp" : "2017-07-03T15:07:33.053"
+}
+
+/* 213 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319eca"),
+    "Total" : 0.00171848,
+    "Price" : 0.00014827,
+    "Quantity" : 11.59022099,
+    "OrderType" : "SELL",
+    "FillType" : "FILL",
+    "Id" : 17074959,
+    "TimeStamp" : "2017-07-03T12:27:28.183"
+}
+
+/* 214 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319ecb"),
+    "Total" : 0.00113032,
+    "Price" : 0.00030538,
+    "Quantity" : 3.70137894,
+    "OrderType" : "SELL",
+    "FillType" : "FILL",
+    "Id" : 5988465,
+    "TimeStamp" : "2017-07-03T10:45:41.573"
+}
+
+/* 215 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319ecc"),
+    "Total" : 0.00150208,
+    "Price" : 1.15e-06,
+    "Quantity" : 1306.16509926,
+    "OrderType" : "BUY",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 1042056,
+    "TimeStamp" : "2017-07-03T15:10:18.83"
+}
+
+/* 216 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319ecd"),
+    "Total" : 0.00821462,
+    "Price" : 4.055e-05,
+    "Quantity" : 202.58026774,
+    "OrderType" : "SELL",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 3270934,
+    "TimeStamp" : "2017-07-03T13:48:16.47"
+}
+
+/* 217 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319ece"),
+    "Total" : 0.08874625,
+    "Price" : 2.411e-05,
+    "Quantity" : 3680.88970212,
+    "OrderType" : "SELL",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 3362348,
+    "TimeStamp" : "2017-07-03T14:50:31.19"
+}
+
+/* 218 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319ecf"),
+    "Total" : 0.00749686,
+    "Price" : 0.00041782,
+    "Quantity" : 17.94282034,
+    "OrderType" : "SELL",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 8714941,
+    "TimeStamp" : "2017-07-02T23:13:42.29"
+}
+
+/* 219 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319ed0"),
+    "Total" : 0.00243701,
+    "Price" : 1.737e-05,
+    "Quantity" : 140.30021402,
+    "OrderType" : "BUY",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 19841182,
+    "TimeStamp" : "2017-07-03T13:20:04.577"
+}
+
+/* 220 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319ed1"),
+    "Total" : 0.00758468,
+    "Price" : 2.63e-06,
+    "Quantity" : 2883.91251804,
+    "OrderType" : "BUY",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 3920496,
+    "TimeStamp" : "2017-07-03T14:21:25.177"
+}
+
+/* 221 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319ed2"),
+    "Total" : 0.01531073,
+    "Price" : 0.00017716,
+    "Quantity" : 86.42318131,
+    "OrderType" : "BUY",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 9905931,
+    "TimeStamp" : "2017-07-03T11:53:22.833"
+}
+
+/* 222 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319ed3"),
+    "Total" : 0.00052889,
+    "Price" : 7.71e-06,
+    "Quantity" : 68.59867543,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 3906117,
+    "TimeStamp" : "2017-07-03T09:16:39.59"
+}
+
+/* 223 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319ed4"),
+    "Total" : 0.04845695,
+    "Price" : 1.435e-05,
+    "Quantity" : 3376.79146875,
+    "OrderType" : "SELL",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 5588379,
+    "TimeStamp" : "2017-07-03T13:57:59.477"
+}
+
+/* 224 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319ed5"),
+    "Total" : 0.009398,
+    "Price" : 4.699e-05,
+    "Quantity" : 200.0,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 8397748,
+    "TimeStamp" : "2017-07-02T21:45:27.7"
+}
+
+/* 225 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319ed6"),
+    "Total" : 0.00436957,
+    "Price" : 0.00066011,
+    "Quantity" : 6.61946377,
+    "OrderType" : "BUY",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 4150448,
+    "TimeStamp" : "2017-07-03T11:38:40.88"
+}
+
+/* 226 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319ed7"),
+    "Total" : 0.055116,
+    "Price" : 0.00018372,
+    "Quantity" : 300.0,
+    "OrderType" : "BUY",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 4332170,
+    "TimeStamp" : "2017-07-03T07:06:11.79"
+}
+
+/* 227 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319ed8"),
+    "Total" : 0.00856103,
+    "Price" : 0.00241512,
+    "Quantity" : 3.54476768,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 8931361,
+    "TimeStamp" : "2017-07-03T10:20:02.127"
+}
+
+/* 228 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319ed9"),
+    "Total" : 0.00345202,
+    "Price" : 0.00207453,
+    "Quantity" : 1.66400256,
+    "OrderType" : "SELL",
+    "FillType" : "FILL",
+    "Id" : 9976407,
+    "TimeStamp" : "2017-07-03T11:06:58.697"
+}
+
+/* 229 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319eda"),
+    "Total" : 0.049612,
+    "Price" : 0.00049612,
+    "Quantity" : 100.0,
+    "OrderType" : "SELL",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 5692970,
+    "TimeStamp" : "2017-07-03T12:42:00.737"
+}
+
+/* 230 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319edb"),
+    "Total" : 0.00063339,
+    "Price" : 8.888e-05,
+    "Quantity" : 7.1263647,
+    "OrderType" : "SELL",
+    "FillType" : "FILL",
+    "Id" : 3847192,
+    "TimeStamp" : "2017-07-03T07:14:08.54"
+}
+
+/* 231 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319edc"),
+    "Total" : 0.00293742,
+    "Price" : 7.96e-06,
+    "Quantity" : 369.02302925,
+    "OrderType" : "SELL",
+    "FillType" : "FILL",
+    "Id" : 1945446,
+    "TimeStamp" : "2017-07-03T13:00:16.06"
+}
+
+/* 232 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319edd"),
+    "Total" : 0.0536009,
+    "Price" : 0.00036,
+    "Quantity" : 148.89139188,
+    "OrderType" : "BUY",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 8060229,
+    "TimeStamp" : "2017-07-03T13:50:41.043"
+}
+
+/* 233 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319ede"),
+    "Total" : 0.01089139,
+    "Price" : 3.787e-05,
+    "Quantity" : 287.59959566,
+    "OrderType" : "SELL",
+    "FillType" : "FILL",
+    "Id" : 10730111,
+    "TimeStamp" : "2017-07-03T13:22:02.89"
+}
+
+/* 234 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319edf"),
+    "Total" : 0.00999362,
+    "Price" : 3.127e-05,
+    "Quantity" : 319.59142361,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 2826025,
+    "TimeStamp" : "2017-07-02T17:27:15.97"
+}
+
+/* 235 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319ee0"),
+    "Total" : 0.00529498,
+    "Price" : 5.494e-05,
+    "Quantity" : 96.37754021,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 29159700,
+    "TimeStamp" : "2017-07-03T14:19:25.043"
+}
+
+/* 236 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319ee1"),
+    "Total" : 0.01916467,
+    "Price" : 0.0001854,
+    "Quantity" : 103.36935396,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 4331769,
+    "TimeStamp" : "2017-07-03T06:41:19.807"
+}
+
+/* 237 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319ee2"),
+    "Total" : 0.00107991,
+    "Price" : 0.00241511,
+    "Quantity" : 0.44714844,
+    "OrderType" : "BUY",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 8931360,
+    "TimeStamp" : "2017-07-03T10:20:02.127"
+}
+
+/* 238 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319ee3"),
+    "Total" : 0.04343275,
+    "Price" : 3.1e-05,
+    "Quantity" : 1401.05664306,
+    "OrderType" : "SELL",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 9468827,
+    "TimeStamp" : "2017-07-03T12:46:54.12"
+}
+
+/* 239 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319ee4"),
+    "Total" : 0.002109,
+    "Price" : 1.406e-05,
+    "Quantity" : 150.0,
+    "OrderType" : "SELL",
+    "FillType" : "FILL",
+    "Id" : 11727249,
+    "TimeStamp" : "2017-07-03T14:46:18.743"
+}
+
+/* 240 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319ee5"),
+    "Total" : 0.00116923,
+    "Price" : 2.83e-06,
+    "Quantity" : 413.15771417,
+    "OrderType" : "SELL",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 1333896,
+    "TimeStamp" : "2017-07-03T14:06:53.64"
+}
+
+/* 241 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319ee6"),
+    "Total" : 0.00555521,
+    "Price" : 2.412e-05,
+    "Quantity" : 230.31576865,
+    "OrderType" : "SELL",
+    "FillType" : "FILL",
+    "Id" : 3362347,
+    "TimeStamp" : "2017-07-03T14:50:31.19"
+}
+
+/* 242 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319ee7"),
+    "Total" : 0.00049999,
+    "Price" : 2.63e-06,
+    "Quantity" : 190.11406844,
+    "OrderType" : "SELL",
+    "FillType" : "FILL",
+    "Id" : 3920468,
+    "TimeStamp" : "2017-07-03T14:19:16.023"
+}
+
+/* 243 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319ee8"),
+    "Total" : 0.14805082,
+    "Price" : 9.499e-05,
+    "Quantity" : 1558.59375,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 8127460,
+    "TimeStamp" : "2017-07-03T14:57:49.083"
+}
+
+/* 244 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319ee9"),
+    "Total" : 0.00669025,
+    "Price" : 3.53e-06,
+    "Quantity" : 1895.2561508,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 2041954,
+    "TimeStamp" : "2017-07-03T14:50:19.96"
+}
+
+/* 245 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319eea"),
+    "Total" : 0.05078575,
+    "Price" : 0.00194999,
+    "Quantity" : 26.0441083,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 20053848,
+    "TimeStamp" : "2017-07-03T15:32:19.883"
+}
+
+/* 246 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319eeb"),
+    "Total" : 0.04645725,
+    "Price" : 2.315e-05,
+    "Quantity" : 2006.79304311,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 5154637,
+    "TimeStamp" : "2017-07-03T15:21:39.963"
+}
+
+/* 247 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319eec"),
+    "Total" : 0.03764765,
+    "Price" : 0.0006601,
+    "Quantity" : 57.03326608,
+    "OrderType" : "SELL",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 4150446,
+    "TimeStamp" : "2017-07-03T11:38:35.647"
+}
+
+/* 248 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319eed"),
+    "Total" : 0.0013195,
+    "Price" : 0.0002639,
+    "Quantity" : 5.0,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 16905405,
+    "TimeStamp" : "2017-07-03T14:25:39.78"
+}
+
+/* 249 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319eee"),
+    "Total" : 0.00499999,
+    "Price" : 0.00473023,
+    "Quantity" : 1.057031,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 17476729,
+    "TimeStamp" : "2017-07-03T15:10:50.54"
+}
+
+/* 250 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319eef"),
+    "Total" : 0.0008065,
+    "Price" : 0.00013986,
+    "Quantity" : 5.76653146,
+    "OrderType" : "SELL",
+    "FillType" : "FILL",
+    "Id" : 17293336,
+    "TimeStamp" : "2017-07-03T08:13:04.777"
+}
+
+/* 251 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319ef0"),
+    "Total" : 0.00078431,
+    "Price" : 0.00017212,
+    "Quantity" : 4.55676433,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 10112348,
+    "TimeStamp" : "2017-07-03T08:45:23.36"
+}
+
+/* 252 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319ef1"),
+    "Total" : 0.00254393,
+    "Price" : 9.3e-07,
+    "Quantity" : 2735.41314516,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 856483,
+    "TimeStamp" : "2017-07-03T15:28:07.933"
+}
+
+/* 253 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319ef2"),
+    "Total" : 0.010299,
+    "Price" : 6.304e-05,
+    "Quantity" : 163.37249803,
+    "OrderType" : "BUY",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 4629026,
+    "TimeStamp" : "2017-07-03T14:19:50.993"
+}
+
+/* 254 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319ef3"),
+    "Total" : 0.00199999,
+    "Price" : 0.00053489,
+    "Quantity" : 3.73908654,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 13270581,
+    "TimeStamp" : "2017-07-03T14:58:34.527"
+}
+
+/* 255 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319ef4"),
+    "Total" : 0.00032982,
+    "Price" : 5.53e-06,
+    "Quantity" : 59.64276582,
+    "OrderType" : "BUY",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 1565902,
+    "TimeStamp" : "2017-07-03T12:42:26.207"
+}
+
+/* 256 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319ef5"),
+    "Total" : 0.0149625,
+    "Price" : 8.56e-06,
+    "Quantity" : 1747.95560748,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 4789268,
+    "TimeStamp" : "2017-07-03T15:01:51.76"
+}
+
+/* 257 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319ef6"),
+    "Total" : 0.01981979,
+    "Price" : 1.435e-05,
+    "Quantity" : 1381.17013213,
+    "OrderType" : "SELL",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 5588378,
+    "TimeStamp" : "2017-07-03T13:57:57.46"
+}
+
+/* 258 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319ef7"),
+    "Total" : 0.00149999,
+    "Price" : 0.00041783,
+    "Quantity" : 3.58997678,
+    "OrderType" : "SELL",
+    "FillType" : "FILL",
+    "Id" : 8714940,
+    "TimeStamp" : "2017-07-02T23:13:42.277"
+}
+
+/* 259 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319ef8"),
+    "Total" : 0.00065489,
+    "Price" : 9.086e-05,
+    "Quantity" : 7.20772669,
+    "OrderType" : "BUY",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 5517642,
+    "TimeStamp" : "2017-07-03T13:29:39.273"
+}
+
+/* 260 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319ef9"),
+    "Total" : 0.0005265,
+    "Price" : 3.51e-06,
+    "Quantity" : 150.0,
+    "OrderType" : "SELL",
+    "FillType" : "FILL",
+    "Id" : 1343462,
+    "TimeStamp" : "2017-07-03T10:41:49.48"
+}
+
+/* 261 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319efa"),
+    "Total" : 0.0315507,
+    "Price" : 7.001e-05,
+    "Quantity" : 450.65995163,
+    "OrderType" : "SELL",
+    "FillType" : "FILL",
+    "Id" : 5241783,
+    "TimeStamp" : "2017-07-02T22:42:29.403"
+}
+
+/* 262 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319efb"),
+    "Total" : 0.01999999,
+    "Price" : 0.00209472,
+    "Quantity" : 9.54781545,
+    "OrderType" : "SELL",
+    "FillType" : "FILL",
+    "Id" : 9976406,
+    "TimeStamp" : "2017-07-03T11:06:58.697"
+}
+
+/* 263 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319efc"),
+    "Total" : 0.04819537,
+    "Price" : 0.00030815,
+    "Quantity" : 156.40231198,
+    "OrderType" : "SELL",
+    "FillType" : "FILL",
+    "Id" : 10085623,
+    "TimeStamp" : "2017-07-03T14:39:00.763"
+}
+
+/* 264 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319efd"),
+    "Total" : 0.00149999,
+    "Price" : 3.824e-05,
+    "Quantity" : 39.22594142,
+    "OrderType" : "SELL",
+    "FillType" : "FILL",
+    "Id" : 10187958,
+    "TimeStamp" : "2017-07-03T11:53:05.65"
+}
+
+/* 265 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319efe"),
+    "Total" : 0.16077872,
+    "Price" : 5.471e-05,
+    "Quantity" : 2938.744823,
+    "OrderType" : "SELL",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 29159555,
+    "TimeStamp" : "2017-07-03T14:16:42.35"
+}
+
+/* 266 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319eff"),
+    "Total" : 0.00750174,
+    "Price" : 0.000164,
+    "Quantity" : 45.74235144,
+    "OrderType" : "BUY",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 11440981,
+    "TimeStamp" : "2017-07-03T13:59:17.827"
+}
+
+/* 267 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f00"),
+    "Total" : 0.01002665,
+    "Price" : 3.009e-05,
+    "Quantity" : 333.22225924,
+    "OrderType" : "BUY",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 4673697,
+    "TimeStamp" : "2017-07-03T15:07:33.053"
+}
+
+/* 268 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f01"),
+    "Total" : 0.00720819,
+    "Price" : 3.101e-05,
+    "Quantity" : 232.44742947,
+    "OrderType" : "SELL",
+    "FillType" : "FILL",
+    "Id" : 9468826,
+    "TimeStamp" : "2017-07-03T12:46:54.12"
+}
+
+/* 269 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f02"),
+    "Total" : 0.03890085,
+    "Price" : 0.00038667,
+    "Quantity" : 100.60478629,
+    "OrderType" : "SELL",
+    "FillType" : "FILL",
+    "Id" : 3885036,
+    "TimeStamp" : "2017-07-03T15:04:24.643"
+}
+
+/* 270 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f03"),
+    "Total" : 0.0332493,
+    "Price" : 0.00029087,
+    "Quantity" : 114.30985825,
+    "OrderType" : "SELL",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 5988393,
+    "TimeStamp" : "2017-07-03T10:34:34.173"
+}
+
+/* 271 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f04"),
+    "Total" : 0.0161334,
+    "Price" : 8.963e-05,
+    "Quantity" : 180.0,
+    "OrderType" : "SELL",
+    "FillType" : "FILL",
+    "Id" : 3847191,
+    "TimeStamp" : "2017-07-03T07:14:08.54"
+}
+
+/* 272 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f05"),
+    "Total" : 0.01012118,
+    "Price" : 0.00267942,
+    "Quantity" : 3.7773789,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 12129880,
+    "TimeStamp" : "2017-07-03T14:49:27.933"
+}
+
+/* 273 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f06"),
+    "Total" : 1.28e-06,
+    "Price" : 5.914e-05,
+    "Quantity" : 0.0216681,
+    "OrderType" : "BUY",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 2799442,
+    "TimeStamp" : "2017-07-03T14:15:04.853"
+}
+
+/* 274 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f07"),
+    "Total" : 0.01361474,
+    "Price" : 3.129e-05,
+    "Quantity" : 435.11493361,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 2825998,
+    "TimeStamp" : "2017-07-02T17:15:14.477"
+}
+
+/* 275 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f08"),
+    "Total" : 0.0283,
+    "Price" : 2.83e-06,
+    "Quantity" : 10000.0,
+    "OrderType" : "SELL",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 1333891,
+    "TimeStamp" : "2017-07-03T14:06:03.04"
+}
+
+/* 276 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f09"),
+    "Total" : 0.00254719,
+    "Price" : 4.7e-05,
+    "Quantity" : 54.19559029,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 8397741,
+    "TimeStamp" : "2017-07-02T21:45:02.603"
+}
+
+/* 277 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f0a"),
+    "Total" : 0.01899647,
+    "Price" : 0.00066011,
+    "Quantity" : 28.77774107,
+    "OrderType" : "SELL",
+    "FillType" : "FILL",
+    "Id" : 4150445,
+    "TimeStamp" : "2017-07-03T11:38:29.693"
+}
+
+/* 278 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f0b"),
+    "Total" : 0.01121989,
+    "Price" : 6.23e-06,
+    "Quantity" : 1800.94644766,
+    "OrderType" : "BUY",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 5225704,
+    "TimeStamp" : "2017-07-03T13:49:40.51"
+}
+
+/* 279 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f0c"),
+    "Total" : 0.00199499,
+    "Price" : 0.00241511,
+    "Quantity" : 0.82604591,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 8931271,
+    "TimeStamp" : "2017-07-03T09:41:43.233"
+}
+
+/* 280 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f0d"),
+    "Total" : 0.14402927,
+    "Price" : 0.000495,
+    "Quantity" : 290.96822364,
+    "OrderType" : "SELL",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 5692416,
+    "TimeStamp" : "2017-07-03T12:37:08.24"
+}
+
+/* 281 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f0e"),
+    "Total" : 0.01999999,
+    "Price" : 8.15e-06,
+    "Quantity" : 2453.98773006,
+    "OrderType" : "SELL",
+    "FillType" : "FILL",
+    "Id" : 1945445,
+    "TimeStamp" : "2017-07-03T12:59:52.357"
+}
+
+/* 282 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f0f"),
+    "Total" : 0.00160201,
+    "Price" : 0.00014828,
+    "Quantity" : 10.80399844,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 17074958,
+    "TimeStamp" : "2017-07-03T12:27:24.403"
+}
+
+/* 283 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f10"),
+    "Total" : 0.08101757,
+    "Price" : 0.00193901,
+    "Quantity" : 41.78295925,
+    "OrderType" : "SELL",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 20053799,
+    "TimeStamp" : "2017-07-03T15:31:58.29"
+}
+
+/* 284 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f11"),
+    "Total" : 0.00999999,
+    "Price" : 6.6e-07,
+    "Quantity" : 15151.51515151,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 1429513,
+    "TimeStamp" : "2017-07-03T15:02:23.503"
+}
+
+/* 285 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f12"),
+    "Total" : 0.00049875,
+    "Price" : 5.188e-05,
+    "Quantity" : 9.61353123,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 2333647,
+    "TimeStamp" : "2017-07-03T05:08:42.267"
+}
+
+/* 286 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f13"),
+    "Total" : 0.00186592,
+    "Price" : 0.02974987,
+    "Quantity" : 0.06272045,
+    "OrderType" : "BUY",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 22343815,
+    "TimeStamp" : "2017-07-03T12:50:41.347"
+}
+
+/* 287 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f14"),
+    "Total" : 0.00310967,
+    "Price" : 0.0002072,
+    "Quantity" : 15.00810181,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 5923221,
+    "TimeStamp" : "2017-07-02T22:16:25.923"
+}
+
+/* 288 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f15"),
+    "Total" : 0.00124384,
+    "Price" : 6.412e-05,
+    "Quantity" : 19.39874732,
+    "OrderType" : "BUY",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 17776764,
+    "TimeStamp" : "2017-07-03T14:18:06.28"
+}
+
+/* 289 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f16"),
+    "Total" : 0.00078785,
+    "Price" : 0.00018819,
+    "Quantity" : 4.18646081,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 4331667,
+    "TimeStamp" : "2017-07-03T06:36:25.91"
+}
+
+/* 290 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f17"),
+    "Total" : 0.0012397,
+    "Price" : 1.01e-06,
+    "Quantity" : 1227.43,
+    "OrderType" : "BUY",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 1679579,
+    "TimeStamp" : "2017-07-03T13:29:40.447"
+}
+
+/* 291 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f18"),
+    "Total" : 0.00082844,
+    "Price" : 4.61e-05,
+    "Quantity" : 17.97056008,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 3580069,
+    "TimeStamp" : "2017-07-03T15:20:41.27"
+}
+
+/* 292 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f19"),
+    "Total" : 0.002816,
+    "Price" : 1.408e-05,
+    "Quantity" : 200.0,
+    "OrderType" : "SELL",
+    "FillType" : "FILL",
+    "Id" : 11727248,
+    "TimeStamp" : "2017-07-03T14:46:18.743"
+}
+
+/* 293 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f1a"),
+    "Total" : 0.00069825,
+    "Price" : 0.000164,
+    "Quantity" : 4.25764856,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 11440926,
+    "TimeStamp" : "2017-07-03T13:58:40.843"
+}
+
+/* 294 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f1b"),
+    "Total" : 0.06307145,
+    "Price" : 0.00026361,
+    "Quantity" : 239.26046053,
+    "OrderType" : "SELL",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 16905279,
+    "TimeStamp" : "2017-07-03T14:22:13.69"
+}
+
+/* 295 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f1c"),
+    "Total" : 0.0128779,
+    "Price" : 0.00017716,
+    "Quantity" : 72.69079424,
+    "OrderType" : "BUY",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 9905930,
+    "TimeStamp" : "2017-07-03T11:53:22.833"
+}
+
+/* 296 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f1d"),
+    "Total" : 0.0852,
+    "Price" : 0.000284,
+    "Quantity" : 300.0,
+    "OrderType" : "SELL",
+    "FillType" : "FILL",
+    "Id" : 21961389,
+    "TimeStamp" : "2017-07-03T12:57:08.157"
+}
+
+/* 297 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f1e"),
+    "Total" : 0.00055403,
+    "Price" : 1.737e-05,
+    "Quantity" : 31.89604004,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 19841142,
+    "TimeStamp" : "2017-07-03T13:17:42.09"
+}
+
+/* 298 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f1f"),
+    "Total" : 0.01619,
+    "Price" : 0.0001619,
+    "Quantity" : 100.0,
+    "OrderType" : "SELL",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 6336009,
+    "TimeStamp" : "2017-07-03T12:40:28.38"
+}
+
+/* 299 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f20"),
+    "Total" : 0.00059257,
+    "Price" : 2.315e-05,
+    "Quantity" : 25.59726962,
+    "OrderType" : "BUY",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 5154636,
+    "TimeStamp" : "2017-07-03T15:21:39.963"
+}
+
+/* 300 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f21"),
+    "Total" : 0.00249999,
+    "Price" : 3.56e-06,
+    "Quantity" : 702.24719101,
+    "OrderType" : "SELL",
+    "FillType" : "FILL",
+    "Id" : 2041952,
+    "TimeStamp" : "2017-07-03T14:50:15.8"
+}
+
+/* 301 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f22"),
+    "Total" : 0.06106452,
+    "Price" : 9.499e-05,
+    "Quantity" : 642.85215117,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 8127450,
+    "TimeStamp" : "2017-07-03T14:57:40.363"
+}
+
+/* 302 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f23"),
+    "Total" : 0.00858572,
+    "Price" : 0.00209473,
+    "Quantity" : 4.09872541,
+    "OrderType" : "SELL",
+    "FillType" : "FILL",
+    "Id" : 9976405,
+    "TimeStamp" : "2017-07-03T11:06:58.697"
+}
+
+/* 303 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f24"),
+    "Total" : 0.1164657,
+    "Price" : 0.00035965,
+    "Quantity" : 323.83067043,
+    "OrderType" : "SELL",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 8060210,
+    "TimeStamp" : "2017-07-03T13:48:50.813"
+}
+
+/* 304 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f25"),
+    "Total" : 0.00999999,
+    "Price" : 1.14e-06,
+    "Quantity" : 8771.92982456,
+    "OrderType" : "SELL",
+    "FillType" : "FILL",
+    "Id" : 1042049,
+    "TimeStamp" : "2017-07-03T15:05:34.623"
+}
+
+/* 305 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f26"),
+    "Total" : 1.32e-06,
+    "Price" : 3.788e-05,
+    "Quantity" : 0.03485497,
+    "OrderType" : "SELL",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 10730103,
+    "TimeStamp" : "2017-07-03T13:21:32.107"
+}
+
+/* 306 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f27"),
+    "Total" : 0.00160201,
+    "Price" : 0.00014828,
+    "Quantity" : 10.80399844,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 17074953,
+    "TimeStamp" : "2017-07-03T12:27:19.233"
+}
+
+/* 307 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f28"),
+    "Total" : 0.00847609,
+    "Price" : 0.00010969,
+    "Quantity" : 77.273194,
+    "OrderType" : "SELL",
+    "FillType" : "FILL",
+    "Id" : 3175024,
+    "TimeStamp" : "2017-07-03T11:32:29.777"
+}
+
+/* 308 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f29"),
+    "Total" : 0.00100828,
+    "Price" : 0.00193901,
+    "Quantity" : 0.52,
+    "OrderType" : "SELL",
+    "FillType" : "FILL",
+    "Id" : 20053798,
+    "TimeStamp" : "2017-07-03T15:31:58.29"
+}
+
+/* 309 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f2a"),
+    "Total" : 0.010815,
+    "Price" : 1.442e-05,
+    "Quantity" : 750.0,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 5588337,
+    "TimeStamp" : "2017-07-03T13:56:43.353"
+}
+
+/* 310 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f2b"),
+    "Total" : 0.05159349,
+    "Price" : 0.0001391,
+    "Quantity" : 370.90935339,
+    "OrderType" : "SELL",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 17292894,
+    "TimeStamp" : "2017-07-03T08:03:54.58"
+}
+
+/* 311 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f2c"),
+    "Total" : 0.02926013,
+    "Price" : 9.3e-07,
+    "Quantity" : 31462.51217742,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 856481,
+    "TimeStamp" : "2017-07-03T15:28:04.09"
+}
+
+/* 312 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f2d"),
+    "Total" : 0.00199999,
+    "Price" : 0.00053489,
+    "Quantity" : 3.73908654,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 13270577,
+    "TimeStamp" : "2017-07-03T14:58:32.42"
+}
+
+/* 313 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f2e"),
+    "Total" : 0.00072553,
+    "Price" : 4.055e-05,
+    "Quantity" : 17.89227315,
+    "OrderType" : "SELL",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 3270932,
+    "TimeStamp" : "2017-07-03T13:48:00.22"
+}
+
+/* 314 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f2f"),
+    "Total" : 0.0142819,
+    "Price" : 1.699e-05,
+    "Quantity" : 840.60633037,
+    "OrderType" : "BUY",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 19841141,
+    "TimeStamp" : "2017-07-03T13:17:42.09"
+}
+
+/* 315 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f30"),
+    "Total" : 0.04968595,
+    "Price" : 2.315e-05,
+    "Quantity" : 2146.26171319,
+    "OrderType" : "BUY",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 5154635,
+    "TimeStamp" : "2017-07-03T15:21:39.947"
+}
+
+/* 316 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f31"),
+    "Total" : 0.00281708,
+    "Price" : 0.00100094,
+    "Quantity" : 2.81443491,
+    "OrderType" : "SELL",
+    "FillType" : "FILL",
+    "Id" : 13709117,
+    "TimeStamp" : "2017-07-03T12:19:16.013"
+}
+
+/* 317 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f32"),
+    "Total" : 0.00099749,
+    "Price" : 1.839e-05,
+    "Quantity" : 54.24143556,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 4772925,
+    "TimeStamp" : "2017-07-03T13:07:48.377"
+}
+
+/* 318 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f33"),
+    "Total" : 0.00440037,
+    "Price" : 0.00066011,
+    "Quantity" : 6.66611733,
+    "OrderType" : "SELL",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 4150438,
+    "TimeStamp" : "2017-07-03T11:36:41.533"
+}
+
+/* 319 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f34"),
+    "Total" : 0.00237402,
+    "Price" : 0.00027501,
+    "Quantity" : 8.63249308,
+    "OrderType" : "SELL",
+    "FillType" : "FILL",
+    "Id" : 4357758,
+    "TimeStamp" : "2017-07-03T14:38:17.683"
+}
+
+/* 320 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f35"),
+    "Total" : 0.0120805,
+    "Price" : 0.0024161,
+    "Quantity" : 5.0,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 8931138,
+    "TimeStamp" : "2017-07-03T08:31:21.733"
+}
+
+/* 321 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f36"),
+    "Total" : 0.00499999,
+    "Price" : 0.00473023,
+    "Quantity" : 1.057031,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 17476726,
+    "TimeStamp" : "2017-07-03T15:10:44.35"
+}
+
+/* 322 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f37"),
+    "Total" : 0.02152299,
+    "Price" : 0.00018182,
+    "Quantity" : 118.37530717,
+    "OrderType" : "SELL",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 4331562,
+    "TimeStamp" : "2017-07-03T06:30:38.65"
+}
+
+/* 323 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f38"),
+    "Total" : 0.00051751,
+    "Price" : 0.00058143,
+    "Quantity" : 0.89006891,
+    "OrderType" : "SELL",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 4985524,
+    "TimeStamp" : "2017-07-03T13:30:58.6"
+}
+
+/* 324 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f39"),
+    "Total" : 0.18167309,
+    "Price" : 0.00017689,
+    "Quantity" : 1027.03992784,
+    "OrderType" : "BUY",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 14481670,
+    "TimeStamp" : "2017-07-03T14:21:12.787"
+}
+
+/* 325 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f3a"),
+    "Total" : 0.01093773,
+    "Price" : 2.412e-05,
+    "Quantity" : 453.47161966,
+    "OrderType" : "SELL",
+    "FillType" : "FILL",
+    "Id" : 3362346,
+    "TimeStamp" : "2017-07-03T14:50:31.19"
+}
+
+/* 326 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f3b"),
+    "Total" : 0.00506045,
+    "Price" : 4.606e-05,
+    "Quantity" : 109.86668136,
+    "OrderType" : "BUY",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 8397728,
+    "TimeStamp" : "2017-07-02T21:44:02.13"
+}
+
+/* 327 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f3c"),
+    "Total" : 0.01964114,
+    "Price" : 6.23e-06,
+    "Quantity" : 3152.67160112,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 5225681,
+    "TimeStamp" : "2017-07-03T13:48:30.163"
+}
+
+/* 328 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f3d"),
+    "Total" : 0.00270097,
+    "Price" : 6.409e-05,
+    "Quantity" : 42.1434609,
+    "OrderType" : "BUY",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 17776758,
+    "TimeStamp" : "2017-07-03T14:18:01.907"
+}
+
+/* 329 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f3e"),
+    "Total" : 0.0132,
+    "Price" : 2.64e-06,
+    "Quantity" : 5000.0,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 3920466,
+    "TimeStamp" : "2017-07-03T14:19:14.303"
+}
+
+/* 330 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f3f"),
+    "Total" : 0.01421312,
+    "Price" : 8.2e-06,
+    "Quantity" : 1733.30751523,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 1945440,
+    "TimeStamp" : "2017-07-03T12:58:55.573"
+}
+
+/* 331 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f40"),
+    "Total" : 0.00017111,
+    "Price" : 6.587e-05,
+    "Quantity" : 2.59773394,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 4628996,
+    "TimeStamp" : "2017-07-03T14:19:14.837"
+}
+
+/* 332 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f41"),
+    "Total" : 0.00215987,
+    "Price" : 7.71e-06,
+    "Quantity" : 280.13965953,
+    "OrderType" : "SELL",
+    "FillType" : "FILL",
+    "Id" : 3906106,
+    "TimeStamp" : "2017-07-03T09:16:35.213"
+}
+
+/* 333 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f42"),
+    "Total" : 0.05928014,
+    "Price" : 4.051e-05,
+    "Quantity" : 1463.34607903,
+    "OrderType" : "SELL",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 3270930,
+    "TimeStamp" : "2017-07-03T13:46:39.313"
+}
+
+/* 334 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f43"),
+    "Total" : 0.00175772,
+    "Price" : 3.51e-06,
+    "Quantity" : 500.777625,
+    "OrderType" : "BUY",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 1343245,
+    "TimeStamp" : "2017-07-03T10:19:55.77"
+}
+
+/* 335 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f44"),
+    "Total" : 0.00417702,
+    "Price" : 0.0001619,
+    "Quantity" : 25.8,
+    "OrderType" : "SELL",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 6336008,
+    "TimeStamp" : "2017-07-03T12:39:21.737"
+}
+
+/* 336 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f45"),
+    "Total" : 0.04710029,
+    "Price" : 0.00207449,
+    "Quantity" : 22.70451964,
+    "OrderType" : "SELL",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 9976360,
+    "TimeStamp" : "2017-07-03T11:05:07.033"
+}
+
+/* 337 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f46"),
+    "Total" : 0.00166119,
+    "Price" : 0.01567769,
+    "Quantity" : 0.10595887,
+    "OrderType" : "SELL",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 7359109,
+    "TimeStamp" : "2017-07-02T21:52:25.677"
+}
+
+/* 338 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f47"),
+    "Total" : 0.20595133,
+    "Price" : 0.00016398,
+    "Quantity" : 1255.953993,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 11440760,
+    "TimeStamp" : "2017-07-03T13:56:21.26"
+}
+
+/* 339 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f48"),
+    "Total" : 0.03993669,
+    "Price" : 0.00030805,
+    "Quantity" : 129.64353445,
+    "OrderType" : "SELL",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 10085579,
+    "TimeStamp" : "2017-07-03T14:25:27.06"
+}
+
+/* 340 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f49"),
+    "Total" : 0.00232096,
+    "Price" : 3.816e-05,
+    "Quantity" : 60.82196036,
+    "OrderType" : "SELL",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 10187893,
+    "TimeStamp" : "2017-07-03T11:50:58.323"
+}
+
+/* 341 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f4a"),
+    "Total" : 0.45539999,
+    "Price" : 0.00049501,
+    "Quantity" : 919.98141451,
+    "OrderType" : "SELL",
+    "FillType" : "FILL",
+    "Id" : 5692415,
+    "TimeStamp" : "2017-07-03T12:37:08.24"
+}
+
+/* 342 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f4b"),
+    "Total" : 0.05408523,
+    "Price" : 3.101e-05,
+    "Quantity" : 1744.12226469,
+    "OrderType" : "SELL",
+    "FillType" : "FILL",
+    "Id" : 9468825,
+    "TimeStamp" : "2017-07-03T12:46:54.12"
+}
+
+/* 343 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f4c"),
+    "Total" : 0.03784862,
+    "Price" : 8.992e-05,
+    "Quantity" : 420.91446206,
+    "OrderType" : "SELL",
+    "FillType" : "FILL",
+    "Id" : 3847190,
+    "TimeStamp" : "2017-07-03T07:14:08.54"
+}
+
+/* 344 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f4d"),
+    "Total" : 0.02232182,
+    "Price" : 0.00030599,
+    "Quantity" : 72.94953429,
+    "OrderType" : "BUY",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 5988380,
+    "TimeStamp" : "2017-07-03T10:32:40.263"
+}
+
+/* 345 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f4e"),
+    "Total" : 0.00135958,
+    "Price" : 3.125e-05,
+    "Quantity" : 43.50663627,
+    "OrderType" : "BUY",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 2825997,
+    "TimeStamp" : "2017-07-02T17:15:14.477"
+}
+
+/* 346 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f4f"),
+    "Total" : 0.021318,
+    "Price" : 0.00028424,
+    "Quantity" : 75.0,
+    "OrderType" : "SELL",
+    "FillType" : "FILL",
+    "Id" : 21961388,
+    "TimeStamp" : "2017-07-03T12:57:08.157"
+}
+
+/* 347 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f50"),
+    "Total" : 0.01740372,
+    "Price" : 0.00017688,
+    "Quantity" : 98.39285844,
+    "OrderType" : "BUY",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 14481669,
+    "TimeStamp" : "2017-07-03T14:21:12.787"
+}
+
+/* 348 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f51"),
+    "Total" : 0.00149999,
+    "Price" : 2.83e-06,
+    "Quantity" : 530.03533567,
+    "OrderType" : "SELL",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 1333887,
+    "TimeStamp" : "2017-07-03T14:02:20.317"
+}
+
+/* 349 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f52"),
+    "Total" : 0.00595686,
+    "Price" : 9.063e-05,
+    "Quantity" : 65.72727379,
+    "OrderType" : "BUY",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 5517641,
+    "TimeStamp" : "2017-07-03T13:29:39.273"
+}
+
+/* 350 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f53"),
+    "Total" : 0.48489164,
+    "Price" : 0.02974987,
+    "Quantity" : 16.2989502,
+    "OrderType" : "BUY",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 22343814,
+    "TimeStamp" : "2017-07-03T12:50:41.347"
+}
+
+/* 351 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f54"),
+    "Total" : 0.0028007,
+    "Price" : 6.409e-05,
+    "Quantity" : 43.69961115,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 17776631,
+    "TimeStamp" : "2017-07-03T14:16:54.867"
+}
+
+/* 352 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f55"),
+    "Total" : 0.02725733,
+    "Price" : 0.00031309,
+    "Quantity" : 87.05910721,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 10085562,
+    "TimeStamp" : "2017-07-03T14:19:59.983"
+}
+
+/* 353 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f56"),
+    "Total" : 0.00992102,
+    "Price" : 0.00035965,
+    "Quantity" : 27.585234,
+    "OrderType" : "SELL",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 8060193,
+    "TimeStamp" : "2017-07-03T13:48:00.64"
+}
+
+/* 354 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f57"),
+    "Total" : 0.00151869,
+    "Price" : 8.56e-06,
+    "Quantity" : 177.4182102,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 4789252,
+    "TimeStamp" : "2017-07-03T14:58:33.63"
+}
+
+/* 355 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f58"),
+    "Total" : 0.00500001,
+    "Price" : 3.102e-05,
+    "Quantity" : 161.18683139,
+    "OrderType" : "SELL",
+    "FillType" : "FILL",
+    "Id" : 9468824,
+    "TimeStamp" : "2017-07-03T12:46:54.12"
+}
+
+/* 356 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f59"),
+    "Total" : 0.00499999,
+    "Price" : 3.788e-05,
+    "Quantity" : 131.99577613,
+    "OrderType" : "SELL",
+    "FillType" : "FILL",
+    "Id" : 10730102,
+    "TimeStamp" : "2017-07-03T13:21:32.107"
+}
+
+/* 357 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f5a"),
+    "Total" : 0.02771722,
+    "Price" : 0.00018278,
+    "Quantity" : 151.64255867,
+    "OrderType" : "SELL",
+    "FillType" : "FILL",
+    "Id" : 4331243,
+    "TimeStamp" : "2017-07-03T06:16:35.98"
+}
+
+/* 358 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f5b"),
+    "Total" : 0.00199999,
+    "Price" : 0.00053489,
+    "Quantity" : 3.73908654,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 13270575,
+    "TimeStamp" : "2017-07-03T14:58:29.917"
+}
+
+/* 359 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f5c"),
+    "Total" : 0.00368503,
+    "Price" : 0.00058067,
+    "Quantity" : 6.34618209,
+    "OrderType" : "BUY",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 4985513,
+    "TimeStamp" : "2017-07-03T13:29:39.477"
+}
+
+/* 360 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f5d"),
+    "Total" : 0.142485,
+    "Price" : 9.499e-05,
+    "Quantity" : 1500.0,
+    "OrderType" : "BUY",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 8127449,
+    "TimeStamp" : "2017-07-03T14:57:40.363"
+}
+
+/* 361 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f5e"),
+    "Total" : 0.0066724,
+    "Price" : 3.57e-06,
+    "Quantity" : 1869.02221999,
+    "OrderType" : "SELL",
+    "FillType" : "FILL",
+    "Id" : 2041951,
+    "TimeStamp" : "2017-07-03T14:50:15.8"
+}
+
+/* 362 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f5f"),
+    "Total" : 0.04552148,
+    "Price" : 9.06e-05,
+    "Quantity" : 502.44464388,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 5517606,
+    "TimeStamp" : "2017-07-03T13:17:46.917"
+}
+
+/* 363 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f60"),
+    "Total" : 0.00028895,
+    "Price" : 6.23e-06,
+    "Quantity" : 46.38195122,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 5225672,
+    "TimeStamp" : "2017-07-03T13:48:07.74"
+}
+
+/* 364 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f61"),
+    "Total" : 0.00114295,
+    "Price" : 7.014e-05,
+    "Quantity" : 16.29540918,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 5241729,
+    "TimeStamp" : "2017-07-02T21:27:24.997"
+}
+
+/* 365 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f62"),
+    "Total" : 0.01081979,
+    "Price" : 8.54e-06,
+    "Quantity" : 1266.9551428,
+    "OrderType" : "BUY",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 4789246,
+    "TimeStamp" : "2017-07-03T14:57:48.093"
+}
+
+/* 366 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f63"),
+    "Total" : 0.00199501,
+    "Price" : 5.494e-05,
+    "Quantity" : 36.31270386,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 29159521,
+    "TimeStamp" : "2017-07-03T14:16:07.287"
+}
+
+/* 367 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f64"),
+    "Total" : 0.01093554,
+    "Price" : 0.00017716,
+    "Quantity" : 61.72692465,
+    "OrderType" : "BUY",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 9905929,
+    "TimeStamp" : "2017-07-03T11:53:22.833"
+}
+
+/* 368 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f65"),
+    "Total" : 0.00078431,
+    "Price" : 0.00017212,
+    "Quantity" : 4.55676433,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 10112346,
+    "TimeStamp" : "2017-07-03T08:45:22.953"
+}
+
+/* 369 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f66"),
+    "Total" : 0.00147596,
+    "Price" : 1.13e-06,
+    "Quantity" : 1306.16509926,
+    "OrderType" : "SELL",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 1042044,
+    "TimeStamp" : "2017-07-03T15:02:44.59"
+}
+
+/* 370 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f67"),
+    "Total" : 0.00049999,
+    "Price" : 0.00030724,
+    "Quantity" : 1.62739226,
+    "OrderType" : "BUY",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 5988377,
+    "TimeStamp" : "2017-07-03T10:31:50.73"
+}
+
+/* 371 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f68"),
+    "Total" : 0.06629439,
+    "Price" : 0.00057461,
+    "Quantity" : 115.37284942,
+    "OrderType" : "BUY",
+    "FillType" : "PARTIAL_FILL",
+    "Id" : 4985512,
+    "TimeStamp" : "2017-07-03T13:29:39.477"
+}
+
+/* 372 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f69"),
+    "Total" : 0.00479845,
+    "Price" : 6.6e-07,
+    "Quantity" : 7270.38038977,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 1429511,
+    "TimeStamp" : "2017-07-03T15:02:07.47"
+}
+
+/* 373 */
+{
+    "_id" : ObjectId("595a647d2875cb4754319f6a"),
+    "Total" : 0.0021438,
+    "Price" : 0.00042876,
+    "Quantity" : 5.0,
+    "OrderType" : "BUY",
+    "FillType" : "FILL",
+    "Id" : 8714584,
+    "TimeStamp" : "2017-07-02T22:42:09.133"
+}
