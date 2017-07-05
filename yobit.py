@@ -20,7 +20,7 @@ class Yobit(object):
         self.key = key
         self.secret = secret
         self.public = ['info', 'ticker', 'depth', 'trades']
-        self.trade = ['ActiveOrders', 'getInfo', 'Trade']
+        self.trade = ['ActiveOrders', 'getInfo', 'Trade', 'CancelOrder', 'ActiveOrders','GetDepositAddress']
 
     def api_query(self, method, values={}):
         if method in self.public:
@@ -56,13 +56,14 @@ class Yobit(object):
 
         result = self.api_query('ticker', {'market': market})
 
-        for key, value in result.items():
-            if market == key:
-                result = {'success' : True, 'message' :'', 'result':{'Bid':value['buy'], 'Ask':value['sell'], 'Last':value['last']}}
-                break
-            else:
-                result = {'success': False, 'message': result['error'], 'result': None}
-                break
+        #{'ltc_btc': {'high': 0.02149593, 'low': 0.019, 'avg': 0.02024796, 'vol': 66.6218802, 'vol_cur': 3254.49119283, 'last': 0.02067049, 'buy': 0.02039001, 'sell': 0.02067012, 'updated': 1499253136}}
+        #{'success': True, 'message': '', 'result': {'Bid': 0.02034974, 'Ask': 0.02037084, 'Last': 0.0203508}}
+
+        if result[market]:
+            result = {'success' : True, 'message' :'', 'result':{'Bid':result[market]['buy'], 'Ask':result[market]['sell'], 'Last':result[market]['last']}}
+        else:
+            result = {'success': False, 'message': result['error'], 'result': None}
+
         return result
 
 
@@ -118,7 +119,9 @@ class Yobit(object):
         :return:
         :rtype : dict
         """
-        return self.api_query('CancelOrder', {'order_id': uuid})
+
+        result = self.api_query('CancelOrder', {'order_id': uuid})
+        return result
 
     def get_open_orders(self, market):
         """
@@ -129,7 +132,19 @@ class Yobit(object):
         :return: Open orders info in JSON
         :rtype : dict
         """
-        return self.api_query('ActiveOrders', {'pair': market})
+        #{'success': True, 'message': '', 'result': [{'Uuid': None, 'OrderUuid': '7f43f22f-586b-46d8-a4b2-f457cfeb2aac', 'Exchange': 'BTC-GEO', 'OrderType': 'LIMIT_SELL', 'Quantity': 2.03478908, 'QuantityRemaining': 2.03478908, 'Limit': 0.00097503, 'CommissionPaid': 0.0, 'Price': 0.0, 'PricePerUnit': None, 'Opened': '2017-07-03T14:13:20.903', 'Closed': None, 'CancelInitiated': False, 'ImmediateOrCancel': False, 'IsConditional': False, 'Condition': 'NONE', 'ConditionTarget': None}]}
+        #{'success': 1, 'return': {'240005185729406': {'pair': 'lsk_btc', 'type': 'sell', 'amount': 1, 'rate': 0.096319, 'timestamp_created': '1499255345', 'status': 0}}}
+        result = self.api_query('ActiveOrders', {'pair': market})
+
+        openOrder =[]
+        if result['success'] == 1:
+            for key, value in result['return'].items():
+                openOrder.append({'OrderUuid':key})
+            result = {'success': True, 'message': '', 'result' : openOrder}
+        else:
+            result = {'success': False, 'message': '', 'result': openOrder}
+
+        return result
 
     def get_balance(self, currency):
         """
@@ -140,4 +155,40 @@ class Yobit(object):
         :return: Balance info in JSON
         :rtype : dict
         """
-        return self.api_query('GetDepositAddress', {'coinName': currency, 'need_new':0})
+
+        result = self.api_query('getInfo', {'coinName': currency, 'need_new':0})
+
+        #{'success': True, 'message': '', 'result': {'Currency': 'NXS', 'Balance': 1.55257461, 'Available': 1.55257461, 'Pending': 0.0, 'CryptoAddress': None}}
+        #{'success': 1, 'return': {'rights': {'info': 1, 'trade': 1, 'deposit': 1, 'withdraw': 0}, 'funds': {'btc': 0.00705219, 'lsk': 2}, 'funds_incl_orders': {'btc': 0.00705219, 'lsk': 2}, 'transaction_count': 0, 'open_orders': 0, 'server_time': 1499255221}}
+        #{'success': 1, 'return': {'rights': {'info': 1, 'trade': 1, 'deposit': 1, 'withdraw': 0}, 'funds': {'btc': 0.00705219, 'lsk': 1}, 'funds_incl_orders': {'btc': 0.00705219, 'lsk': 2}, 'transaction_count': 0, 'open_orders': 0, 'server_time': 1499255362}}
+
+        #{'success': False, 'message': 'INVALID_CURRENCY', 'result': None}
+        #{'success': 1, 'return': {'rights': {'info': 1, 'trade': 1, 'deposit': 1, 'withdraw': 0}, 'funds': {'btc': 0.00705219, 'lsk': 1}, 'funds_incl_orders': {'btc': 0.00705219, 'lsk': 2}, 'transaction_count': 0, 'open_orders': 0, 'server_time': 1499255600}}
+        try:
+            result = {'success': True, 'message' :'', 'result':{'Currency': currency, 'Balance': result['return']['funds_incl_orders'][currency], 'Available': result['return']['funds'][currency], 'Pending': 0.0, 'CryptoAddress': None}}
+        except:
+            result = {'success': False, 'message' :'', 'result':{'Currency': currency, 'Balance': 0.0, 'Available': 0.0, 'Pending': 0.0, 'CryptoAddress': None}}
+        return result
+
+    def get_markets(self):
+        """
+        Used to get the open and available trading markets
+        at Bittrex along with other meta data.
+        :return: Available market info in JSON
+        :rtype : dict
+        """
+
+        #
+
+        result = self.api_query('info')
+        print(str(result))
+        detail = []
+        for key, value in result['pairs'].items():
+            IsActive = False
+            if value['hidden'] ==0:
+                IsActive = True
+            dict_result = {'MarketCurrency':key.split('_')[0],'BaseCurrency': key.split('_')[1], 'MarketName':key,'IsActive':IsActive}
+            detail.append(dict_result)
+
+        result={'success' : True, 'message':'', 'result':detail}
+        return result
