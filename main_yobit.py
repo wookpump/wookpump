@@ -91,9 +91,9 @@ class ThreadGetTiker(Thread):
                         price_bid = dict_price_bid[self.MarketName]
                         price_last = dict_price_last[self.MarketName]
 
-                        value_str = 'ASK -  [%s][%.8f],[%s][%.8f]' % (price_ask[0][0], price_ask[0][1], price_ask[1][0], price_ask[1][1])
-                        value_str_bid = 'BID -  [%s][%.8f],[%s][%.8f]' % (price_bid[0][0], price_bid[0][1], price_bid[1][0], price_bid[1][1])
-                        value_str_last = 'LAST - [%s][%.8f],[%s][%.8f]' % (price_last[0][0], price_last[0][1], price_last[1][0], price_last[1][1])
+                        value_str = 'ASK -  [%s][%.8f],[%s][%.8f]' % (priv_time, priv_price, curr_time, curr_price)
+                        value_str_bid = 'BID -  [%s][%.8f],[%s][%.8f]' % (priv_time, priv_price_bid, curr_time, curr_price_bid)
+                        value_str_last = 'LAST - [%s][%.8f],[%s][%.8f]' % (priv_time, priv_price_last, curr_time, curr_price_last)
 
                         printt(self.MarketName + ' : ' + value_str + ' : ' + str('%.8f' % gap_price_rate))
                         printt(self.MarketName + ' : ' + value_str_bid + ' : ' + str('%.8f' % gap_price_rate_bid))
@@ -302,7 +302,7 @@ if __name__  == "__main__":
                 value_str_last = 'LAST - [%s][%.8f],[%s][%.8f]' % (price_last[0][0], price_last[0][1], price_last[1][0], price_last[1][1])
 
                 # printt(key + ' : ' + value_str +' : '+ str('%.8f' % rate))
-                writeLogFile(key.split('_')[0] + ' : ' + value_str + ' : ' + str('%.8f' % rate))
+                printt(key.split('_')[0] + ' : ' + value_str + ' : ' + str('%.8f' % rate))
                 #writeLogFile(key.split('_')[0] + ' : ' + value_str_bid + ' : ' + str('%.8f' % rate_bid))
                 #writeLogFile(key.split('_')[0] + ' : ' + value_str_last + ' : ' + str('%.8f' % rate_last))
                 """
