@@ -20,7 +20,7 @@ class Yobit(object):
         self.key = key
         self.secret = secret
         self.public = ['info', 'ticker', 'depth', 'trades']
-        self.trade = ['ActiveOrders', 'getInfo', 'Trade', 'CancelOrder', 'ActiveOrders','GetDepositAddress']
+        self.trade = ['ActiveOrders', 'getInfo', 'Trade', 'CancelOrder', 'ActiveOrders','GetDepositAddress', 'TradeHistory']
 
     def api_query(self, method, values={}):
         if method in self.public:
@@ -191,4 +191,42 @@ class Yobit(object):
             detail.append(dict_result)
 
         result={'success' : True, 'message':'', 'result':detail}
+        return result
+
+    def get_order_history(self, market, count):
+        """
+        Used to reterieve order trade history of account
+        /account/getorderhistory
+        :param market: optional a string literal for the market (ie. BTC-LTC). If ommited, will return for all markets
+        :type market: str
+        :param count: optional 	the number of records to return
+        :type count: int
+        :return: order history in JSON
+        :rtype : dict
+        
+        from: No. of transaction from which withdrawal starts (value: numeral, on default: 0)
+        count: quantity of withrawal transactions (value: numeral, on default: 1000)
+        from_id: ID of transaction from which withdrawal starts (value: numeral, on default: 0)
+        end_id: ID of transaction at which withdrawal finishes (value: numeral, on default: ∞)
+        order: sorting at withdrawal (value: ASC or DESC, on default: DESC)
+        since: the time to start the display (value: unix time, on default: 0)
+        end: the time to end the display (value: unix time, on default: ∞)
+        pair: pair (example: ltc_btc)
+        """
+
+        #{'success': 1, 'return': {'109825525': {'pair': 'ping_btc', 'type': 'buy', 'amount': 6.09291698, 'rate': 0.0001625, 'order_id': '140019185785530', 'is_your_order': 1, 'timestamp': '1499264633'}, '109825369': {'pair': 'ping_btc', 'type': 'buy', 'amount': 5.82651097, 'rate': 0.00016993, 'order_id': '140019185783578', 'is_your_order': 1, 'timestamp': '1499264444'}}}
+        #{'success': True, 'message': '', 'result': [{'OrderUuid': '13ef657a-ff69-430a-9b30-e9fe548ee3a1', 'Exchange': 'BTC-EBST', 'TimeStamp': '2017-07-03T06:08:53.403', 'OrderType': 'LIMIT_BUY', 'Limit': 7.059e-05, 'Quantity': 9.91557595, 'QuantityRemaining': 0.0, 'Commission': 1.45e-06, 'Price': 0.00058333, 'PricePerUnit': 5.882e-05, 'IsConditional': False, 'Condition': 'NONE', 'ConditionTarget': None, 'ImmediateOrCancel': False, 'Closed': '2017-07-03T06:08:53.547'}, {'OrderUuid': '28ead7b0-fd16-4b81-97ac-d1336259cdd9', 'Exchange': 'BTC-EBST', 'TimeStamp': '2017-06-24T16:10:53.46', 'OrderType': 'LIMIT_SELL', 'Limit': 0.0002381, 'Quantity': 330.16278111, 'QuantityRemaining': 0.0, 'Commission': 0.0001965, 'Price': 0.07861172, 'PricePerUnit': 0.00023809, 'IsConditional': False, 'Condition': 'NONE', 'ConditionTarget': None, 'ImmediateOrCancel': False, 'Closed': '2017-06-24T16:10:57.02'}, {'OrderUuid': '8d5a8f5a-2ca9-44ea-a66f-9cfefe4b0a74', 'Exchange': 'BTC-EBST', 'TimeStamp': '2017-06-24T16:01:05.28', 'OrderType': 'LIMIT_BUY', 'Limit': 0.00074, 'Quantity': 330.16278111, 'QuantityRemaining': 0.0, 'Commission': 0.00057778, 'Price': 0.23111394, 'PricePerUnit': 0.00069999, 'IsConditional': False, 'Condition': 'NONE', 'ConditionTarget': None, 'ImmediateOrCancel': False, 'Closed': '2017-06-24T16:01:05.387'}]}
+
+
+        result = self.api_query('TradeHistory', {'pair':market, 'order': 'DESC', 'count': 1000})
+
+        list_order=[]
+        if result['success'] == 1:
+            for key, value in result['return'].items():
+                list_order.append({'PricePerUnit':value['rate']})
+
+            result = {'success': True, 'message': '', 'result':list_order}
+        else:
+            result = {'success': False, 'message': '', 'result': list_order}
+
         return result
