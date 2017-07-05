@@ -1,5 +1,6 @@
 import time
 from bittrex import Bittrex
+from yobit import Yobit
 import json
 from decimal import *
 import sys
@@ -12,9 +13,9 @@ import socket
 
 slack = slackweb.Slack(url="https://hooks.slack.com/services/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")
 
-AUTO_TRADE = True  # True or False ex)False = Display CoinName Only
-BUY_COIN_UNIT = 0.001  # Total Buy bit at least 0.0005 ex)0.1 = 0.1BIT
-ACCEPT_PRICE_GAP = 0.05  # Gap of prev between curr price ex)0.1 = 10%
+AUTO_TRADE = False  # True or False ex)False = Display CoinName Only
+BUY_COIN_UNIT = 0.0007  # Total Buy bit at least 0.0005 ex)0.1 = 0.1BIT
+ACCEPT_PRICE_GAP = 0.005  # Gap of prev between curr price ex)0.1 = 10%
 IGNORE_GAP_SECONDS = 5  # accept time gap under 10 ex)10 = 10 second
 BUY_PRICE_RATE = 1.01  # Buy coin at Current price * 1.2 ex)1.2 = 120%
 SELL_PRICE_RATE = 1.01  # Sell coin at buy price(Actual) * 1.2 ex)1.2 = 120%
@@ -28,6 +29,10 @@ with open("secrets.json") as secrets_file:
     secrets_file.close()
     bittrex = Bittrex(secrets['key'], secrets['secret'])
 
+with open("secrets_yobit.json") as secrets_file:
+    secrets = json.load(secrets_file)
+    secrets_file.close()
+    yobit = Yobit(secrets['key'], secrets['secret'])
 
 class ThreadGetTiker(Thread):
     def __init__(self, MarketName):
@@ -39,7 +44,12 @@ class ThreadGetTiker(Thread):
             try:
                 current_time = datetime.datetime.now()
                 current_time_str = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                ticker = bittrex.get_ticker(self.MarketName)
+                ticker = yobit.get_ticker(self.MarketName)
+                if ticker['result']['Bid'] == 0 or ticker['result']['Ask'] == 0 or ticker['result']['Last'] == 0 or ticker['result']['Ask'] > 0.1:
+                    dict_price.update({MarketName: [[current_time, 1], [current_time, 1], False]})
+                    dict_price_bid.update({MarketName: [[current_time, 1], [current_time, 1], False]})
+                    dict_price_last.update({MarketName: [[current_time, 1], [current_time, 1], False]})
+                    break
                 price = float(ticker['result']['Ask'])
                 price_bid = float(ticker['result']['Bid'])
                 price_last = float(ticker['result']['Last'])
@@ -76,8 +86,7 @@ class ThreadGetTiker(Thread):
 
                     if gap_price_rate > ACCEPT_PRICE_GAP:
                         #and gap_price_rate_bid > ACCEPT_PRICE_GAP and gap_price_rate_last > ACCEPT_PRICE_GAP:
-                        printt('#################################### ' + self.MarketName.split('-')[
-                            1] + ' #############################')
+                        printt('#################################### ' + self.MarketName.split('_')[0] + ' #############################')
                         price_ask = dict_price[self.MarketName]
                         price_bid = dict_price_bid[self.MarketName]
                         price_last = dict_price_last[self.MarketName]
@@ -90,8 +99,7 @@ class ThreadGetTiker(Thread):
                         printt(self.MarketName + ' : ' + value_str_bid + ' : ' + str('%.8f' % gap_price_rate_bid))
                         printt(self.MarketName + ' : ' + value_str_last + ' : ' + str('%.8f' % gap_price_rate_last))
 
-                        printt('#################################### ' + self.MarketName.split('-')[
-                            1] + ' #############################')
+                        printt('#################################### ' + self.MarketName.split('_')[0] + ' #############################')
 
                         # Real Trading
                         if AUTO_TRADE:
@@ -100,7 +108,7 @@ class ThreadGetTiker(Thread):
 
                             buyResult = buyCoin(self.MarketName, BUY_PRICE_RATE, curr_price)
                             printt(str(buyResult))
-                            coinName = self.MarketName.split('-')[1]
+                            coinName = self.MarketName.split('_')[0]
 
                             sellRate = SELL_PRICE_RATE
 
@@ -138,6 +146,7 @@ class ThreadGetTiker(Thread):
                 traceback.print_exc()
 
 
+
             time.sleep(1.1)
 
 
@@ -145,7 +154,7 @@ def buyCoin(coinName, rate, curr_price):
     askPrice = curr_price * rate
     qty = round(float(BUY_COIN_UNIT / askPrice), 8)
     printt('BUY - ' + coinName + ':' + str('%.8f' % askPrice) + ':' + str('%.8f' % qty))
-    buyResult = bittrex.buy_limit(coinName, qty, askPrice)['result']
+    buyResult = yobit.buy_limit(coinName, qty, askPrice)['result']
 
     return buyResult
 
@@ -155,27 +164,27 @@ def sellCoin(coinName, rate):
     # {'success': True, 'message': '', 'result': {'Currency': 'ANS', 'Balance': None, 'Available': None, 'Pending': None, 'CryptoAddress': None}}
     printt('sellCoin :' + coinName)
     # number of coin
-    balance = bittrex.get_balance(coinName)
+    balance = yobit.get_balance(coinName)
     loop_count = 0
     sell_count = 0
 
     while True:
         if balance['result']['Available'] == None or balance['result']['Available'] == 0.0:
-            balance = bittrex.get_balance(coinName)
+            balance = yobit.get_balance(coinName)
         else:
             if sell_count == 0:
                 coinAvail = '%.8f' % float(balance['result']['Available'])
-                history = bittrex.get_order_history('BTC-' + coinName, 0)
+                history = yobit.get_order_history(coinName + '_btc', 0)
                 buy_actual_price = history['result'][0]['PricePerUnit']
                 bidPrice = '%.8f' % (buy_actual_price * rate)
-                sellResult = bittrex.sell_limit('BTC-' + coinName, coinAvail, bidPrice)['result']
+                sellResult = yobit.sell_limit(coinName + '_btc', coinAvail, bidPrice)['result']
                 printt('sell price : ' + bidPrice + ', sell unit : ' + coinAvail + ', sell_count %d' % sell_count)
                 sell_count += 1
             else:
                 coinAvail = '%.8f' % float(balance['result']['Available'])
                 bidPrice = '%.8f' % (0.0006 / float(coinAvail))
                 printt('sell price : ' + bidPrice + ', sell unit : ' + coinAvail + ', sell market price count %d' % sell_count)
-                sellResult = bittrex.sell_limit('BTC-' + coinName, coinAvail, bidPrice)['result']
+                sellResult = yobit.sell_limit(coinName + '_btc', coinAvail, bidPrice)['result']
                 sell_count += 1
 
         loop_count += 1
@@ -190,18 +199,18 @@ def sellCoin(coinName, rate):
         if during_seconds > CANCEL_TIME:
             loop_count2 = 0
             while True:
-                openOrder = bittrex.get_open_orders('BTC-' + coinName)
+                openOrder = yobit.get_open_orders(coinName + '_btc')
                 for order in openOrder['result']:
-                    bittrex.cancel(order['OrderUuid'])
-                    printt('BTC-' + coinName + ' CANCEL : ' + order['OrderUuid'])
+                    yobit.cancel(order['OrderUuid'])
+                    printt(coinName + '_btc' + ' CANCEL : ' + order['OrderUuid'])
 
-                balance = bittrex.get_balance(coinName)
+                balance = yobit.get_balance(coinName)
 
                 if balance['result']['Available'] != None and balance['result']['Available'] != 0.0:
                     coinAvail = '%.8f' % float(balance['result']['Available'])
                     bidPrice = '%.8f' % (0.0006 / float(coinAvail))
                     printt('sell price : ' + bidPrice + ', sell unit : ' +  coinAvail)
-                    sellResult = bittrex.sell_limit('BTC-' + coinName, coinAvail, bidPrice)['result']
+                    sellResult = yobit.sell_limit(coinName + '_btc', coinAvail, bidPrice)['result']
 
                 loop_count2 += 1
 
@@ -243,21 +252,38 @@ def isExcludedCoin(MarketName):
             print("Included")
             return False
 
-if __name__  == "__main__":
-    result = bittrex.get_markets()
+with open("include_coin_list_yobit.json") as secrets_file:
+    coinList = json.load(secrets_file)
 
-    printt(str(result))
-    for coin in result['result']:
-        MarketName = coin['MarketName']
-        if 'BTC-' in MarketName and coin['IsActive'] and isExcludedCoin(MarketName) is not True:
+
+if __name__  == "__main__":
+    for coin in coinList:
+        print(coin)
+    result = yobit.get_markets()
+
+    #printt(str(result))
+    index = 0
+    #for coin in result['result']:
+    for coin in coinList['coin']:
+        #MarketName = coin['MarketName']
+        MarketName = coin
+        current_time = datetime.datetime.now()
+        dict_price.update({MarketName: [[current_time, 1], [current_time, 1], True]})
+        dict_price_bid.update({MarketName: [[current_time, 1], [current_time, 1], True]})
+        dict_price_last.update({MarketName: [[current_time, 1], [current_time, 1], True]})
+        ThreadGetTiker(MarketName).start()
+        """
+        if '_btc' in MarketName and coin['IsActive'] and isExcludedCoin(MarketName) is not True:
             try:
                 current_time = datetime.datetime.now()
                 dict_price.update({MarketName: [[current_time, 1], [current_time, 1], True]})
                 dict_price_bid.update({MarketName: [[current_time, 1], [current_time, 1], True]})
                 dict_price_last.update({MarketName: [[current_time, 1], [current_time, 1], True]})
                 ThreadGetTiker(MarketName).start()
+                index += 1
             except:
                 print('error : ' + MarketName)
+        """
 
     while True:
         printt('Program is running')
@@ -276,16 +302,16 @@ if __name__  == "__main__":
                 value_str_last = 'LAST - [%s][%.8f],[%s][%.8f]' % (price_last[0][0], price_last[0][1], price_last[1][0], price_last[1][1])
 
                 # printt(key + ' : ' + value_str +' : '+ str('%.8f' % rate))
-                writeLogFile(key.split('-')[1] + ' : ' + value_str + ' : ' + str('%.8f' % rate))
-                writeLogFile(key.split('-')[1] + ' : ' + value_str_bid + ' : ' + str('%.8f' % rate_bid))
-                writeLogFile(key.split('-')[1] + ' : ' + value_str_last + ' : ' + str('%.8f' % rate_last))
+                writeLogFile(key.split('_')[0] + ' : ' + value_str + ' : ' + str('%.8f' % rate))
+                #writeLogFile(key.split('_')[0] + ' : ' + value_str_bid + ' : ' + str('%.8f' % rate_bid))
+                #writeLogFile(key.split('_')[0] + ' : ' + value_str_last + ' : ' + str('%.8f' % rate_last))
                 """
                 if rate > ACCEPT_PRICE_GAP:
-                    printt('#################################### ' + key.split('-')[1] + ' #############################')
-                    printt('#################################### ' + key.split('-')[1] + ' #############################')
-                    printt(key.split('-')[1] + ' : ' + value_str + ' : ' + str('%.8f' % rate))
-                    printt(key.split('-')[1] + ' : ' + value_str_bid + ' : ' + str('%.8f' % rate_bid))
-                    printt('#################################### ' + key.split('-')[1] + ' #############################')
-                    printt('#################################### ' + key.split('-')[1] + ' #############################')
+                    printt('#################################### ' + key.split('_')[0] + ' #############################')
+                    printt('#################################### ' + key.split('_')[0] + ' #############################')
+                    printt(key.split('_')[0] + ' : ' + value_str + ' : ' + str('%.8f' % rate))
+                    printt(key.split('_')[0] + ' : ' + value_str_bid + ' : ' + str('%.8f' % rate_bid))
+                    printt('#################################### ' + key.split('_')[0] + ' #############################')
+                    printt('#################################### ' + key.split('_')[0] + ' #############################')
             """
-        time.sleep(2)
+        time.sleep(5)
