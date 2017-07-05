@@ -138,9 +138,12 @@ class Yobit(object):
 
         openOrder =[]
         if result['success'] == 1:
-            for key, value in result['return'].items():
-                openOrder.append({'OrderUuid':key})
-            result = {'success': True, 'message': '', 'result' : openOrder}
+            try :
+                for key, value in result['return'].items():
+                    openOrder.append({'OrderUuid':key})
+                result = {'success': True, 'message': '', 'result' : openOrder}
+            except:
+                result = {'success': False, 'message': '', 'result': openOrder}
         else:
             result = {'success': False, 'message': '', 'result': openOrder}
 
