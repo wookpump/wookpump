@@ -13,11 +13,11 @@ import socket
 
 slack = slackweb.Slack(url="https://hooks.slack.com/services/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")
 
-AUTO_TRADE = False  # True or False ex)False = Display CoinName Only
-BUY_COIN_UNIT = 0.0007  # Total Buy bit at least 0.0005 ex)0.1 = 0.1BIT
-ACCEPT_PRICE_GAP = 0.005  # Gap of prev between curr price ex)0.1 = 10%
+AUTO_TRADE = True  # True or False ex)False = Display CoinName Only
+BUY_COIN_UNIT = 0.001  # Total Buy bit at least 0.0005 ex)0.1 = 0.1BIT
+ACCEPT_PRICE_GAP = 0.01  # Gap of prev between curr price ex)0.1 = 10%
 IGNORE_GAP_SECONDS = 5  # accept time gap under 10 ex)10 = 10 second
-BUY_PRICE_RATE = 1.01  # Buy coin at Current price * 1.2 ex)1.2 = 120%
+BUY_PRICE_RATE = 1.1  # Buy coin at Current price * 1.2 ex)1.2 = 120%
 SELL_PRICE_RATE = 1.01  # Sell coin at buy price(Actual) * 1.2 ex)1.2 = 120%
 CANCEL_TIME = 5 # afert CANCLE_TIME seconds, cancel all open order and sell market ex) 50 = 50 seconds
 
@@ -154,7 +154,7 @@ def buyCoin(coinName, rate, curr_price):
     askPrice = curr_price * rate
     qty = round(float(BUY_COIN_UNIT / askPrice), 8)
     printt('BUY - ' + coinName + ':' + str('%.8f' % askPrice) + ':' + str('%.8f' % qty))
-    buyResult = yobit.buy_limit(coinName, qty, askPrice)['result']
+    buyResult = yobit.buy_limit(coinName, qty, askPrice)
 
     return buyResult
 
@@ -177,14 +177,14 @@ def sellCoin(coinName, rate):
                 history = yobit.get_order_history(coinName + '_btc', 0)
                 buy_actual_price = history['result'][0]['PricePerUnit']
                 bidPrice = '%.8f' % (buy_actual_price * rate)
-                sellResult = yobit.sell_limit(coinName + '_btc', coinAvail, bidPrice)['result']
+                sellResult = yobit.sell_limit(coinName + '_btc', coinAvail, bidPrice)
                 printt('sell price : ' + bidPrice + ', sell unit : ' + coinAvail + ', sell_count %d' % sell_count)
                 sell_count += 1
             else:
                 coinAvail = '%.8f' % float(balance['result']['Available'])
                 bidPrice = '%.8f' % (0.0006 / float(coinAvail))
                 printt('sell price : ' + bidPrice + ', sell unit : ' + coinAvail + ', sell market price count %d' % sell_count)
-                sellResult = yobit.sell_limit(coinName + '_btc', coinAvail, bidPrice)['result']
+                sellResult = yobit.sell_limit(coinName + '_btc', coinAvail, bidPrice)
                 sell_count += 1
 
         loop_count += 1
@@ -302,7 +302,7 @@ if __name__  == "__main__":
                 value_str_last = 'LAST - [%s][%.8f],[%s][%.8f]' % (price_last[0][0], price_last[0][1], price_last[1][0], price_last[1][1])
 
                 # printt(key + ' : ' + value_str +' : '+ str('%.8f' % rate))
-                printt(key.split('_')[0] + ' : ' + value_str + ' : ' + str('%.8f' % rate))
+                writeLogFile(key.split('_')[0] + ' : ' + value_str + ' : ' + str('%.8f' % rate))
                 #writeLogFile(key.split('_')[0] + ' : ' + value_str_bid + ' : ' + str('%.8f' % rate_bid))
                 #writeLogFile(key.split('_')[0] + ' : ' + value_str_last + ' : ' + str('%.8f' % rate_last))
                 """
