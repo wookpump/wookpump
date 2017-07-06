@@ -280,6 +280,7 @@ if __name__  == "__main__":
         dict_price_bid.update({MarketName: [[current_time, 1], [current_time, 1], True]})
         dict_price_last.update({MarketName: [[current_time, 1], [current_time, 1], True]})
         ThreadGetTiker(MarketName).start()
+        printt(MarketName + ' is started' )
         """
         if '_btc' in MarketName and coin['IsActive'] and isExcludedCoin(MarketName) is not True:
             try:
