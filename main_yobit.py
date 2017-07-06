@@ -273,7 +273,7 @@ if __name__  == "__main__":
     for coin in result['result']:
         #for coin in coinList['coin']:
         MarketName = coin['MarketName']
-        if MarketName.split('_').len() > 4:
+        if len(MarketName.split('_')[0]) > 4:
             continue
         #MarketName = coin
 
