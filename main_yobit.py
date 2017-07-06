@@ -13,7 +13,7 @@ import socket
 
 slack = slackweb.Slack(url="https://hooks.slack.com/services/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")
 
-AUTO_TRADE = True  # True or False ex)False = Display CoinName Only
+AUTO_TRADE = False  # True or False ex)False = Display CoinName Only
 BUY_COIN_UNIT = 0.00011  # Total Buy bit at least 0.00001 ex)0.1 = 0.1BIT
 ACCEPT_PRICE_GAP = 0.05  # Gap of prev between curr price ex)0.1 = 10%
 IGNORE_GAP_SECONDS = 5  # accept time gap under 10 ex)10 = 10 second
@@ -282,6 +282,7 @@ if __name__  == "__main__":
             dict_price_last.update({MarketName: [[current_time, 1], [current_time, 1], True]})
             ThreadGetTiker(MarketName).start()
             printt(MarketName + ' is started' )
+            time.sleep(0.1)
         """
         if '_btc' in MarketName and coin['IsActive'] and isExcludedCoin(MarketName) is not True:
             try:
