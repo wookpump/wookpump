@@ -45,7 +45,7 @@ class ThreadGetTiker(Thread):
                 current_time = datetime.datetime.now()
                 current_time_str = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                 ticker = yobit.get_ticker(self.MarketName)
-                if ticker['result']['Bid'] == 0 or ticker['result']['Ask'] == 0 or ticker['result']['Last'] == 0 or ticker['result']['Ask'] > 0.1:
+                if ticker['result']['Bid'] < 0.00000100 or ticker['result']['Ask'] < 0.00000100 or ticker['result']['Last'] < 0.00000100 or ticker['result']['Ask'] > 0.1:
                     dict_price.update({MarketName: [[current_time, 1], [current_time, 1], False]})
                     dict_price_bid.update({MarketName: [[current_time, 1], [current_time, 1], False]})
                     dict_price_last.update({MarketName: [[current_time, 1], [current_time, 1], False]})
@@ -273,6 +273,8 @@ if __name__  == "__main__":
     for coin in result['result']:
         #for coin in coinList['coin']:
         MarketName = coin['MarketName']
+        if MarketName.split('_').len() > 4:
+            continue
         #MarketName = coin
 
         if '_btc' in MarketName and coin['IsActive'] and isExcludedCoin(MarketName) is not True:
