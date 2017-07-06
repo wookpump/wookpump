@@ -13,12 +13,12 @@ import socket
 
 slack = slackweb.Slack(url="https://hooks.slack.com/services/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")
 
-AUTO_TRADE = False  # True or False ex)False = Display CoinName Only
-BUY_COIN_UNIT = 0.001  # Total Buy bit at least 0.0005 ex)0.1 = 0.1BIT
-ACCEPT_PRICE_GAP = 0.15  # Gap of prev between curr price ex)0.1 = 10%
+AUTO_TRADE = True  # True or False ex)False = Display CoinName Only
+BUY_COIN_UNIT = 0.00011  # Total Buy bit at least 0.00001 ex)0.1 = 0.1BIT
+ACCEPT_PRICE_GAP = 0.05  # Gap of prev between curr price ex)0.1 = 10%
 IGNORE_GAP_SECONDS = 5  # accept time gap under 10 ex)10 = 10 second
-BUY_PRICE_RATE = 1.1  # Buy coin at Current price * 1.2 ex)1.2 = 120%
-SELL_PRICE_RATE = 1.01  # Sell coin at buy price(Actual) * 1.2 ex)1.2 = 120%
+BUY_PRICE_RATE = 1.01  # Buy coin at Current price * 1.2 ex)1.2 = 120%
+SELL_PRICE_RATE = 1.02  # Sell coin at buy price(Actual) * 1.2 ex)1.2 = 120%
 CANCEL_TIME = 5 # afert CANCLE_TIME seconds, cancel all open order and sell market ex) 50 = 50 seconds
 
 dict_price = {}
@@ -84,8 +84,8 @@ class ThreadGetTiker(Thread):
                     gap_price_rate_bid = (curr_price_bid - priv_price_bid) / priv_price_bid
                     gap_price_rate_last = (curr_price_last - priv_price_last) / priv_price_last
 
-                    if gap_price_rate > ACCEPT_PRICE_GAP:
-                        #and gap_price_rate_bid > ACCEPT_PRICE_GAP and gap_price_rate_last > ACCEPT_PRICE_GAP:
+                    if gap_price_rate > ACCEPT_PRICE_GAP and gap_price_rate_bid > ACCEPT_PRICE_GAP:
+                        # and gap_price_rate_last > ACCEPT_PRICE_GAP:
                         printt('#################################### ' + self.MarketName.split('_')[0] + ' #############################')
                         price_ask = dict_price[self.MarketName]
                         price_bid = dict_price_bid[self.MarketName]
@@ -170,6 +170,8 @@ def sellCoin(coinName, rate):
     loop_count = 0
     sell_count = 0
 
+    bidPrice = 0
+
     while True:
         if balance['result']['Available'] == None or balance['result']['Available'] == 0.0:
             balance = yobit.get_balance(coinName)
@@ -180,13 +182,15 @@ def sellCoin(coinName, rate):
                 buy_actual_price = history['result'][0]['PricePerUnit']
                 bidPrice = '%.8f' % (buy_actual_price * rate)
                 sellResult = yobit.sell_limit(coinName + '_btc', coinAvail, bidPrice)
+                printt('D3' + str(sellResult))
                 printt('sell price : ' + bidPrice + ', sell unit : ' + coinAvail + ', sell_count %d' % sell_count)
                 sell_count += 1
             else:
                 coinAvail = '%.8f' % float(balance['result']['Available'])
-                bidPrice = '%.8f' % (0.0006 / float(coinAvail))
+                #bidPrice = '%.8f' % (0.0006 / float(coinAvail))
                 printt('sell price : ' + bidPrice + ', sell unit : ' + coinAvail + ', sell market price count %d' % sell_count)
                 sellResult = yobit.sell_limit(coinName + '_btc', coinAvail, bidPrice)
+                printt('D2' + str(sellResult))
                 sell_count += 1
 
         loop_count += 1
@@ -203,7 +207,8 @@ def sellCoin(coinName, rate):
             while True:
                 openOrder = yobit.get_open_orders(coinName + '_btc')
                 for order in openOrder['result']:
-                    yobit.cancel(order['OrderUuid'])
+                    result = yobit.cancel(order['OrderUuid'])
+                    printt('Cancel : ' + str(result))
                     printt(coinName + '_btc' + ' CANCEL : ' + order['OrderUuid'])
 
                 balance = yobit.get_balance(coinName)
@@ -213,7 +218,7 @@ def sellCoin(coinName, rate):
                     bidPrice = '%.8f' % (0.0006 / float(coinAvail))
                     printt('sell price : ' + bidPrice + ', sell unit : ' +  coinAvail)
                     sellResult = yobit.sell_limit(coinName + '_btc', coinAvail, bidPrice)['result']
-
+                    printt('D1' + str(sellResult))
                 loop_count2 += 1
 
                 printt("After %d seconds Try %d / 20 to Cancel and Sell Market Price" % (CANCEL_TIME, loop_count2))
@@ -259,16 +264,17 @@ with open("include_coin_list_yobit.json") as secrets_file:
 
 
 if __name__  == "__main__":
-    for coin in coinList:
-        print(coin)
+    #for coin in coinList:
+    #    print(coin)
     result = yobit.get_markets()
 
     #printt(str(result))
     index = 0
-    #for coin in result['result']:
-    for coin in coinList['coin']:
-        #MarketName = coin['MarketName']
-        MarketName = coin
+    for coin in result['result']:
+        #for coin in coinList['coin']:
+        MarketName = coin['MarketName']
+        #MarketName = coin
+
         current_time = datetime.datetime.now()
         dict_price.update({MarketName: [[current_time, 1], [current_time, 1], True]})
         dict_price_bid.update({MarketName: [[current_time, 1], [current_time, 1], True]})
@@ -316,4 +322,4 @@ if __name__  == "__main__":
                     printt('#################################### ' + key.split('_')[0] + ' #############################')
                     printt('#################################### ' + key.split('_')[0] + ' #############################')
             """
-        time.sleep(5)
+        time.sleep(2)
