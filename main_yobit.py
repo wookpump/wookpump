@@ -13,9 +13,9 @@ import socket
 
 slack = slackweb.Slack(url="https://hooks.slack.com/services/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")
 
-AUTO_TRADE = True  # True or False ex)False = Display CoinName Only
+AUTO_TRADE = False  # True or False ex)False = Display CoinName Only
 BUY_COIN_UNIT = 0.001  # Total Buy bit at least 0.0005 ex)0.1 = 0.1BIT
-ACCEPT_PRICE_GAP = 0.01  # Gap of prev between curr price ex)0.1 = 10%
+ACCEPT_PRICE_GAP = 0.15  # Gap of prev between curr price ex)0.1 = 10%
 IGNORE_GAP_SECONDS = 5  # accept time gap under 10 ex)10 = 10 second
 BUY_PRICE_RATE = 1.1  # Buy coin at Current price * 1.2 ex)1.2 = 120%
 SELL_PRICE_RATE = 1.01  # Sell coin at buy price(Actual) * 1.2 ex)1.2 = 120%
@@ -105,6 +105,7 @@ class ThreadGetTiker(Thread):
                         if AUTO_TRADE:
                             # close this coin
                             dict_price.update({self.MarketName: [list_priv, list_curr, False]})
+                            printt('curr_price %.8f, BUY_PRICE_RATE %.8f' % (curr_price, BUY_PRICE_RATE))
 
                             buyResult = buyCoin(self.MarketName, BUY_PRICE_RATE, curr_price)
                             printt(str(buyResult))
@@ -160,6 +161,7 @@ def buyCoin(coinName, rate, curr_price):
 
 
 def sellCoin(coinName, rate):
+    sellResult = ''
     start_time = datetime.datetime.now()
     # {'success': True, 'message': '', 'result': {'Currency': 'ANS', 'Balance': None, 'Available': None, 'Pending': None, 'CryptoAddress': None}}
     printt('sellCoin :' + coinName)

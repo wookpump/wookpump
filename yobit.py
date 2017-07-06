@@ -90,7 +90,9 @@ class Yobit(object):
         :return:
         :rtype : dict
         """
-        return self.api_query('Trade', {'type':'buy', 'pair': market, 'amount': quantity, 'rate':rate})
+
+        result = self.api_query('Trade', {'type':'buy', 'pair': market, 'amount': quantity, 'rate':rate})
+        return result
 
     def sell_limit(self, market, quantity, rate):
         """
