@@ -380,9 +380,10 @@ def main():
                 value_str_last = 'LAST - [%s][%.8f],[%s][%.8f]' % (price_last[0][0], price_last[0][1], price_last[1][0], price_last[1][1])
 
                 # printt(key + ' : ' + value_str +' : '+ str('%.8f' % rate))
-                writeLogFile(key.split('_')[0] + ' : ' + value_str + ' : ' + str('%.8f' % rate))
-                writeLogFile(key.split('_')[0] + ' : ' + value_str_bid + ' : ' + str('%.8f' % rate_bid))
-                writeLogFile(key.split('_')[0] + ' : ' + value_str_last + ' : ' + str('%.8f' % rate_last))
+                if AUTO_TRADE == False:
+                    writeLogFile(key.split('_')[0] + ' : ' + value_str + ' : ' + str('%.8f' % rate))
+                    writeLogFile(key.split('_')[0] + ' : ' + value_str_bid + ' : ' + str('%.8f' % rate_bid))
+                    writeLogFile(key.split('_')[0] + ' : ' + value_str_last + ' : ' + str('%.8f' % rate_last))
                 """
                 if rate > ACCEPT_PRICE_GAP:
                     printt('#################################### ' + key.split('_')[0] + ' #############################')
