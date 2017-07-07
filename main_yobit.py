@@ -381,8 +381,8 @@ if __name__  == "__main__":
 
                 # printt(key + ' : ' + value_str +' : '+ str('%.8f' % rate))
                 writeLogFile(key.split('_')[0] + ' : ' + value_str + ' : ' + str('%.8f' % rate))
-                #writeLogFile(key.split('_')[0] + ' : ' + value_str_bid + ' : ' + str('%.8f' % rate_bid))
-                #writeLogFile(key.split('_')[0] + ' : ' + value_str_last + ' : ' + str('%.8f' % rate_last))
+                writeLogFile(key.split('_')[0] + ' : ' + value_str_bid + ' : ' + str('%.8f' % rate_bid))
+                writeLogFile(key.split('_')[0] + ' : ' + value_str_last + ' : ' + str('%.8f' % rate_last))
                 """
                 if rate > ACCEPT_PRICE_GAP:
                     printt('#################################### ' + key.split('_')[0] + ' #############################')
