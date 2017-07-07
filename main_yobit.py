@@ -327,7 +327,7 @@ def isExcludedCoin(MarketName):
 with open("include_coin_list_yobit.json") as secrets_file:
     coinList = json.load(secrets_file)
 
-def maain():
+def main():
     #for coin in coinList:
     #    print(coin)
     #result = yobit.get_markets()
