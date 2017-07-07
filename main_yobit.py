@@ -84,8 +84,8 @@ class ThreadGetTiker(Thread):
                     gap_price_rate_bid = (curr_price_bid - priv_price_bid) / priv_price_bid
                     gap_price_rate_last = (curr_price_last - priv_price_last) / priv_price_last
 
-                    if gap_price_rate > ACCEPT_PRICE_GAP and gap_price_rate_bid > ACCEPT_PRICE_GAP:
-                        # and gap_price_rate_last > ACCEPT_PRICE_GAP:
+                    if gap_price_rate > ACCEPT_PRICE_GAP :
+                        # and gap_price_rate_bid > ACCEPT_PRICE_GAP and gap_price_rate_last > ACCEPT_PRICE_GAP:
                         printt('#################################### ' + self.MarketName.split('_')[0] + ' #############################')
                         price_ask = dict_price[self.MarketName]
                         price_bid = dict_price_bid[self.MarketName]
