@@ -362,8 +362,9 @@ def main():
             os.system('clear')
         elif os_type == 'Windows':
             os.system('cls')
-        printt(str(current_time) + ' : Program is running')
         """
+        printt(str(current_time) + ' : Program is running')
+
         for key, value in dict_price.items():
             # print(key + ' : ' + str('%.8f' % (value[0][1]-value[1][1])/value[0][1]))
             if value[0][0] != 0 and value[2]:
