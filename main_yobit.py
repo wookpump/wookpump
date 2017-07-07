@@ -327,11 +327,10 @@ def isExcludedCoin(MarketName):
 with open("include_coin_list_yobit.json") as secrets_file:
     coinList = json.load(secrets_file)
 
-
-if __name__  == "__main__":
+def maain():
     #for coin in coinList:
     #    print(coin)
-    result = yobit.get_markets()
+    #result = yobit.get_markets()
 
     #printt(str(result))
     index = 0
@@ -393,3 +392,7 @@ if __name__  == "__main__":
                     printt('#################################### ' + key.split('_')[0] + ' #############################')
             """
         time.sleep(2)
+
+
+if __name__  == "__main__":
+    main()

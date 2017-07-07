@@ -195,7 +195,6 @@ class Yobit(object):
         #
 
         result = self.api_query('info')
-        print(str(result))
         detail = []
         for key, value in result['pairs'].items():
             IsActive = False
