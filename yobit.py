@@ -21,7 +21,7 @@ class Yobit(object):
         self.secret = secret
         self.public = ['info', 'ticker', 'depth', 'trades']
         self.trade = ['ActiveOrders', 'getInfo', 'Trade', 'CancelOrder', 'ActiveOrders','GetDepositAddress', 'TradeHistory']
-
+        self.prev_nonce = str(int(time.time() ))
     def api_query(self, method, values={}):
         if method in self.public:
             #https://yobit.net/api/3/ticker/ltc_btc
@@ -36,7 +36,16 @@ class Yobit(object):
         elif method in self.trade:
             url = 'https://yobit.net/tapi'
             values['method'] = method
-            values['nonce'] = str(int(time.time()))
+
+            nonce = str(int(time.time() ))
+            while True:
+                if nonce == self.prev_nonce:
+                    nonce = str(int(time.time()))
+                else:
+                    self.prev_nonce = nonce
+                    break
+
+            values['nonce'] = nonce
             body =  urlencode(values)
             #headers={"apisign": hmac.new(self.api_secret.encode(), request_url.encode(), hashlib.sha512).hexdigest()}
             #POST-parameters (?param0=val0 & ...& nonce=1) signed by secret key through HMAC-SHA512
@@ -91,7 +100,7 @@ class Yobit(object):
         :rtype : dict
         """
 
-        result = self.api_query('Trade', {'type':'buy', 'pair': market, 'amount': quantity, 'rate':rate})
+        result = self.api_query('Trade', {'type':'buy', 'pair': market, 'amount': quantity, 'rate':'%.8f'%rate})
         return result
 
     def sell_limit(self, market, quantity, rate):
@@ -110,7 +119,7 @@ class Yobit(object):
         :return:
         :rtype : dict
         """
-        return self.api_query('Trade', {'type':'sell', 'pair': market, 'amount': quantity, 'rate':rate})
+        return self.api_query('Trade', {'type':'sell', 'pair': market, 'amount': quantity, 'rate':'%.8f'%rate})
 
     def cancel(self, uuid):
         """
@@ -231,6 +240,41 @@ class Yobit(object):
                 list_order.append({'PricePerUnit':value['rate']})
 
             result = {'success': True, 'message': '', 'result':list_order}
+        else:
+            result = {'success': False, 'message': '', 'result': list_order}
+
+        return result
+
+    def get_order_history_type(self, market, count, type):
+        """
+        Used to reterieve order trade history of account
+        /account/getorderhistory
+        :param market: optional a string literal for the market (ie. BTC-LTC). If ommited, will return for all markets
+        :type market: str
+        :param count: optional 	the number of records to return
+        :type count: int
+        :return: order history in JSON
+        :rtype : dict
+
+        from: No. of transaction from which withdrawal starts (value: numeral, on default: 0)
+        count: quantity of withrawal transactions (value: numeral, on default: 1000)
+        from_id: ID of transaction from which withdrawal starts (value: numeral, on default: 0)
+        end_id: ID of transaction at which withdrawal finishes (value: numeral, on default: ∞)
+        order: sorting at withdrawal (value: ASC or DESC, on default: DESC)
+        since: the time to start the display (value: unix time, on default: 0)
+        end: the time to end the display (value: unix time, on default: ∞)
+        pair: pair (example: ltc_btc)
+        """
+
+        result = self.api_query('TradeHistory', {'pair': market, 'order': 'DESC', 'count': count})
+
+        list_order = []
+        if result['success'] == 1:
+            for key, value in result['return'].items():
+                if value['type'] == type:
+                    list_order.append({'PricePerUnit': value['rate']})
+
+            result = {'success': True, 'message': '', 'result': list_order}
         else:
             result = {'success': False, 'message': '', 'result': list_order}
 
