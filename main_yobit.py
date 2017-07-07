@@ -61,7 +61,7 @@ class ThreadTrade(Thread):
 
     def run(self):
         try:
-            printt(self.MarketName + ' Trading START!!!!')
+            printt(self.MarketName + ' Trading START!!')
             buyResult = buyCoin(self.MarketName, BUY_PRICE_RATE, self.buy_price)
             #printt(str(buyResult))
             coinName = self.MarketName.split('_')[0]
@@ -69,7 +69,7 @@ class ThreadTrade(Thread):
             #printt(str(sellResult))
             t = dict_TradingThread[self.MarketName]
             t.inTrading = False;
-            printt(self.MarketName + ' Trading END!!!!')
+            printt(self.MarketName + ' Trading END!!')
         except:
             print(self.MarketName + ' : error')
             traceback.print_exc()
@@ -327,10 +327,11 @@ def isExcludedCoin(MarketName):
 with open("include_coin_list_yobit.json") as secrets_file:
     coinList = json.load(secrets_file)
 
-def main():
+
+if __name__  == "__main__":
     #for coin in coinList:
     #    print(coin)
-    #result = yobit.get_markets()
+    result = yobit.get_markets()
 
     #printt(str(result))
     index = 0
@@ -362,8 +363,8 @@ def main():
             os.system('clear')
         elif os_type == 'Windows':
             os.system('cls')
-        """
         printt(str(current_time) + ' : Program is running')
+        """
         for key, value in dict_price.items():
             # print(key + ' : ' + str('%.8f' % (value[0][1]-value[1][1])/value[0][1]))
             if value[0][0] != 0 and value[2]:
@@ -392,7 +393,3 @@ def main():
                     printt('#################################### ' + key.split('_')[0] + ' #############################')
             """
         time.sleep(2)
-
-
-if __name__  == "__main__":
-    main()
