@@ -89,9 +89,9 @@ class ThreadGetTiker(Thread):
                 current_time_str = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                 ticker = yobit.get_ticker(self.MarketName)
                 if ticker['result']['Bid'] < 0.00000100 or ticker['result']['Ask'] < 0.00000100 or ticker['result']['Last'] < 0.00000100 or ticker['result']['Ask'] > 0.1:
-                    dict_price.update({MarketName: [[current_time, 1], [current_time, 1], False]})
-                    dict_price_bid.update({MarketName: [[current_time, 1], [current_time, 1], False]})
-                    dict_price_last.update({MarketName: [[current_time, 1], [current_time, 1], False]})
+                    dict_price.update({self.MarketName: [[current_time, 1], [current_time, 1], False]})
+                    dict_price_bid.update({self.MarketName: [[current_time, 1], [current_time, 1], False]})
+                    dict_price_last.update({self.MarketName: [[current_time, 1], [current_time, 1], False]})
                     break
                 price = float(ticker['result']['Ask'])
                 price_bid = float(ticker['result']['Bid'])
@@ -327,8 +327,7 @@ def isExcludedCoin(MarketName):
 with open("include_coin_list_yobit.json") as secrets_file:
     coinList = json.load(secrets_file)
 
-
-if __name__  == "__main__":
+def main():
     #for coin in coinList:
     #    print(coin)
     result = yobit.get_markets()
@@ -393,3 +392,7 @@ if __name__  == "__main__":
                     printt('#################################### ' + key.split('_')[0] + ' #############################')
             """
         time.sleep(2)
+
+
+if __name__  == "__main__":
+    main()
