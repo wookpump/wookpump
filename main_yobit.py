@@ -10,16 +10,18 @@ import datetime
 import traceback
 import slackweb
 import socket
+import platform
+import os
 
 slack = slackweb.Slack(url="https://hooks.slack.com/services/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")
 
-AUTO_TRADE = True  # True or False ex)False = Display CoinName Only
+AUTO_TRADE = False  # True or False ex)False = Display CoinName Only
 BUY_COIN_UNIT = 0.0002  # Total Buy bit at least 0.0001 ex)0.1 = 0.1BIT
 ACCEPT_PRICE_GAP = 0.10  # Gap of prev between curr price ex)0.1 = 10%
 IGNORE_GAP_SECONDS = 5  # accept time gap under 10 ex)10 = 10 second
 BUY_PRICE_RATE = 1.01  # Buy coin at Current price * 1.2 ex)1.2 = 120%
 SELL_PRICE_RATE = 1.02  # Sell coin at buy price(Actual) * 1.2 ex)1.2 = 120%
-CANCEL_TIME = 5 # afert CANCLE_TIME seconds, cancel all open order and sell market ex) 50 = 50 seconds
+CANCEL_TIME = 60 # afert CANCLE_TIME seconds, cancel all open order and sell market ex) 50 = 50 seconds
 
 dict_price = {} #dict_price.update({MarketName: [[prev_time, prev_price], [curr_time, curr_price], RunThread, AutoTrade]})
 dict_price_bid = {}
@@ -36,6 +38,18 @@ with open("secrets_yobit.json") as secrets_file:
     secrets = json.load(secrets_file)
     secrets_file.close()
     yobit = Yobit(secrets['key'], secrets['secret'])
+
+class ThreadKeyInput(Thread):
+
+    def __init__(self):
+        threading.Thread.__init__(self)
+
+    def run(self):
+        while True:
+            s = input()
+            if s == 'q':
+                exit(0)
+
 class ThreadTrade(Thread):
 
     def __init__(self, MarketName, buy_price,sell_rate, catch_gap):
@@ -270,7 +284,7 @@ def sellCoin(coinName, rate):
                     printt('D1' + str(sellResult))
                 loop_count2 += 1
 
-                printt("After %d seconds Try %d / 20 to Cancel and Sell Market Price" % (CANCEL_TIME, loop_count2))
+                printt("After %d seconds Try %d / 20 to Cancel and Sell 1.1" % (CANCEL_TIME, loop_count2))
                 if(loop_count2 >= 20):
                     printt("LOOP COUNT2 10 BREAK")
                     break
@@ -339,9 +353,14 @@ if __name__  == "__main__":
         printt(MarketName + ' is started : %d' % index)
         time.sleep(0.1)
 
-
     while True:
-        printt('Program is running')
+        current_time = datetime.datetime.now()
+        os_type = platform.system()
+        if os_type == 'Linux':
+            os.system('clear')
+        elif os_type == 'Windows':
+            os.system('cls')
+        printt(str(current_time) + ' : Program is running')
         for key, value in dict_price.items():
             # print(key + ' : ' + str('%.8f' % (value[0][1]-value[1][1])/value[0][1]))
             if value[0][0] != 0 and value[2]:
