@@ -61,13 +61,15 @@ class ThreadTrade(Thread):
 
     def run(self):
         try:
+            printt(self.MarketName + ' Trading START!!!!')
             buyResult = buyCoin(self.MarketName, BUY_PRICE_RATE, self.buy_price)
-            printt(str(buyResult))
+            #printt(str(buyResult))
             coinName = self.MarketName.split('_')[0]
             sellResult = sellCoin(coinName, self.sell_rate)
-            printt(str(sellResult))
+            #printt(str(sellResult))
             t = dict_TradingThread[self.MarketName]
             t.inTrading = False;
+            printt(self.MarketName + ' Trading END!!!!')
         except:
             print(self.MarketName + ' : error')
             traceback.print_exc()
@@ -231,7 +233,7 @@ def sellCoin(coinName, rate):
                     bidPrice = 0.0001 / float(coinAvail)
 
                 sellResult = yobit.sell_limit(coinName + '_btc', coinAvail, bidPrice)
-                printt('D3' + str(sellResult))
+                #printt('D3' + str(sellResult))
                 printt('sell price : %.8f' % bidPrice + ', sell unit : %.8f' % coinAvail + ', sell_count %d' % sell_count)
                 sell_count += 1
             else:
@@ -239,7 +241,7 @@ def sellCoin(coinName, rate):
                 #bidPrice = 0.0001 / float(coinAvail)
 
                 sellResult = yobit.sell_limit(coinName + '_btc', coinAvail, bidPrice)
-                printt('D2' + str(sellResult))
+                #printt('D2' + str(sellResult))
                 printt('sell price : %.8f' % bidPrice + ', sell unit : %.8f' % coinAvail + ', sell_count %d' % sell_count)
                 sell_count += 1
 
@@ -281,7 +283,7 @@ def sellCoin(coinName, rate):
                     if sellResult['success'] == 1:
                         list_newOrderId.append(str(sellResult['return']['order_id']))
                     printt('sell price : %.8f' % bidPrice + ', sell unit : %.8f' % coinAvail)
-                    printt('D1' + str(sellResult))
+                    #printt('D1' + str(sellResult))
                 loop_count2 += 1
 
                 printt("After %d seconds Try %d / 20 to Cancel and Sell 1.1" % (CANCEL_TIME, loop_count2))
@@ -354,12 +356,14 @@ if __name__  == "__main__":
         time.sleep(0.1)
 
     while True:
+        """
         current_time = datetime.datetime.now()
         os_type = platform.system()
         if os_type == 'Linux':
             os.system('clear')
         elif os_type == 'Windows':
             os.system('cls')
+        """
         printt(str(current_time) + ' : Program is running')
         for key, value in dict_price.items():
             # print(key + ' : ' + str('%.8f' % (value[0][1]-value[1][1])/value[0][1]))
