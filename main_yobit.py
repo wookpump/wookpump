@@ -267,7 +267,7 @@ def sellCoin(coinName, rate):
                         continue
                     else:
                         result = yobit.cancel(order_id)
-                        printt('Cancel : ' + str(result))
+                        #sprintt('Cancel : ' + str(result))
                         printt(coinName + '_btc' + ' CANCEL : ' + order['OrderUuid'])
 
                 balance = yobit.get_balance(coinName)
