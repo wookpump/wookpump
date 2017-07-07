@@ -71,7 +71,7 @@ class ThreadTrade(Thread):
             t.inTrading = False;
             printt(self.MarketName + ' Trading END!!')
         except:
-            print(self.MarketName + ' : error')
+            printt(self.MarketName + ' : error')
             traceback.print_exc()
 
 class ThreadGetTiker(Thread):
@@ -204,7 +204,7 @@ def buyCoin(coinName, rate, curr_price):
     qty = round(float(BUY_COIN_UNIT / askPrice), 8)
     printt('BUY - ' + coinName + ':' + str('%.8f' % askPrice) + ':' + str('%.8f' % qty))
     buyResult = yobit.buy_limit(coinName, qty, askPrice)
-    printt(str(buyResult))
+    #printt(str(buyResult))
     return buyResult
 
 
