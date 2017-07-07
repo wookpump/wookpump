@@ -261,8 +261,8 @@ def sellCoin(coinName, rate):
                 openOrder = yobit.get_open_orders(coinName + '_btc')
                 for order in openOrder['result']:
                     order_id = order['OrderUuid']
-                    print(str(order_id) + ' in ' + str(list_newOrderId))
-                    print(str(order_id in list_newOrderId))
+                    #print(str(order_id) + ' in ' + str(list_newOrderId))
+                    #print(str(order_id in list_newOrderId))
                     if str(order_id) in list_newOrderId:
                         continue
                     else:
