@@ -278,3 +278,8 @@ class Yobit(object):
             result = {'success': False, 'message': '', 'result': list_order}
 
         return result
+
+    def get_ticker_bulk(self, market):
+
+        result = self.api_query('ticker', {'market': market})
+        return result
