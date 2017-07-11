@@ -138,7 +138,6 @@ class Coin:
                     prev2_price_gap_rate_last = (prev_prev_price_last - prev2_prev_price_last) / prev2_prev_price_last
                     prev_price_gap_rate_last = (prev_curr_price_last - prev_prev_price_last) / prev_prev_price_last
 
-
                     #if price_gap_rate_bid > ACCEPT_PRICE_GAP and price_gap_rate_ask > ACCEPT_PRICE_GAP and price_gap_rate_vol > ACCEPT_PRICE_GAP :
                     if prev3_prev_price_last == 9999 and price_gap_rate_last > ACCEPT_PRICE_GAP and price_gap_rate_vol > ACCEPT_PRICE_GAP and price_gap_rate_ask > ACCEPT_PRICE_GAP and curr_price_high == curr_price_last :
                         printt('%s : Catch #############\n' % self.coinName)
