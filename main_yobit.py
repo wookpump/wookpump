@@ -99,7 +99,14 @@ class Coin:
         prev_price_vol = self.list_price[3][8]
         curr_price_vol = self.list_price[4][8]
 
-        if prev_price_last < 0.00000100 or prev_price_last > 0.1:
+        prev_price_low = self.list_price[3][6]
+        curr_price_low = self.list_price[4][6]
+
+        prev_price_high = self.list_price[3][5]
+        curr_price_high = self.list_price[4][5]
+
+
+        if prev_price_low < 0.00000050 or prev_price_low > 0.1:
             return None
 
         if self.IsInTrading == False:
@@ -110,7 +117,12 @@ class Coin:
                 price_gap_rate_last = (curr_price_last - prev_price_last) / prev_price_last
                 price_gap_rate_vol = (curr_price_vol - prev_price_vol) / prev_price_vol
 
-                if price_gap_rate_last > ACCEPT_PRICE_GAP:
+                if self.list_price[4][1] == self.list_price[4][5]:
+                    self.print_price(self.coinName + ' high = last')
+                if price_gap_rate_vol > 0.01:
+                    self.print_price(self.coinName + ' volume Up!!')
+
+                if price_gap_rate_last > 0.01:
 
                     prev3_prev_time = self.list_price[0][0]
                     prev2_prev_time = self.list_price[1][0]
@@ -126,17 +138,9 @@ class Coin:
                     prev2_price_gap_rate_last = (prev_prev_price_last - prev2_prev_price_last) / prev2_prev_price_last
                     prev_price_gap_rate_last = (prev_curr_price_last - prev_prev_price_last) / prev_prev_price_last
 
-                    if price_gap_rate_vol > 0.01:
-                        printt('%s volume UP ######## : %.8f -> %.8f -> %.8f -> %.8f -> %.8f  : %.8f\n' % (self.coinName,
-                                                                                               self.list_price[0][8],
-                                                                                               self.list_price[1][8],
-                                                                                               self.list_price[2][8],
-                                                                                               self.list_price[3][8],
-                                                                                               self.list_price[4][8], (
-                                                                                               self.list_price[4][8] -
-                                                                                               self.list_price[3][8]) /
-                                                                                               self.list_price[3][8]))
-                    if price_gap_rate_bid > ACCEPT_PRICE_GAP and price_gap_rate_ask > ACCEPT_PRICE_GAP and price_gap_rate_vol > ACCEPT_PRICE_GAP :
+
+                    #if price_gap_rate_bid > ACCEPT_PRICE_GAP and price_gap_rate_ask > ACCEPT_PRICE_GAP and price_gap_rate_vol > ACCEPT_PRICE_GAP :
+                    if prev3_prev_price_last == 9999 and price_gap_rate_last > ACCEPT_PRICE_GAP and price_gap_rate_vol > ACCEPT_PRICE_GAP and price_gap_rate_ask > ACCEPT_PRICE_GAP and curr_price_high == curr_price_last :
                         printt('%s : Catch #############\n' % self.coinName)
 
                         if AUTO_TRADE and self.IsAutoTrad:
@@ -144,7 +148,7 @@ class Coin:
                             self.IsInTrading = True
                             ThreadTrade(self.coinName, curr_price_bid, SELL_PRICE_RATE, price_gap_rate_last).start()
 
-                            slack_message = '[' + self.coinName + '] ' + '\nPREV: ' + str(datetime.datetime.fromtimestamp(prev_prev_time)) + ' , ' + str(
+                            slack_message = 'AUTO TRADE : [' + self.coinName + '] ' + '\nPREV: ' + str(datetime.datetime.fromtimestamp(prev_prev_time)) + ' , ' + str(
                                 '%.8f' % prev_prev_price_last) + '\nCURR: ' + str(datetime.datetime.fromtimestamp(curr_time)) + ' , ' + str(
                                 '%.8f' % curr_price_last) + '\nGAP: ' + '%.1f' % (
                                 ACCEPT_PRICE_GAP * 100) + '\nUNIT: ' + '%.3f' % BUY_COIN_UNIT + 'BTC\nHOST: ' + socket.gethostname() + '\nCATCH : %0.8f' % price_gap_rate_last + '\nBUY_PRICE_RATE : %.2f' % BUY_PRICE_RATE + '\nSELL_PRICE_RATE : %.2f' % SELL_PRICE_RATE
@@ -236,6 +240,71 @@ class Coin:
                                                                                self.list_price[3][8],
                                                                                self.list_price[4][8], (self.list_price[4][8]-self.list_price[3][8])/ self.list_price[3][8]))
 
+    def print_price(self, str):
+        printt('########################### ' + str + ' #############################')
+        printt('%s high : %.8f -> %.8f -> %.8f -> %.8f -> %.8f : %.8f' % (self.coinName,
+                                                                          self.list_price[0][5],
+                                                                          self.list_price[1][5],
+                                                                          self.list_price[2][5],
+                                                                          self.list_price[3][5],
+                                                                          self.list_price[4][5], (
+                                                                              self.list_price[4][5] -
+                                                                              self.list_price[3][5]) /
+                                                                          self.list_price[3][5]))
+        printt('%s low : %.8f -> %.8f -> %.8f -> %.8f -> %.8f : %.8f' % (self.coinName,
+                                                                         self.list_price[0][6],
+                                                                         self.list_price[1][6],
+                                                                         self.list_price[2][6],
+                                                                         self.list_price[3][6],
+                                                                         self.list_price[4][6], (
+                                                                             self.list_price[4][6] -
+                                                                             self.list_price[3][6]) /
+                                                                         self.list_price[3][6]))
+        printt('%s avg : %.8f -> %.8f -> %.8f -> %.8f -> %.8f : %.8f' % (self.coinName,
+                                                                         self.list_price[0][7],
+                                                                         self.list_price[1][7],
+                                                                         self.list_price[2][7],
+                                                                         self.list_price[3][7],
+                                                                         self.list_price[4][7], (
+                                                                             self.list_price[4][7] -
+                                                                             self.list_price[3][7]) /
+                                                                         self.list_price[3][7]))
+        printt('%s Last: %.8f -> %.8f -> %.8f -> %.8f -> %.8f : %.8f' % (self.coinName,
+                                                                         self.list_price[0][1],
+                                                                         self.list_price[1][1],
+                                                                         self.list_price[2][1],
+                                                                         self.list_price[3][1],
+                                                                         self.list_price[4][1], (
+                                                                         self.list_price[4][1] - self.list_price[3][
+                                                                             1]) / self.list_price[3][1]))
+
+        printt('%s Bid : %.8f -> %.8f -> %.8f -> %.8f -> %.8f : %.8f' % (self.coinName,
+                                                                         self.list_price[0][2],
+                                                                         self.list_price[1][2],
+                                                                         self.list_price[2][2],
+                                                                         self.list_price[3][2],
+                                                                         self.list_price[4][2], (
+                                                                         self.list_price[4][2] - self.list_price[3][
+                                                                             2]) / self.list_price[3][2]))
+        printt('%s Ask : %.8f -> %.8f -> %.8f -> %.8f -> %.8f : %.8f' % (self.coinName,
+                                                                         self.list_price[0][3],
+                                                                         self.list_price[1][3],
+                                                                         self.list_price[2][3],
+                                                                         self.list_price[3][3],
+                                                                         self.list_price[4][3], (
+                                                                         self.list_price[4][3] - self.list_price[3][
+                                                                             3]) / self.list_price[3][3]))
+
+        printt('%s volume : %.8f -> %.8f -> %.8f -> %.8f -> %.8f  : %.8f\n' % (self.coinName,
+                                                                               self.list_price[0][8],
+                                                                               self.list_price[1][8],
+                                                                               self.list_price[2][8],
+                                                                               self.list_price[3][8],
+                                                                               self.list_price[4][8], (
+                                                                               self.list_price[4][8] -
+                                                                               self.list_price[3][8]) /
+                                                                               self.list_price[3][8]))
+
 
 
 
@@ -279,9 +348,11 @@ class ThreadTrade(Thread):
             #time.sleep(60)
             coin = dict_ALL_COIN_DATA[self.MarketName]
             coin.IsInTrading = False;
-            printt(self.MarketName + ' Trading END!!')
+            printt(self.MarketName + ' Trading END!! without Error')
         except:
             printt(self.MarketName + ' : error')
+            coin.IsInTrading = False;
+            printt(self.MarketName + ' Trading END!! with Error')
             traceback.print_exc()
 
 class ThreadGetTiker(Thread):
