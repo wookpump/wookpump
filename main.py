@@ -12,13 +12,27 @@ import socket
 
 slack = slackweb.Slack(url="https://hooks.slack.com/services/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")
 
-AUTO_TRADE = False  # True or False ex)False = Display CoinName Only
-BUY_COIN_UNIT = 0.001  # Total Buy bit at least 0.0005 ex)0.1 = 0.1BIT
-ACCEPT_PRICE_GAP = 0.05  # Gap of prev between curr price ex)0.1 = 10%
-IGNORE_GAP_SECONDS = 5  # accept time gap under 10 ex)10 = 10 second
-BUY_PRICE_RATE = 1.01  # Buy coin at Current price * 1.2 ex)1.2 = 120%
-SELL_PRICE_RATE = 1.01  # Sell coin at buy price(Actual) * 1.2 ex)1.2 = 120%
-CANCEL_TIME = 5 # afert CANCLE_TIME seconds, cancel all open order and sell market ex) 50 = 50 seconds
+with open("run_param_bittrex.json") as run_param_yobit:
+    param = json.load(run_param_yobit)
+    run_param_yobit.close()
+
+# set in run_param_yobit.json file
+# AUTO_TRADE = False  # True or False ex)False = Display CoinName Only
+# BUY_COIN_UNIT = 0.0002  # Total Buy bit at least 0.0001 ex)0.1 = 0.1BIT
+# ACCEPT_PRICE_GAP = 0.10  # Gap of prev between curr price ex)0.1 = 10%
+# IGNORE_GAP_SECONDS = 5  # accept time gap under 10 ex)10 = 10 second
+# BUY_PRICE_RATE = 1.01  # Buy coin at Current price * 1.2 ex)1.2 = 120%
+# SELL_PRICE_RATE = 1.02  # Sell coin at buy price(Actual) * 1.2 ex)1.2 = 120%
+# CANCEL_TIME = 60 # afert CANCLE_TIME seconds, cancel all open order and sell market ex) 50 = 50 seconds
+
+AUTO_TRADE = param['AUTO_TRADE']
+BUY_COIN_UNIT = param['BUY_COIN_UNIT']
+ACCEPT_PRICE_GAP = param['ACCEPT_PRICE_GAP']
+IGNORE_GAP_SECONDS = param['IGNORE_GAP_SECONDS']
+BUY_PRICE_RATE = param['BUY_PRICE_RATE']
+SELL_PRICE_RATE = param['SELL_PRICE_RATE']
+LAST_SELL_PRICE_RATE = param['LAST_SELL_PRICE_RATE']
+CANCEL_TIME = param['CANCEL_TIME']
 
 dict_price = {}
 dict_price_bid = {}
