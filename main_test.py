@@ -42,6 +42,43 @@ with open("secrets.json") as secrets_file:
 
 dict_ALL_COIN_DATA = {}
 
+class ThreadGetTiker(Thread):
+    def __init__(self, coinName):
+        self.coinName = coinName
+        threading.Thread.__init__(self)
+
+    def run(self):
+        while True:
+            try:
+                ticker = bittrex.get_ticker(self.coinName)
+                dict_ALL_COIN_DATA[self.coinName].setCurrentPrice(ticker['result']['Last'], ticker['result']['Bid'], ticker['result']['Ask'])
+            except:
+                print(self.coinList + ' : error')
+                traceback.print_exc()
+
+
+
+            time.sleep(1.1)
+
+class ProcessManager:
+
+    def __init__(self,list_coinName):
+        self.dict_coinName = list_coinName
+        for coinName in list_coinName:
+            coin = Coin(coinName)
+            dict_ALL_COIN_DATA.update({coinName: coin})
+
+        process = Process(target=get_ticker, args=(bittrex, list_coinName))
+        process.start()
+
+def get_ticker(pbittrex, list_coinName):
+    for coin in list_coinName:
+        ThreadGetTiker(coin).start()
+
+    while True:
+        time.sleep(100)
+
+
 class Coin:
 
     def __init__(self, coinName):
@@ -359,40 +396,31 @@ def isExcludedCoin(MarketName):
             print("Included")
             return False
 
-def get_ticker(pbittrex, coinName, ALL_COIN_DATA):
-    while True:
-        ticker = pbittrex.get_ticker(coinName)
-        #print(str(result))
-        ALL_COIN_DATA[coinName].setCurrentPrice(ticker['result']['Last'], ticker['result']['Bid'], ticker['result']['Ask'])
+# def get_ticker(pbittrex, coinName, ALL_COIN_DATA):
+#     while True:
+#         ticker = pbittrex.get_ticker(coinName)
+#         #print(str(result))
+#         ALL_COIN_DATA[coinName].setCurrentPrice(ticker['result']['Last'], ticker['result']['Bid'], ticker['result']['Ask'])
 
 if __name__  == "__main__":
     result = bittrex.get_markets()
 
     #printt(str(result))
     index = 0
-    for coin in result['result']:
-        MarketName = coin['MarketName']
-        if 'BTC-' in MarketName and coin['IsActive'] and isExcludedCoin(MarketName) is not True:
+    for idx, Market in enumerate(result['result']):
+        coinName = Market['MarketName']
+        if 'BTC-' in coinName and Market['IsActive'] and isExcludedCoin(coinName) is not True:
+            list_coinName =[]
+            if idx % 10 == 0:
+                list_coinName.append(coinName)
+
             try:
                 #qresult = Queue()
-                process = Process(target = get_ticker, args=(bittrex,MarketName,dict_ALL_COIN_DATA))
-                coin = Coin(MarketName)
-                dict_ALL_COIN_DATA.update({MarketName:coin})
-                process.start()
+                processManager = ProcessManager(list_coinName)
             except:
-                print('error : ' + MarketName)
+                print('error : ' + list_coinName)
 
-            index += 1
-            if index == 100:
-                break
+    if idx % 10 != 0:
+        processManager = ProcessManager(list_coinName)
 
-    # while True:
-    #     for key, coin in dict_ALL_COIN_DATA.items():
-    #         printt("%s : [%s:%.8f]->[%s:%.8f]->[%s:%.8f]->[%s:%.8f]->[%s:%.8f]" % (key,
-    #                                                                      str(datetime.datetime.fromtimestamp(coin.list_price[0][0])), coin.list_price[0][3],
-    #                                                                      str(datetime.datetime.fromtimestamp(coin.list_price[1][0])),coin.list_price[1][3],
-    #                                                                      str(datetime.datetime.fromtimestamp(coin.list_price[2][0])),coin.list_price[2][3],
-    #                                                                      str(datetime.datetime.fromtimestamp(coin.list_price[3][0])),coin.list_price[3][3],
-    #                                                                      str(datetime.datetime.fromtimestamp(coin.list_price[4][0])),coin.list_price[4][3]
-    #                                                                      ))
-    #     time.sleep(1)
+
