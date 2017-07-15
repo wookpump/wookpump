@@ -58,7 +58,7 @@ class ThreadGetTiker(Thread):
 
 
 
-            time.sleep(1.1)
+            time.sleep(0.1)
 
 class ProcessManager:
 
@@ -407,20 +407,23 @@ if __name__  == "__main__":
 
     #printt(str(result))
     index = 0
+    list_coinName = []
     for idx, Market in enumerate(result['result']):
         coinName = Market['MarketName']
         if 'BTC-' in coinName and Market['IsActive'] and isExcludedCoin(coinName) is not True:
-            list_coinName =[]
-            if idx % 10 == 0:
-                list_coinName.append(coinName)
+
+
+            list_coinName.append(coinName)
 
             try:
                 #qresult = Queue()
-                processManager = ProcessManager(list_coinName)
+                if idx % 8 == 0 and idx != 0:
+                    processManager = ProcessManager(list_coinName)
+                    list_coinName = []
             except:
                 print('error : ' + list_coinName)
 
-    if idx % 10 != 0:
+    if idx % 8 != 0:
         processManager = ProcessManager(list_coinName)
 
 
