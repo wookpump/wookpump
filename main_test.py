@@ -34,7 +34,7 @@ SELL_PRICE_RATE = param['SELL_PRICE_RATE']
 LAST_SELL_PRICE_RATE = param['LAST_SELL_PRICE_RATE']
 CANCEL_TIME = param['CANCEL_TIME']
 
-with open("secrets.json") as secrets_file:
+with open("secrets_bittrex.json") as secrets_file:
     secrets = json.load(secrets_file)
     secrets_file.close()
     bittrex = Bittrex(secrets['key'], secrets['secret'])
