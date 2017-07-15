@@ -125,7 +125,7 @@ class Coin:
                                                                                self.list_price[4][3]
                                                                                ))
         #self.catch_for_buy()
-        time.sleep(0.01)
+        time.sleep(0.001)
 
     def catch_for_buy(self):
 
@@ -417,13 +417,13 @@ if __name__  == "__main__":
 
             try:
                 #qresult = Queue()
-                if idx % 8 == 0 and idx != 0:
+                if idx % 5 == 0 and idx != 0:
                     processManager = ProcessManager(list_coinName)
                     list_coinName = []
             except:
                 print('error : ' + list_coinName)
 
-    if idx % 8 != 0:
+    if idx % 5 != 0:
         processManager = ProcessManager(list_coinName)
 
 
