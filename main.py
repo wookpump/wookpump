@@ -37,7 +37,7 @@ CANCEL_TIME = param['CANCEL_TIME']
 dict_price = {}
 dict_price_bid = {}
 dict_price_last = {}
-with open("secrets.json") as secrets_file:
+with open("secrets_bittrex.json") as secrets_file:
     secrets = json.load(secrets_file)
     secrets_file.close()
     bittrex = Bittrex(secrets['key'], secrets['secret'])
@@ -213,7 +213,7 @@ def sellCoin(coinName, rate):
 
                 if balance['result']['Available'] != None and balance['result']['Available'] != 0.0:
                     coinAvail = '%.8f' % float(balance['result']['Available'])
-                    bidPrice = '%.8f' % (0.0006 / float(coinAvail))
+                    bidPrice = '%.8f' % (buy_actual_price * LAST_SELL_PRICE_RATE)
                     printt('sell price : ' + bidPrice + ', sell unit : ' +  coinAvail)
                     sellResult = bittrex.sell_limit('BTC-' + coinName, coinAvail, bidPrice)['result']
 
